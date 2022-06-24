@@ -11,24 +11,26 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 
 @Entity
-public class Departement {
+public class Demande {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
-	@Column(name="id_departement")
+	@Column(name="id_demande")
 	private int id;
 	
-	private String nom;
+	@OneToOne(targetEntity=Produit.class)
+	private Produit produit;
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="departement_id")
-	private List<Service> services = new ArrayList<>();
-	
-	public Departement(String nom) {
-		this.nom = nom;
-	}
+	@JoinColumn(name="demande_id")
+	private List<Note> notes = new ArrayList<>();
 
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="demande_id")
+	private List<Notification> notifications = new ArrayList<>();
+	
 	public int getId() {
 		return id;
 	}
@@ -37,11 +39,7 @@ public class Departement {
 		this.id = id;
 	}
 	
-	public String getNom() {
-		return nom;
-	}
-	
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setProduit(Produit produit) {
+		this.produit = produit;
 	}
 }
