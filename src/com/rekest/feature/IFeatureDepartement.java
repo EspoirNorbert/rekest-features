@@ -24,7 +24,7 @@ public interface IFeatureDepartement {
 
 
 	/**
-	 * Return a list of all 'departements'
+	 * Return a list of all 'departements'.
 	 * 
 	 * @param 
 	 * @return
@@ -33,7 +33,7 @@ public interface IFeatureDepartement {
 
 	/**
 	 * 
-	 * Return a list of 'departements' according to the filters
+	 * Return a list of 'departements' according to the filters.
 	 * 
 	 * @param whereClause
 	 * @return
@@ -42,24 +42,24 @@ public interface IFeatureDepartement {
 	public List<Departement> listerDepartements ( String whereClause) ;
 	
 	/**
-	 * Delete the 'departement' set in parameter
-	 * Return true if it succeeded, else false
+	 * Delete the 'departement' set in parameter.
+	 * Return true if it succeeded, else false.
 	 * 
 	 * @param departement
 	 */
 	public boolean supprimerDepartement (Departement departement);
 
 	/**
-	 * Update the 'departement' set in parameter
-	 * Return true if it succeeded, else false
+	 * Update the 'departement' set in parameter.
+	 * Return true if it succeeded, else false.
 	 * 
 	 * @param departement
 	 */
 	public boolean modifierDepartement (Departement departement);
 
 	/**
-	 * Save the 'departement' set in parameter
-	 * Return true if it succeeded, else false
+	 * Save the 'departement' set in parameter.
+	 * Return true if it succeeded, else false.
 	 * 
 	 * @param departement
 	 */
@@ -67,7 +67,7 @@ public interface IFeatureDepartement {
 
 
 	/**
-	 * Find the 'departement' set in parameter if it exist, else null
+	 * Find the 'departement' set in parameter if it exist, else null.
 	 * 
 	 * @param whereClause
 	 * @return
@@ -76,7 +76,7 @@ public interface IFeatureDepartement {
 	public Departement rechercherDepartement( String whereClause) ;
 
 	/**
-	 * Find the 'departement' set in parameter if it exist, else null
+	 * Find the 'departement' set in parameter if it exist, else null.
 	 * 
 	 * @param primaryKey
 	 * @return

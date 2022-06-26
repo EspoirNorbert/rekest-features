@@ -92,6 +92,7 @@ public class FeatureUtilisateur implements IFeatureUtilisateur {
 
 	@Override
 	public Utilisateur rechercherUtilisateur(String whereClause) {
+		
 		return (Utilisateur) HibernateDao.getCurrentInstance().find( Utilisateur.class, whereClause);
 	}
 
