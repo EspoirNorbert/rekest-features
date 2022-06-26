@@ -73,7 +73,7 @@ public interface IFeatureDepartement {
 	 * @return
 	 * @ 
 	 */
-	public Departement rechercherDepartement( String whereClause) ;
+	public Departement rechercherDepartement ( String whereClause) ;
 
 	/**
 	 * Find the 'departement' set in parameter if it exist, else null.
@@ -82,7 +82,7 @@ public interface IFeatureDepartement {
 	 * @return
 	 * @ 
 	 */
-	public Departement rechercherDepartement( Integer primaryKey) ;	
+	public Departement rechercherDepartement ( Integer primaryKey) ;	
 
 	 
 	

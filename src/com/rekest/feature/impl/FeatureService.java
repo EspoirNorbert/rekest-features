@@ -11,21 +11,21 @@ public class FeatureService implements IFeatureService {
 
 	private static FeatureService instance = null;
 	
-	private FeatureService() {}
+	private FeatureService () {}
 
 	public static FeatureService getCurrentInstance () {
-		if (instance == null) instance = new FeatureService();
+		if  (instance == null) instance = new FeatureService ();
 		return instance;
 	}
 	
 	@Override
-	public List<Service> listerServices() {
+	public List<Service> listerServices () {
 
-		List<Object> objects = HibernateDao.getCurrentInstance().list( Service.class);
-		List<Service> objs = new ArrayList<>();
-		for (Object obj : objects) {
-			if (obj instanceof Service) {
-				objs.add( (Service) obj);
+		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Service.class);
+		List<Service> objs = new ArrayList<> ();
+		for  (Object obj : objects) {
+			if  (obj instanceof Service) {
+				objs.add (  (Service) obj);
 			}
 		}
 		
@@ -33,13 +33,13 @@ public class FeatureService implements IFeatureService {
 	}
 
 	@Override
-	public List<Service> listerServices(String whereClause) {
+	public List<Service> listerServices (String whereClause) {
 
-		List<Object> objects = HibernateDao.getCurrentInstance().list( Service.class, whereClause);
-		List<Service> objs = new ArrayList<>();
-		for (Object obj : objects) {
-			if (obj instanceof Service) {
-				objs.add( (Service) obj);
+		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Service.class, whereClause);
+		List<Service> objs = new ArrayList<> ();
+		for  (Object obj : objects) {
+			if  (obj instanceof Service) {
+				objs.add (  (Service) obj);
 			}
 		}
 		
@@ -48,36 +48,36 @@ public class FeatureService implements IFeatureService {
 	}
 
 	@Override
-	public boolean supprimerService(Service service) {
+	public boolean supprimerService (Service service) {
 		
-		return  HibernateDao.getCurrentInstance().delete( service);
-		
-	}
-
-	@Override
-	public boolean modifierService(Service service) {
-		
-		return  HibernateDao.getCurrentInstance().update( service);
-	}
-
-	@Override
-	public boolean creerService(Service service) {
-
-		return  HibernateDao.getCurrentInstance().save( service);
+		return  HibernateDao.getCurrentInstance ().delete ( service);
 		
 	}
 
 	@Override
-	public Service rechercherService(String whereClause) {
+	public boolean modifierService (Service service) {
 		
-		return  (Service) HibernateDao.getCurrentInstance().find( Service.class, whereClause);
+		return  HibernateDao.getCurrentInstance ().update ( service);
 	}
 
 	@Override
-	public Service rechercherService(Integer primaryKey) {
+	public boolean creerService (Service service) {
+
+		return  HibernateDao.getCurrentInstance ().save ( service);
+		
+	}
+
+	@Override
+	public Service rechercherService (String whereClause) {
+		
+		return   (Service) HibernateDao.getCurrentInstance ().find ( Service.class, whereClause);
+	}
+
+	@Override
+	public Service rechercherService (Integer primaryKey) {
 
 
-		return  (Service) HibernateDao.getCurrentInstance().find( Service.class, primaryKey);
+		return   (Service) HibernateDao.getCurrentInstance ().find ( Service.class, primaryKey);
 	}
 
 }

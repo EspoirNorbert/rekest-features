@@ -21,7 +21,7 @@ public interface IFeatureProduit {
 	/**
 	 * TODO
 	 */
-	//public boolean rafraichirProduit (Produit produit);
+	//public boolean rafraichirProduit  (Produit produit);
 
 
 	/**
@@ -30,7 +30,7 @@ public interface IFeatureProduit {
 	 * @param persons
 	 * @return
 	 */
-	public List<Produit> listerProduits ();
+	public List<Produit> listerProduits  ();
 
 	/**
 	 * Return a list of all 'produits' according to the filters.
@@ -39,7 +39,7 @@ public interface IFeatureProduit {
 	 * @return
 	 * @ 
 	 */
-	public List<Produit> listerProduits ( String whereClause) ;
+	public List<Produit> listerProduits  ( String whereClause) ;
 	
 	/**
 	 * Delete the 'produit' set in parameter. 
@@ -47,7 +47,7 @@ public interface IFeatureProduit {
 	 *  
 	 * @param produit
 	 */
-	public boolean supprimerProduit (Produit produit);
+	public boolean supprimerProduit  (Produit produit);
 
 	/**
 	 * Update the 'produit' set in parameter. 
@@ -56,7 +56,7 @@ public interface IFeatureProduit {
 	 * 
 	 * @param produit
 	 */
-	public boolean modifierProduit (Produit produit);
+	public boolean modifierProduit  (Produit produit);
 
 	/**
 	 * Save the 'produit' set in parameter. 
@@ -64,7 +64,7 @@ public interface IFeatureProduit {
 	 * 
 	 * @param produit
 	 */
-	public boolean creerProduit (Produit produit);
+	public boolean creerProduit  (Produit produit);
 
 
 	/**
@@ -74,7 +74,7 @@ public interface IFeatureProduit {
 	 * @return
 	 * @ 
 	 */
-	public Produit rechercherProduit( String whereClause) ;
+	public Produit rechercherProduit ( String whereClause) ;
 
 	/**
 	 * Find and return the 'produit' set in parameter if it exist, else null.
@@ -83,7 +83,7 @@ public interface IFeatureProduit {
 	 * @return
 	 * @ 
 	 */
-	public Produit rechercherProduit( Integer primaryKey) ;	
+	public Produit rechercherProduit ( Integer primaryKey) ;	
 
 	 
 	

@@ -12,21 +12,21 @@ public class FeatureManager implements IFeatureManager {
 
 	private static FeatureManager instance = null;
 	
-	private FeatureManager() {}
+	private FeatureManager () {}
 
-	public static FeatureManager getCurrentInstance () {
-		if (instance == null) instance = new FeatureManager();
+	public static FeatureManager getCurrentInstance  () {
+		if  (instance == null) instance = new FeatureManager ();
 		return instance;
 	}
 	
 	@Override
-	public List<Manager> listerManagers() {
+	public List<Manager> listerManagers () {
 
-		List<Object> objects = HibernateDao.getCurrentInstance().list( Manager.class);
-		List<Manager> objs = new ArrayList<>();
-		for (Object obj : objects) {
-			if (obj instanceof Manager) {
-				objs.add( (Manager) obj);
+		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Manager.class);
+		List<Manager> objs = new ArrayList<> ();
+		for  (Object obj : objects) {
+			if  (obj instanceof Manager) {
+				objs.add (  (Manager) obj);
 			}
 		}
 		
@@ -34,13 +34,13 @@ public class FeatureManager implements IFeatureManager {
 	}
 
 	@Override
-	public List<Manager> listerManagers(String whereClause) {
+	public List<Manager> listerManagers (String whereClause) {
 
-		List<Object> objects = HibernateDao.getCurrentInstance().list( Manager.class, whereClause);
-		List<Manager> objs = new ArrayList<>();
-		for (Object obj : objects) {
-			if (obj instanceof Manager) {
-				objs.add( (Manager) obj);
+		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Manager.class, whereClause);
+		List<Manager> objs = new ArrayList<> ();
+		for  (Object obj : objects) {
+			if  (obj instanceof Manager) {
+				objs.add (  (Manager) obj);
 			}
 		}
 		
@@ -49,35 +49,35 @@ public class FeatureManager implements IFeatureManager {
 	}
 
 	@Override
-	public boolean supprimerManager(Manager manager) {
+	public boolean supprimerManager (Manager manager) {
 		
-		return  HibernateDao.getCurrentInstance().delete( manager);
-		
-	}
-
-	@Override
-	public boolean modifierManager(Manager manager) {
-		
-		return  HibernateDao.getCurrentInstance().update( manager);
-	}
-
-	@Override
-	public boolean creerManager(Manager manager) {
-
-		return  HibernateDao.getCurrentInstance().save( manager);
+		return  HibernateDao.getCurrentInstance ().delete ( manager);
 		
 	}
 
 	@Override
-	public Manager rechercherManager(String whereClause) {
+	public boolean modifierManager (Manager manager) {
 		
-		return  (Manager) HibernateDao.getCurrentInstance().find( Manager.class, whereClause);
+		return  HibernateDao.getCurrentInstance ().update ( manager);
 	}
 
 	@Override
-	public Manager rechercherManager(Integer primaryKey) {
+	public boolean creerManager (Manager manager) {
+
+		return  HibernateDao.getCurrentInstance ().save ( manager);
+		
+	}
+
+	@Override
+	public Manager rechercherManager (String whereClause) {
+		
+		return   (Manager) HibernateDao.getCurrentInstance ().find ( Manager.class, whereClause);
+	}
+
+	@Override
+	public Manager rechercherManager (Integer primaryKey) {
 
 
-		return  (Manager) HibernateDao.getCurrentInstance().find( Manager.class, primaryKey);
+		return   (Manager) HibernateDao.getCurrentInstance ().find ( Manager.class, primaryKey);
 	}
 }

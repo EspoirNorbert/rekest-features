@@ -52,7 +52,7 @@ public interface IFeatureService {
 	public boolean supprimerService (Service service);
 
 	/**
-	 * Update the 'produit' set in parameter. 
+	 * Update the 'service' set in parameter. 
 	 * Return true if it succeeded, else false. 
 	 * 
 	 * @param service
@@ -60,7 +60,7 @@ public interface IFeatureService {
 	public boolean modifierService (Service service);
 
 	/**
-	 * Save the 'produit' set in parameter. 
+	 * Save the 'service' set in parameter. 
 	 * Return true if it succeeded, else false. 
 	 * 
 	 * @param service

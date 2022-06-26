@@ -12,15 +12,15 @@ public interface IFeatureManager {
 
 	/**
 	 * TODO
-	 * @param service
+	 * @param manager
 	 * @return
 	 */
-	//public boolean rafraichirManager (Manager service);
+	//public boolean rafraichirManager (Manager manager);
 
 
 
 	/**
-	 * Return a list of all 'services'.
+	 * Return a list of all 'managers'.
 	 * 
 	 * @return
 	 */
@@ -36,7 +36,7 @@ public interface IFeatureManager {
 	public List<Manager> listerManagers ( String whereClause) ;
 	
 	/**
-	 * Delete the 'manager' set in parameter.
+	 * Delete the 'manager' set in parameter. 
 	 * Return true if it succeeded, else false.
 	 * 
 	 * @param service

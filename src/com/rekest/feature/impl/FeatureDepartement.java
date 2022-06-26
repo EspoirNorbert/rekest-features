@@ -11,21 +11,21 @@ public class FeatureDepartement implements IFeatureDepartement {
 
 	private static FeatureDepartement instance = null;
 	
-	private FeatureDepartement() {}
+	private FeatureDepartement () {}
 
-	public static FeatureDepartement getCurrentInstance () {
-		if (instance == null) instance = new FeatureDepartement();
+	public static FeatureDepartement getCurrentInstance  () {
+		if (instance == null) instance = new FeatureDepartement ();
 		return instance;
 	}
 	
 	@Override
-	public List<Departement> listerDepartements() {
+	public List<Departement> listerDepartements () {
 
-		List<Object> objects = HibernateDao.getCurrentInstance().list( Departement.class);
-		List<Departement> objs = new ArrayList<>();
+		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Departement.class);
+		List<Departement> objs = new ArrayList<> ();
 		for (Object obj : objects) {
-			if (obj instanceof Departement) {
-				objs.add( (Departement) obj);
+			if  (obj instanceof Departement) {
+				objs.add ( (Departement) obj);
 			}
 		}
 		
@@ -33,13 +33,13 @@ public class FeatureDepartement implements IFeatureDepartement {
 	}
 
 	@Override
-	public List<Departement> listerDepartements(String whereClause) {
+	public List<Departement> listerDepartements (String whereClause) {
 
-		List<Object> objects = HibernateDao.getCurrentInstance().list( Departement.class, whereClause);
-		List<Departement> objs = new ArrayList<>();
-		for (Object obj : objects) {
-			if (obj instanceof Departement) {
-				objs.add( (Departement) obj);
+		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Departement.class, whereClause);
+		List<Departement> objs = new ArrayList<> ();
+		for  (Object obj : objects) {
+			if  (obj instanceof Departement) {
+				objs.add (  (Departement) obj);
 			}
 		}
 		
@@ -48,36 +48,36 @@ public class FeatureDepartement implements IFeatureDepartement {
 	}
 
 	@Override
-	public boolean supprimerDepartement(Departement departement) {
+	public boolean supprimerDepartement (Departement departement) {
 		
-		return  HibernateDao.getCurrentInstance().delete( departement);
-		
-	}
-
-	@Override
-	public boolean modifierDepartement(Departement departement) {
-		
-		return  HibernateDao.getCurrentInstance().update( departement);
-	}
-
-	@Override
-	public boolean creerDepartement(Departement departement) {
-
-		return  HibernateDao.getCurrentInstance().save( departement);
+		return  HibernateDao.getCurrentInstance ().delete ( departement);
 		
 	}
 
 	@Override
-	public Departement rechercherDepartement(String whereClause) {
+	public boolean modifierDepartement (Departement departement) {
 		
-		return  (Departement) HibernateDao.getCurrentInstance().find( Departement.class, whereClause);
+		return  HibernateDao.getCurrentInstance ().update ( departement);
 	}
 
 	@Override
-	public Departement rechercherDepartement(Integer primaryKey) {
+	public boolean creerDepartement (Departement departement) {
+
+		return  HibernateDao.getCurrentInstance ().save ( departement);
+		
+	}
+
+	@Override
+	public Departement rechercherDepartement (String whereClause) {
+		
+		return   (Departement) HibernateDao.getCurrentInstance ().find ( Departement.class, whereClause);
+	}
+
+	@Override
+	public Departement rechercherDepartement (Integer primaryKey) {
 
 
-		return  (Departement) HibernateDao.getCurrentInstance().find( Departement.class, primaryKey);
+		return   (Departement) HibernateDao.getCurrentInstance ().find ( Departement.class, primaryKey);
 	}
 
 }

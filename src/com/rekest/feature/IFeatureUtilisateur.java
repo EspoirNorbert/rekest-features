@@ -21,7 +21,7 @@ public interface IFeatureUtilisateur {
 	/**
 	 * @return
 	 */
-	//public List<Utilisateur> chargerListeUtilisateur();
+	//public List<Utilisateur> chargerListeUtilisateur ();
 
 	
 	/**
@@ -31,7 +31,7 @@ public interface IFeatureUtilisateur {
 	 * @param utilisateur
 	 * @return
 	 */
-	public boolean activerUtilisateur (Utilisateur utilisateur);	
+	public boolean activerUtilisateur  (Utilisateur utilisateur);	
 	
 	/**
 	 * Disable the user set in parameter.
@@ -40,7 +40,7 @@ public interface IFeatureUtilisateur {
 	 * @param utilisateur
 	 * @return
 	 */
-	public boolean desactiverUtilisateur (Utilisateur utilisateur);	
+	public boolean desactiverUtilisateur  (Utilisateur utilisateur);	
 	
 	/**
 	 * 
@@ -54,7 +54,7 @@ public interface IFeatureUtilisateur {
 	 * @param persons
 	 * @return
 	 */
-	public List<Utilisateur> listerUtilisateurs ();
+	public List<Utilisateur> listerUtilisateurs  ();
 
 	/**
 	 * Return a list of all 'utilisteurs' according to the filters.
@@ -63,7 +63,7 @@ public interface IFeatureUtilisateur {
 	 * @return
 	 * @ 
 	 */
-	public List<Utilisateur> listerUtilisateurs ( String whereClause) ;
+	public List<Utilisateur> listerUtilisateurs  ( String whereClause) ;
 	
 	/**
 	 * 
@@ -72,7 +72,7 @@ public interface IFeatureUtilisateur {
 	 * 
 	 * @param utilisateur
 	 */
-	public boolean supprimerUtilisateur (Utilisateur utilisateur);
+	public boolean supprimerUtilisateur  (Utilisateur utilisateur);
 
 	/**
 	 * Update the 'utilisateur' set in parameter. 
@@ -80,7 +80,7 @@ public interface IFeatureUtilisateur {
 	 * 
 	 * @param utilisateur
 	 */
-	public boolean modifierUtilisateur (Utilisateur utilisateur);
+	public boolean modifierUtilisateur  (Utilisateur utilisateur);
 
 	/**
 	 * Save the 'utilisateur' set in parameter. 
@@ -88,7 +88,7 @@ public interface IFeatureUtilisateur {
 	 * 
 	 * @param utilisateur
 	 */
-	public boolean creerUtilisateur (Utilisateur utilisateur);
+	public boolean creerUtilisateur  (Utilisateur utilisateur);
 
 
 	/**
@@ -98,7 +98,7 @@ public interface IFeatureUtilisateur {
 	 * @return
 	 * @ 
 	 */
-	public Utilisateur rechercherUtilisateur( String whereClause) ;
+	public Utilisateur rechercherUtilisateur ( String whereClause) ;
 
 	/**
 	 * Find and return the 'utilisateur' set in parameter if it exist, else null.
@@ -107,26 +107,27 @@ public interface IFeatureUtilisateur {
 	 * @return
 	 * @ 
 	 */
-	public Utilisateur rechercherUtilisateur( Integer primaryKey) ;	
+	public Utilisateur rechercherUtilisateur ( Integer primaryKey) ;	
 	
 	
 	
 	/**
 	 * TODO
+	 * 
 	 * @return
 	 */
-	public String getTheDaoImplementationClassname();
+	public String getTheDaoImplementationClassname ();
 	
 	/**
 	 * @return
 	 * @throws DAOException 
 	 */
-	//public ObservableList<Utilisateur> chargerUtilisateurObservableList();
+	//public ObservableList<Utilisateur> chargerUtilisateurObservableList ();
 
 	/**
 	 * @return
 	 */
-	//public ObservableList<Utilisateur> getCurrentUtilisateurObservableList();
+	//public ObservableList<Utilisateur> getCurrentUtilisateurObservableList ();
 
 
 	 
