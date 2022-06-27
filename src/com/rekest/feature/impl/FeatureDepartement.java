@@ -19,7 +19,7 @@ public class FeatureDepartement implements IFeatureDepartement {
 	}
 	
 	@Override
-	public List<Departement> listerDepartements () {
+	public List<Departement> listerDepartements () throws Exception   {
 
 		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Departement.class);
 		List<Departement> objs = new ArrayList<> ();
@@ -33,7 +33,7 @@ public class FeatureDepartement implements IFeatureDepartement {
 	}
 
 	@Override
-	public List<Departement> listerDepartements (String whereClause) {
+	public List<Departement> listerDepartements (String whereClause) throws Exception  {
 
 		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Departement.class, whereClause);
 		List<Departement> objs = new ArrayList<> ();
@@ -48,33 +48,33 @@ public class FeatureDepartement implements IFeatureDepartement {
 	}
 
 	@Override
-	public boolean supprimerDepartement (Departement departement) {
+	public void supprimerDepartement (Departement departement) throws Exception {
 		
-		return  HibernateDao.getCurrentInstance ().delete ( departement);
-		
-	}
-
-	@Override
-	public boolean modifierDepartement (Departement departement) {
-		
-		return  HibernateDao.getCurrentInstance ().update ( departement);
-	}
-
-	@Override
-	public boolean creerDepartement (Departement departement) {
-
-		return  HibernateDao.getCurrentInstance ().save ( departement);
+		  HibernateDao.getCurrentInstance ().delete ( departement);
 		
 	}
 
 	@Override
-	public Departement rechercherDepartement (String whereClause) {
+	public void modifierDepartement (Departement departement) throws Exception {
+		
+		  HibernateDao.getCurrentInstance ().update ( departement);
+	}
+
+	@Override
+	public void creerDepartement (Departement departement) throws Exception  {
+
+		  HibernateDao.getCurrentInstance ().save ( departement);
+		
+	}
+
+	@Override
+	public Departement rechercherDepartement (String whereClause) throws Exception {
 		
 		return   (Departement) HibernateDao.getCurrentInstance ().find ( Departement.class, whereClause);
 	}
 
 	@Override
-	public Departement rechercherDepartement (Integer primaryKey) {
+	public Departement rechercherDepartement (Integer primaryKey) throws Exception  {
 
 
 		return   (Departement) HibernateDao.getCurrentInstance ().find ( Departement.class, primaryKey);

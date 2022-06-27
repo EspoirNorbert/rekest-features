@@ -8,8 +8,6 @@ import com.rekest.entities.employes.Utilisateur;
 
 public class IDaoAdministrateurImpl implements IDaoAdministrateur {
 
-	private static Session session = null;
-	private static Transaction transaction = null;
 	private static IDaoAdministrateurImpl daoAdministrateurInstance = null;
 	
 	public static IDaoAdministrateurImpl getCurrentInstance () {
@@ -23,7 +21,7 @@ public class IDaoAdministrateurImpl implements IDaoAdministrateur {
 //	}
 
 //	@Override
-//	public boolean disableAccount(Utilisateur entity) {
+//	public void disableAccount(Utilisateur entity) {
 //		System.out.println("Ici la methode disableAccount de IDaoAdministrateur");		
 //	}
 

@@ -21,29 +21,29 @@ public class FeatureUtilisateur implements IFeatureUtilisateur {
 	}
 	
 	@Override
-	public boolean activerUtilisateur  (Utilisateur utilisateur) {
+	public void activerUtilisateur  (Utilisateur utilisateur) throws Exception {
 		
-		return HibernateDao.getCurrentInstance ().enableAccount (utilisateur);
+		HibernateDao.getCurrentInstance ().enableAccount (utilisateur);
 	
 		
 	}
 
 	@Override
-	public boolean desactiverUtilisateur  (Utilisateur utilisateur) {
+	public void desactiverUtilisateur  (Utilisateur utilisateur) throws Exception {
 		
-		return HibernateDao.getCurrentInstance ().disableAccount (utilisateur);
+		HibernateDao.getCurrentInstance ().disableAccount (utilisateur);
 	}
 
 	/*
 	@Override
-	public boolean rafraichirUtilisateur (Utilisateur utilisateur) {
+	public void rafraichirUtilisateur (Utilisateur utilisateur) {
 		// TODO Auto-generated method stub
 		return HibernateDao.getCurrentInstance ().;
 	}
 	*/
 
 	@Override
-	public List<Utilisateur> listerUtilisateurs () {
+	public List<Utilisateur> listerUtilisateurs () throws Exception {
 
 		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Utilisateur.class);
 		List<Utilisateur> objs = new ArrayList<> ();
@@ -57,7 +57,7 @@ public class FeatureUtilisateur implements IFeatureUtilisateur {
 	}
 
 	@Override
-	public List<Utilisateur> listerUtilisateurs (String whereClause) {
+	public List<Utilisateur> listerUtilisateurs (String whereClause) throws Exception{
 		
 		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Utilisateur.class, whereClause);
 		List<Utilisateur> objs = new ArrayList<> ();
@@ -71,35 +71,35 @@ public class FeatureUtilisateur implements IFeatureUtilisateur {
 	}
 
 	@Override
-	public boolean supprimerUtilisateur (Utilisateur utilisateur) {
-		return HibernateDao.getCurrentInstance ().delete ( utilisateur);
+	public void supprimerUtilisateur (Utilisateur utilisateur) throws Exception {
+		 HibernateDao.getCurrentInstance ().delete ( utilisateur);
 		
 	}
 
 	@Override
-	public boolean modifierUtilisateur (Utilisateur utilisateur) {
+	public void modifierUtilisateur (Utilisateur utilisateur) throws Exception {
 
-		return HibernateDao.getCurrentInstance ().update ( utilisateur);
+		HibernateDao.getCurrentInstance ().update ( utilisateur);
 	}
 
 	@Override
-	public boolean creerUtilisateur (Utilisateur utilisateur) {
+	public void creerUtilisateur (Utilisateur utilisateur) throws Exception {
 	
-		return HibernateDao.getCurrentInstance ().save ( utilisateur);
+		HibernateDao.getCurrentInstance ().save ( utilisateur);
 		
 	}
 
 
 	@Override
-	public Utilisateur rechercherUtilisateur (String whereClause) {
+	public Utilisateur rechercherUtilisateur (String whereClause) throws Exception {
 		
-		return  (Utilisateur) HibernateDao.getCurrentInstance ().find ( Utilisateur.class, whereClause);
+		return  (Utilisateur) HibernateDao.getCurrentInstance ().find (  Utilisateur.class, whereClause);
 	}
 
 	@Override
-	public Utilisateur rechercherUtilisateur (Integer primaryKey) {
-		
-		return  (Utilisateur) HibernateDao.getCurrentInstance ().find ( Utilisateur.class, primaryKey);
+	public Utilisateur rechercherUtilisateur (Integer primaryKey) throws Exception{
+		Utilisateur user = new Utilisateur( null, null, null, null);
+		return  (Utilisateur) HibernateDao.getCurrentInstance ().find ( user , primaryKey);
 	}
 
 	@Override

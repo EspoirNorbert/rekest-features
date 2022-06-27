@@ -20,7 +20,7 @@ public interface IFeatureDepartement {
 	/**
 	 * TODO
 	 */
-	//public boolean rafraichirDepartement (Departement departement);
+	//public void rafraichirDepartement (Departement departement);
 
 
 	/**
@@ -29,7 +29,7 @@ public interface IFeatureDepartement {
 	 * @param 
 	 * @return
 	 */
-	public List<Departement> listerDepartements ();
+	public List<Departement> listerDepartements () throws Exception ;
 
 	/**
 	 * 
@@ -39,7 +39,7 @@ public interface IFeatureDepartement {
 	 * @return
 	 * @ 
 	 */
-	public List<Departement> listerDepartements ( String whereClause) ;
+	public List<Departement> listerDepartements ( String whereClause) throws Exception ;
 	
 	/**
 	 * Delete the 'departement' set in parameter.
@@ -47,7 +47,7 @@ public interface IFeatureDepartement {
 	 * 
 	 * @param departement
 	 */
-	public boolean supprimerDepartement (Departement departement);
+	public void supprimerDepartement (Departement departement) throws Exception ;
 
 	/**
 	 * Update the 'departement' set in parameter.
@@ -55,7 +55,7 @@ public interface IFeatureDepartement {
 	 * 
 	 * @param departement
 	 */
-	public boolean modifierDepartement (Departement departement);
+	public void modifierDepartement (Departement departement) throws Exception ;
 
 	/**
 	 * Save the 'departement' set in parameter.
@@ -63,7 +63,7 @@ public interface IFeatureDepartement {
 	 * 
 	 * @param departement
 	 */
-	public boolean creerDepartement (Departement departement);
+	public void creerDepartement (Departement departement) throws Exception ;
 
 
 	/**
@@ -73,7 +73,7 @@ public interface IFeatureDepartement {
 	 * @return
 	 * @ 
 	 */
-	public Departement rechercherDepartement ( String whereClause) ;
+	public Departement rechercherDepartement ( String whereClause) throws Exception ;
 
 	/**
 	 * Find the 'departement' set in parameter if it exist, else null.
@@ -82,7 +82,7 @@ public interface IFeatureDepartement {
 	 * @return
 	 * @ 
 	 */
-	public Departement rechercherDepartement ( Integer primaryKey) ;	
+	public Departement rechercherDepartement ( Integer primaryKey) throws Exception ;	
 
 	 
 	

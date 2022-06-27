@@ -20,7 +20,7 @@ public class FeatureProduit implements IFeatureProduit {
 	}
 	
 	@Override
-	public List<Produit> listerProduits () {
+	public List<Produit> listerProduits () throws Exception {
 
 		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Produit.class);
 		List<Produit> objs = new ArrayList<> ();
@@ -35,7 +35,7 @@ public class FeatureProduit implements IFeatureProduit {
 	}
 
 	@Override
-	public List<Produit> listerProduits (String whereClause) {
+	public List<Produit> listerProduits (String whereClause) throws Exception{
 
 		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Produit.class, whereClause);
 		List<Produit> objs = new ArrayList<> ();
@@ -50,35 +50,35 @@ public class FeatureProduit implements IFeatureProduit {
 	}
 
 	@Override
-	public boolean supprimerProduit (Produit produit) {
+	public void supprimerProduit (Produit produit) throws Exception{
 	
-		return  HibernateDao.getCurrentInstance ().delete ( produit);
+		HibernateDao.getCurrentInstance ().delete ( produit);
 		
 	}
 
 	@Override
-	public boolean modifierProduit (Produit produit) {
+	public void modifierProduit (Produit produit) throws Exception{
 
 
-		return  HibernateDao.getCurrentInstance ().update ( produit);
+		 HibernateDao.getCurrentInstance ().update ( produit);
 		
 	}
 
 	@Override
-	public boolean creerProduit (Produit produit) {
+	public void creerProduit (Produit produit) throws Exception{
 
-		return  HibernateDao.getCurrentInstance ().save ( produit);
+		HibernateDao.getCurrentInstance ().save ( produit);
 		
 	}
 
 	@Override
-	public Produit rechercherProduit (String whereClause) {
+	public Produit rechercherProduit (String whereClause) throws Exception{
 
 		return   (Produit) HibernateDao.getCurrentInstance ().find ( Produit.class, whereClause);
 	}
 
 	@Override
-	public Produit rechercherProduit (Integer primaryKey) {
+	public Produit rechercherProduit (Integer primaryKey) throws Exception {
 
 		return   (Produit) HibernateDao.getCurrentInstance ().find ( Produit.class, primaryKey);
 	}

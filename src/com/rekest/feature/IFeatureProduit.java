@@ -1,10 +1,10 @@
-package com.rekest.feature;
+package com.rekest.feature ;
 
-import java.util.List;
+import java.util.List ;
 
-import com.rekest.entities.Produit;
+import com.rekest.entities.Produit ;
 
-import com.rekest.dao.impl.HibernateDao;
+import com.rekest.dao.impl.HibernateDao ;
 
 /**
  * @author DELL
@@ -21,7 +21,7 @@ public interface IFeatureProduit {
 	/**
 	 * TODO
 	 */
-	//public boolean rafraichirProduit  (Produit produit);
+	//public void rafraichirProduit  (Produit produit) throws Exception;
 
 
 	/**
@@ -30,7 +30,7 @@ public interface IFeatureProduit {
 	 * @param persons
 	 * @return
 	 */
-	public List<Produit> listerProduits  ();
+	public List<Produit> listerProduits  () throws Exception;
 
 	/**
 	 * Return a list of all 'produits' according to the filters.
@@ -39,7 +39,7 @@ public interface IFeatureProduit {
 	 * @return
 	 * @ 
 	 */
-	public List<Produit> listerProduits  ( String whereClause) ;
+	public List<Produit> listerProduits  ( String whereClause)  throws Exception;
 	
 	/**
 	 * Delete the 'produit' set in parameter. 
@@ -47,7 +47,7 @@ public interface IFeatureProduit {
 	 *  
 	 * @param produit
 	 */
-	public boolean supprimerProduit  (Produit produit);
+	public void supprimerProduit  (Produit produit) throws Exception;
 
 	/**
 	 * Update the 'produit' set in parameter. 
@@ -56,7 +56,7 @@ public interface IFeatureProduit {
 	 * 
 	 * @param produit
 	 */
-	public boolean modifierProduit  (Produit produit);
+	public void modifierProduit  (Produit produit) throws Exception;
 
 	/**
 	 * Save the 'produit' set in parameter. 
@@ -64,7 +64,7 @@ public interface IFeatureProduit {
 	 * 
 	 * @param produit
 	 */
-	public boolean creerProduit  (Produit produit);
+	public void creerProduit  (Produit produit) throws Exception;
 
 
 	/**
@@ -74,7 +74,7 @@ public interface IFeatureProduit {
 	 * @return
 	 * @ 
 	 */
-	public Produit rechercherProduit ( String whereClause) ;
+	public Produit rechercherProduit ( String whereClause)  throws Exception;
 
 	/**
 	 * Find and return the 'produit' set in parameter if it exist, else null.
@@ -83,7 +83,7 @@ public interface IFeatureProduit {
 	 * @return
 	 * @ 
 	 */
-	public Produit rechercherProduit ( Integer primaryKey) ;	
+	public Produit rechercherProduit ( Integer primaryKey)  throws Exception;	
 
 	 
 	

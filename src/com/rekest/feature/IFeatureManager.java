@@ -1,9 +1,8 @@
-package com.rekest.feature;
+package com.rekest.feature ;
 
-import java.util.List;
+import java.util.List ;
 
-import com.rekest.entities.employes.Manager;
-
+import com.rekest.entities.employes.Manager ;
 public interface IFeatureManager {
 
 	
@@ -15,7 +14,7 @@ public interface IFeatureManager {
 	 * @param manager
 	 * @return
 	 */
-	//public boolean rafraichirManager (Manager manager);
+	//public void rafraichirManager (Manager manager) throws Exception 
 
 
 
@@ -24,7 +23,7 @@ public interface IFeatureManager {
 	 * 
 	 * @return
 	 */
-	public List<Manager> listerManagers ();
+	public List<Manager> listerManagers () throws Exception ;
 
 	/**
 	 * Return a list of all 'manager' according to the filters.
@@ -33,7 +32,7 @@ public interface IFeatureManager {
 	 * @return
 	 * @ 
 	 */
-	public List<Manager> listerManagers ( String whereClause) ;
+	public List<Manager> listerManagers ( String whereClause)  throws Exception ;
 	
 	/**
 	 * Delete the 'manager' set in parameter. 
@@ -41,7 +40,7 @@ public interface IFeatureManager {
 	 * 
 	 * @param service
 	 */
-	public boolean supprimerManager (Manager manager);
+	public void supprimerManager (Manager manager) throws Exception ;
 
 	/**
 	 * Update the 'manager' set in parameter. 
@@ -49,7 +48,7 @@ public interface IFeatureManager {
 	 * 
 	 * @param service
 	 */
-	public boolean modifierManager (Manager manager);
+	public void modifierManager (Manager manager) throws Exception ;
 
 	/**
 	 * Save the 'manager' set in parameter. 
@@ -57,7 +56,7 @@ public interface IFeatureManager {
 	 * 
 	 * @param service
 	 */
-	public boolean creerManager (Manager manager);
+	public void creerManager (Manager manager) throws Exception ;
 	
 
 
@@ -68,7 +67,7 @@ public interface IFeatureManager {
 	 * @return
 	 * @ 
 	 */
-	public Manager rechercherManager( String whereClause) ;
+	public Manager rechercherManager( String whereClause)  throws Exception ;
 
 	/**
 	 * Find and return the 'manager' set in parameter if it exist, else null.
@@ -77,6 +76,6 @@ public interface IFeatureManager {
 	 * @return
 	 * @ 
 	 */
-	public Manager rechercherManager( Integer primaryKey) ;	
+	public Manager rechercherManager( Integer primaryKey)  throws Exception;
 
 }

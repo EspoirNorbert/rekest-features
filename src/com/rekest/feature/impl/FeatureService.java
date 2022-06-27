@@ -19,7 +19,7 @@ public class FeatureService implements IFeatureService {
 	}
 	
 	@Override
-	public List<Service> listerServices () {
+	public List<Service> listerServices () throws Exception{
 
 		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Service.class);
 		List<Service> objs = new ArrayList<> ();
@@ -33,7 +33,7 @@ public class FeatureService implements IFeatureService {
 	}
 
 	@Override
-	public List<Service> listerServices (String whereClause) {
+	public List<Service> listerServices (String whereClause) throws Exception{
 
 		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Service.class, whereClause);
 		List<Service> objs = new ArrayList<> ();
@@ -48,33 +48,33 @@ public class FeatureService implements IFeatureService {
 	}
 
 	@Override
-	public boolean supprimerService (Service service) {
+	public void supprimerService (Service service) throws Exception{
 		
-		return  HibernateDao.getCurrentInstance ().delete ( service);
-		
-	}
-
-	@Override
-	public boolean modifierService (Service service) {
-		
-		return  HibernateDao.getCurrentInstance ().update ( service);
-	}
-
-	@Override
-	public boolean creerService (Service service) {
-
-		return  HibernateDao.getCurrentInstance ().save ( service);
+		 HibernateDao.getCurrentInstance ().delete ( service);
 		
 	}
 
 	@Override
-	public Service rechercherService (String whereClause) {
+	public void modifierService (Service service) throws Exception {
+		
+		HibernateDao.getCurrentInstance ().update ( service);
+	}
+
+	@Override
+	public void creerService (Service service) throws Exception{
+
+		 HibernateDao.getCurrentInstance ().save ( service);
+		
+	}
+
+	@Override
+	public Service rechercherService (String whereClause) throws Exception {
 		
 		return   (Service) HibernateDao.getCurrentInstance ().find ( Service.class, whereClause);
 	}
 
 	@Override
-	public Service rechercherService (Integer primaryKey) {
+	public Service rechercherService (Integer primaryKey) throws Exception {
 
 
 		return   (Service) HibernateDao.getCurrentInstance ().find ( Service.class, primaryKey);

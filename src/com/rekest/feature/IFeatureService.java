@@ -1,9 +1,9 @@
 package com.rekest.feature;
 
-import java.util.List;
+import java.util.List ;
 
-import com.rekest.entities.Service;
-import com.rekest.dao.impl.HibernateDao;
+import com.rekest.entities.Service ;
+import com.rekest.dao.impl.HibernateDao ;
 
 /**
  * @author DELL
@@ -23,7 +23,7 @@ public interface IFeatureService {
 	 * @param service
 	 * @return
 	 */
-	//public boolean rafraichirService (Service service);
+	//public void rafraichirService (Service service) throws Exception;
 
 
 
@@ -32,7 +32,7 @@ public interface IFeatureService {
 	 * 
 	 * @return
 	 */
-	public List<Service> listerServices ();
+	public List<Service> listerServices () throws Exception;
 
 	/**
 	 * Return a list of all 'services' according to the filters.
@@ -41,7 +41,7 @@ public interface IFeatureService {
 	 * @return
 	 * @ 
 	 */
-	public List<Service> listerServices ( String whereClause) ;
+	public List<Service> listerServices ( String whereClause)  throws Exception;
 	
 	/**
 	 * Delete the 'service' set in parameter.
@@ -49,7 +49,7 @@ public interface IFeatureService {
 	 * 
 	 * @param service
 	 */
-	public boolean supprimerService (Service service);
+	public void supprimerService (Service service) throws Exception;
 
 	/**
 	 * Update the 'service' set in parameter. 
@@ -57,7 +57,7 @@ public interface IFeatureService {
 	 * 
 	 * @param service
 	 */
-	public boolean modifierService (Service service);
+	public void modifierService (Service service) throws Exception;
 
 	/**
 	 * Save the 'service' set in parameter. 
@@ -65,7 +65,7 @@ public interface IFeatureService {
 	 * 
 	 * @param service
 	 */
-	public boolean creerService (Service service);
+	public void creerService (Service service) throws Exception;
 	
 
 
@@ -76,7 +76,7 @@ public interface IFeatureService {
 	 * @return
 	 * @ 
 	 */
-	public Service rechercherService( String whereClause) ;
+	public Service rechercherService( String whereClause)  throws Exception;
 
 	/**
 	 * Find and return the 'service' set in parameter if it exist, else null.
@@ -85,7 +85,7 @@ public interface IFeatureService {
 	 * @return
 	 * @ 
 	 */
-	public Service rechercherService( Integer primaryKey) ;	
+	public Service rechercherService( Integer primaryKey)  throws Exception;	
 
 	 
 	

@@ -1,12 +1,12 @@
-package com.rekest.feature;
+package com.rekest.feature ;
 
-import java.util.List;
+import java.util.List ;
 
-import com.rekest.dao.impl.HibernateDao;
+import com.rekest.dao.impl.HibernateDao ;
 
-import com.rekest.entities.employes.Utilisateur;
+import com.rekest.entities.employes.Utilisateur ;
 
-import javafx.collections.ObservableList;
+import javafx.collections.ObservableList ;
 
 /**
  * @author DELL
@@ -21,7 +21,7 @@ public interface IFeatureUtilisateur {
 	/**
 	 * @return
 	 */
-	//public List<Utilisateur> chargerListeUtilisateur ();
+	//public List<Utilisateur> chargerListeUtilisateur () throws Exception;
 
 	
 	/**
@@ -31,7 +31,7 @@ public interface IFeatureUtilisateur {
 	 * @param utilisateur
 	 * @return
 	 */
-	public boolean activerUtilisateur  (Utilisateur utilisateur);	
+	public void activerUtilisateur  (Utilisateur utilisateur) throws Exception;	
 	
 	/**
 	 * Disable the user set in parameter.
@@ -40,12 +40,12 @@ public interface IFeatureUtilisateur {
 	 * @param utilisateur
 	 * @return
 	 */
-	public boolean desactiverUtilisateur  (Utilisateur utilisateur);	
+	public void desactiverUtilisateur  (Utilisateur utilisateur) throws Exception;	
 	
 	/**
 	 * 
 	 */
-	//public boolean rafraichirUtilisateur (Utilisateur utilisateur);
+	//public void rafraichirUtilisateur (Utilisateur utilisateur) throws Exception;
 
 
 	/**
@@ -54,7 +54,7 @@ public interface IFeatureUtilisateur {
 	 * @param persons
 	 * @return
 	 */
-	public List<Utilisateur> listerUtilisateurs  ();
+	public List<Utilisateur> listerUtilisateurs  () throws Exception;
 
 	/**
 	 * Return a list of all 'utilisteurs' according to the filters.
@@ -63,7 +63,7 @@ public interface IFeatureUtilisateur {
 	 * @return
 	 * @ 
 	 */
-	public List<Utilisateur> listerUtilisateurs  ( String whereClause) ;
+	public List<Utilisateur> listerUtilisateurs  ( String whereClause)  throws Exception;
 	
 	/**
 	 * 
@@ -72,7 +72,7 @@ public interface IFeatureUtilisateur {
 	 * 
 	 * @param utilisateur
 	 */
-	public boolean supprimerUtilisateur  (Utilisateur utilisateur);
+	public void supprimerUtilisateur  (Utilisateur utilisateur) throws Exception;
 
 	/**
 	 * Update the 'utilisateur' set in parameter. 
@@ -80,7 +80,7 @@ public interface IFeatureUtilisateur {
 	 * 
 	 * @param utilisateur
 	 */
-	public boolean modifierUtilisateur  (Utilisateur utilisateur);
+	public void modifierUtilisateur  (Utilisateur utilisateur) throws Exception;
 
 	/**
 	 * Save the 'utilisateur' set in parameter. 
@@ -88,7 +88,7 @@ public interface IFeatureUtilisateur {
 	 * 
 	 * @param utilisateur
 	 */
-	public boolean creerUtilisateur  (Utilisateur utilisateur);
+	public void creerUtilisateur  (Utilisateur utilisateur) throws Exception;
 
 
 	/**
@@ -98,7 +98,7 @@ public interface IFeatureUtilisateur {
 	 * @return
 	 * @ 
 	 */
-	public Utilisateur rechercherUtilisateur ( String whereClause) ;
+	public Utilisateur rechercherUtilisateur ( String whereClause)  throws Exception;
 
 	/**
 	 * Find and return the 'utilisateur' set in parameter if it exist, else null.
@@ -107,7 +107,7 @@ public interface IFeatureUtilisateur {
 	 * @return
 	 * @ 
 	 */
-	public Utilisateur rechercherUtilisateur ( Integer primaryKey) ;	
+	public Utilisateur rechercherUtilisateur ( Integer primaryKey)  throws Exception;	
 	
 	
 	
@@ -116,18 +116,18 @@ public interface IFeatureUtilisateur {
 	 * 
 	 * @return
 	 */
-	public String getTheDaoImplementationClassname ();
+	public String getTheDaoImplementationClassname () throws Exception;
 	
 	/**
 	 * @return
-	 * @throws DAOException 
+	 * @throws Exception 
 	 */
-	//public ObservableList<Utilisateur> chargerUtilisateurObservableList ();
+	//public ObservableList<Utilisateur> chargerUtilisateurObservableList () throws Exception;
 
 	/**
 	 * @return
 	 */
-	//public ObservableList<Utilisateur> getCurrentUtilisateurObservableList ();
+	//public ObservableList<Utilisateur> getCurrentUtilisateurObservableList () throws Exception;
 
 
 	 

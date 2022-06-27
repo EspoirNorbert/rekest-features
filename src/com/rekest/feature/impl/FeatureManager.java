@@ -20,7 +20,7 @@ public class FeatureManager implements IFeatureManager {
 	}
 	
 	@Override
-	public List<Manager> listerManagers () {
+	public List<Manager> listerManagers () throws Exception  {
 
 		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Manager.class);
 		List<Manager> objs = new ArrayList<> ();
@@ -34,7 +34,7 @@ public class FeatureManager implements IFeatureManager {
 	}
 
 	@Override
-	public List<Manager> listerManagers (String whereClause) {
+	public List<Manager> listerManagers (String whereClause) throws Exception {
 
 		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Manager.class, whereClause);
 		List<Manager> objs = new ArrayList<> ();
@@ -49,33 +49,33 @@ public class FeatureManager implements IFeatureManager {
 	}
 
 	@Override
-	public boolean supprimerManager (Manager manager) {
+	public void supprimerManager (Manager manager) throws Exception {
 		
-		return  HibernateDao.getCurrentInstance ().delete ( manager);
-		
-	}
-
-	@Override
-	public boolean modifierManager (Manager manager) {
-		
-		return  HibernateDao.getCurrentInstance ().update ( manager);
-	}
-
-	@Override
-	public boolean creerManager (Manager manager) {
-
-		return  HibernateDao.getCurrentInstance ().save ( manager);
+		HibernateDao.getCurrentInstance ().delete ( manager);
 		
 	}
 
 	@Override
-	public Manager rechercherManager (String whereClause) {
+	public void modifierManager (Manager manager) throws Exception {
+		
+		 HibernateDao.getCurrentInstance ().update ( manager);
+	}
+
+	@Override
+	public void creerManager (Manager manager) throws Exception {
+
+		 HibernateDao.getCurrentInstance ().save ( manager);
+		
+	}
+
+	@Override
+	public Manager rechercherManager (String whereClause) throws Exception {
 		
 		return   (Manager) HibernateDao.getCurrentInstance ().find ( Manager.class, whereClause);
 	}
 
 	@Override
-	public Manager rechercherManager (Integer primaryKey) {
+	public Manager rechercherManager (Integer primaryKey) throws Exception {
 
 
 		return   (Manager) HibernateDao.getCurrentInstance ().find ( Manager.class, primaryKey);
