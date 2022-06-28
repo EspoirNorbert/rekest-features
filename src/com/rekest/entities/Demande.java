@@ -36,6 +36,8 @@ public class Demande {
 	@JoinColumn(name="demande_id")
 	private List<Notification> notifications = new ArrayList<>();
 	
+	public Demande() {}
+	
 	public int getId() {
 		return id;
 	}
@@ -71,5 +73,7 @@ public class Demande {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+	
+	
 	
 }

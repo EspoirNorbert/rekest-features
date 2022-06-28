@@ -22,6 +22,8 @@ public class Notification {
 	public Notification(String message) {
 		this.message = message;
 	}
+	
+	public Notification() {}
 
 	public int getId() {
 		return id;

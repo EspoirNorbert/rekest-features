@@ -76,8 +76,8 @@ public class FeatureDepartement implements IFeatureDepartement {
 	@Override
 	public Departement rechercherDepartement (Integer primaryKey) throws Exception  {
 
-
-		return   (Departement) HibernateDao.getCurrentInstance ().find ( Departement.class, primaryKey);
+		Departement dep   = new Departement();
+		return   (Departement) HibernateDao.getCurrentInstance ().find ( dep, primaryKey);
 	}
 
 }

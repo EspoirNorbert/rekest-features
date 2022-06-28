@@ -29,6 +29,8 @@ public class Departement {
 		this.nom = nom;
 	}
 
+	public Departement() {}
+	
 	public int getId() {
 		return id;
 	}

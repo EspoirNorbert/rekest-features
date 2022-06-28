@@ -20,4 +20,8 @@ public class Gestionnaire extends Utilisateur {
 	public Gestionnaire(String nom, String prenom, String login, String password) {
 		super(nom, prenom, login, password);		
 	}
+	
+	public Gestionnaire() {
+		super();		
+	}
 }

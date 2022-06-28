@@ -77,7 +77,7 @@ public class FeatureManager implements IFeatureManager {
 	@Override
 	public Manager rechercherManager (Integer primaryKey) throws Exception {
 
-
-		return   (Manager) HibernateDao.getCurrentInstance ().find ( Manager.class, primaryKey);
+		Manager manager = new Manager();
+		return   (Manager) HibernateDao.getCurrentInstance ().find ( manager, primaryKey);
 	}
 }

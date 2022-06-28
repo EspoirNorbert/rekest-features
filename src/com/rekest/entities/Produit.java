@@ -18,6 +18,8 @@ public class Produit {
 	public Produit(String nom) {
 		this.nom = nom;
 	}
+	
+	public Produit() {}
 
 	public int getId() {
 		return id;

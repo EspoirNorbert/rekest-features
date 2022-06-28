@@ -80,7 +80,8 @@ public class FeatureProduit implements IFeatureProduit {
 	@Override
 	public Produit rechercherProduit (Integer primaryKey) throws Exception {
 
-		return   (Produit) HibernateDao.getCurrentInstance ().find ( Produit.class, primaryKey);
+		Produit prod = new Produit();
+		return   (Produit) HibernateDao.getCurrentInstance ().find ( prod, primaryKey);
 	}
 
 }

@@ -35,6 +35,8 @@ public class Service {
 	public Service(String nom) {
 		this.nom = nom;
 	}
+	
+	public Service() {}
 
 	public int getId() {
 		return id;

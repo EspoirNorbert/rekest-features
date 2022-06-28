@@ -18,6 +18,7 @@ public class Note {
 	public Note(String message) {
 		this.message = message;
 	}
+	public Note() {}
 
 	public int getId() {
 		return id;

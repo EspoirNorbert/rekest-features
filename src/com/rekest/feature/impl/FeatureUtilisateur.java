@@ -98,6 +98,7 @@ public class FeatureUtilisateur implements IFeatureUtilisateur {
 
 	@Override
 	public Utilisateur rechercherUtilisateur (Integer primaryKey) throws Exception{
+		
 		Utilisateur user = new Utilisateur( null, null, null, null);
 		return  (Utilisateur) HibernateDao.getCurrentInstance ().find ( user , primaryKey);
 	}

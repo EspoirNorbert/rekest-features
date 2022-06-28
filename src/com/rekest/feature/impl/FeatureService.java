@@ -76,8 +76,8 @@ public class FeatureService implements IFeatureService {
 	@Override
 	public Service rechercherService (Integer primaryKey) throws Exception {
 
-
-		return   (Service) HibernateDao.getCurrentInstance ().find ( Service.class, primaryKey);
+		Service serv = new Service();
+		return   (Service) HibernateDao.getCurrentInstance ().find ( serv, primaryKey);
 	}
 
 }
