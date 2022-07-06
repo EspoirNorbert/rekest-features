@@ -2,7 +2,9 @@ package com.rekest.feature;
 
 import java.util.List;
 
+import com.rekest.entities.Demande;
 import com.rekest.entities.Departement;
+import com.rekest.entities.Note;
 import com.rekest.entities.Produit;
 import com.rekest.entities.Role;
 import com.rekest.entities.Service;
@@ -507,6 +509,144 @@ public interface IFeature {
 	 * @ 
 	 */
 	public Employe rechercherEmploye ( Integer primaryKey)  throws Exception;	
+	
+	
+	/**
+	 * TODO
+	 * @param Demande
+	 * @return
+	 */
+	//public void rafraichirDemande (Demande Demande) throws Exception 
+
+
+
+	/**
+	 * Return a list of all 'Demandes'.
+	 * 
+	 * @return
+	 */
+	public List<Demande> listerDemandes () throws Exception ;
+
+	/**
+	 * Return a list of all 'Demande' according to the filters.
+	 * 
+	 * @param whereClause
+	 * @return
+	 * @ 
+	 */
+	public List<Demande> listerDemandes ( String whereClause)  throws Exception ;
+	
+	/**
+	 * Delete the 'Demande' set in parameter. 
+	 * Return true if it succeeded, else false.
+	 * 
+	 * @param service
+	 */
+	public void supprimerDemande (Demande Demande) throws Exception ;
+
+	/**
+	 * Update the 'Demande' set in parameter. 
+	 * Return true if it succeeded, else false. 
+	 * 
+	 * @param service
+	 */
+	public void modifierDemande (Demande Demande) throws Exception ;
+
+	/**
+	 * Save the 'Demande' set in parameter. 
+	 * Return true if it succeeded, else false. 
+	 * 
+	 * @param service
+	 */
+	public void creerDemande (Demande Demande) throws Exception ;
+	
+
+
+	/**
+	 * Find and return the 'Demande' set in parameter if it exist, else null.
+	 * 
+	 * @param whereClause
+	 * @return
+	 * @ 
+	 */
+	public Demande rechercherDemande( String whereClause)  throws Exception ;
+
+	/**
+	 * Find and return the 'Demande' set in parameter if it exist, else null.
+	 * 
+	 * @param primaryKey
+	 * @return
+	 * @ 
+	 */
+	public Demande rechercherDemande( Integer primaryKey)  throws Exception;
+	
+	
+	/**
+	 * TODO
+	 * @param note
+	 * @return
+	 */
+	
+
+	/**
+	 * Return a list of all 'notes'.
+	 * 
+	 * @return
+	 */
+	public List<Note> listerNotes () throws Exception ;
+
+	/**
+	 * Return a list of all 'note' according to the filters.
+	 * 
+	 * @param whereClause
+	 * @return
+	 * @ 
+	 */
+	public List<Note> listerNotes ( String whereClause)  throws Exception ;
+	
+	/**
+	 * Delete the 'note' set in parameter. 
+	 * Return true if it succeeded, else false.
+	 * 
+	 * @param service
+	 */
+	public void supprimerNote (Note note) throws Exception ;
+
+	/**
+	 * Update the 'note' set in parameter. 
+	 * Return true if it succeeded, else false. 
+	 * 
+	 * @param service
+	 */
+	public void modifierNote (Note note) throws Exception ;
+
+	/**
+	 * Save the 'note' set in parameter. 
+	 * Return true if it succeeded, else false. 
+	 * 
+	 * @param service
+	 */
+	public void creerNote (Note note) throws Exception ;
+	
+
+
+	/**
+	 * Find and return the 'manager' set in parameter if it exist, else null.
+	 * 
+	 * @param whereClause
+	 * @return
+	 * @ 
+	 */
+	public Note rechercherNote( String whereClause)  throws Exception ;
+
+	/**
+	 * Find and return the 'note' set in parameter if it exist, else null.
+	 * 
+	 * @param primaryKey
+	 * @return
+	 * @ 
+	 */
+	public Note rechercherNote( Integer primaryKey)  throws Exception;
 
 	 
 	

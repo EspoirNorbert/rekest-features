@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.rekest.dao.impl.HibernateDao;
+import com.rekest.entities.Demande;
 import com.rekest.entities.Departement;
+import com.rekest.entities.Note;
 import com.rekest.entities.Produit;
 import com.rekest.entities.Role;
 import com.rekest.entities.Service;
@@ -497,7 +499,135 @@ public class Feature implements IFeature {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	
+	@Override
+	public List<Note> listerNotes () throws Exception  {
 
+		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Note.class);
+		List<Note> objs = new ArrayList<> ();
+		for  (Object obj : objects) {
+			if  (obj instanceof Note) {
+				objs.add (  (Note) obj);
+			}
+		}
+		
+		return objs;
+	}
+
+	@Override
+	public List<Note> listerNotes (String whereClause) throws Exception {
+
+		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Note.class, whereClause);
+		List<Note> objs = new ArrayList<> ();
+		for  (Object obj : objects) {
+			if  (obj instanceof Note) {
+				objs.add (  (Note) obj);
+			}
+		}
+		
+		return objs;
+		
+	}
+
+	@Override
+	public void supprimerNote (Note note) throws Exception {
+		
+		HibernateDao.getCurrentInstance ().delete ( note);
+		
+	}
+
+	@Override
+	public void modifierNote (Note note) throws Exception {
+		
+		 HibernateDao.getCurrentInstance ().update ( note);
+	}
+
+	@Override
+	public void creerNote (Note note) throws Exception {
+
+		 HibernateDao.getCurrentInstance ().save ( note);
+		
+	}
+
+	@Override
+	public Note rechercherNote (String whereClause) throws Exception {
+		
+		return   (Note) HibernateDao.getCurrentInstance ().find ( Note.class, whereClause);
+	}
+
+	@Override
+	public Note rechercherNote (Integer primaryKey) throws Exception {
+
+
+		return   (Note) HibernateDao.getCurrentInstance ().find ( Note.class, primaryKey);
+	}
+
+	
+
+	
+	
+	@Override
+	public List<Demande> listerDemandes () throws Exception  {
+
+		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Demande.class);
+		List<Demande> objs = new ArrayList<> ();
+		for  (Object obj : objects) {
+			if  (obj instanceof Demande) {
+				objs.add (  (Demande) obj);
+			}
+		}
+		
+		return objs;
+	}
+
+	@Override
+	public List<Demande> listerDemandes (String whereClause) throws Exception {
+
+		List<Object> objects = HibernateDao.getCurrentInstance ().list ( Demande.class, whereClause);
+		List<Demande> objs = new ArrayList<> ();
+		for  (Object obj : objects) {
+			if  (obj instanceof Demande) {
+				objs.add (  (Demande) obj);
+			}
+		}
+		
+		return objs;
+		
+	}
+
+	@Override
+	public void supprimerDemande (Demande demande) throws Exception {
+		
+		HibernateDao.getCurrentInstance ().delete ( demande);
+		
+	}
+
+	@Override
+	public void modifierDemande (Demande demande) throws Exception {
+		
+		 HibernateDao.getCurrentInstance ().update ( demande);
+	}
+
+	@Override
+	public void creerDemande (Demande demande) throws Exception {
+
+		 HibernateDao.getCurrentInstance ().save ( demande);
+		
+	}
+
+	@Override
+	public Demande rechercherDemande (String whereClause) throws Exception {
+		
+		return   (Demande) HibernateDao.getCurrentInstance ().find ( Demande.class, whereClause);
+	}
+
+	@Override
+	public Demande rechercherDemande (Integer primaryKey) throws Exception {
+
+
+		return   (Demande) HibernateDao.getCurrentInstance ().find ( Demande.class, primaryKey);
+	}
 	
 	
 }
