@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.rekest.dao.impl.HibernateDao;
+import com.rekest.entities.Demande;
 import com.rekest.entities.Departement;
 import com.rekest.entities.Produit;
 import com.rekest.entities.Role;
@@ -11,7 +12,10 @@ import com.rekest.entities.Service;
 import com.rekest.entities.employes.Employe;
 import com.rekest.entities.employes.Manager;
 import com.rekest.entities.employes.Utilisateur;
+import com.rekest.exeptions.DAOException;
 import com.rekest.feature.impl.Feature;
+
+import javafx.collections.ObservableList;
 
 
 public class TestMain {
@@ -25,10 +29,28 @@ public class TestMain {
 		  HibernateDao dao = HibernateDao.getCurrentInstance();
 		  
 		  Feature feat = Feature.getCurrentInstance();
+		  
+		  
+		  
+		  try {
+			Demande demande = new Demande();
+			
+			feat.creerDemande(demande);
+			  
+			ObservableList<Demande> employes =  feat.loadDemandesObservableList();
+			
+			
+			for (Demande employe : employes) {
+				System.out.println("Email de l'employe " +employe.getId());
+				
+			}
+			
+			
+		} catch (DAOException e) {
+			// TODO Auto-generated catch block
+			System.err.println("Blem "+e.getMessage());
+		}
 
-		  testDepartement(feat);
-		  testProduit(feat);
-		  testService(feat);
 
 		  
 		  HibernateDao.closeSession();

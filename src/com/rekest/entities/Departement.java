@@ -11,9 +11,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Transient;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 @Entity
 public class Departement {
+	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
 	@Column(name="id_departement")
@@ -21,15 +25,23 @@ public class Departement {
 	
 	private String nom;
 	
+	@Transient
+	private StringProperty stringPropertyNom;
+	
 	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="departement_id")
+	@JoinColumn(name="id_departement")
 	private List<Service> services = new ArrayList<>();
 	
 	public Departement(String nom) {
 		this.nom = nom;
+		this.stringPropertyNom = new SimpleStringProperty(nom);
 	}
 
-	public Departement() {}
+
+	public Departement() {
+		
+	}
+	
 	
 	public int getId() {
 		return id;
@@ -45,5 +57,9 @@ public class Departement {
 	
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+	
+	public static void copy(Departement oldDepartement, Departement newDepartment) {
+		oldDepartement.setNom(newDepartment.getNom());
 	}
 }

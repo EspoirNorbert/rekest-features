@@ -1398,3 +1398,720 @@ org.hibernate.InstantiationException: No default constructor for entity:  : com.
 29 juin 2022 19:01:33,989 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Begin transaction. 
 29 juin 2022 19:01:34,001 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Record is Successfully deleted. 
 29 juin 2022 19:01:34,004 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:26:12,602 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 20:26:15,217 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 20:26:15,226 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 20:26:15,227 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:26:15,228 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 20:26:15,228 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 20:26:15,236 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 20:26:15,988 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+09 juil. 2022 20:26:16,003 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 20:26:19,219 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@15186ce0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 20:26:23,499 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 20:26:23,550 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 20:26:24,474 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:34:10,569 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 20:34:12,075 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 20:34:12,084 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 20:34:12,084 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:34:12,084 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 20:34:12,085 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 20:34:12,089 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 20:34:12,729 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+09 juil. 2022 20:34:12,732 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 20:34:14,564 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@15186ce0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 20:34:16,088 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 20:34:16,132 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 20:34:16,672 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:34:49,425 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 20:34:51,270 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 20:34:51,280 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 20:34:51,280 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:34:51,280 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 20:34:51,281 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 20:34:51,284 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 20:34:51,889 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+09 juil. 2022 20:34:51,895 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 20:34:53,915 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@15186ce0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 20:34:55,113 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 20:34:55,133 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 20:34:55,560 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:35:20,446 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 20:35:21,902 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 20:35:21,913 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 20:35:21,913 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:35:21,914 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 20:35:21,914 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 20:35:21,920 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 20:35:22,565 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+09 juil. 2022 20:35:22,576 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 20:35:24,600 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@15186ce0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 20:35:26,094 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 20:35:26,136 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 20:35:26,821 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:36:06,352 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 20:36:07,810 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 20:36:07,823 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 20:36:07,824 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:36:07,825 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 20:36:07,825 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 20:36:07,831 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 20:36:08,596 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+09 juil. 2022 20:36:08,598 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 20:36:10,700 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@15186ce0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 20:36:12,180 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 20:36:12,223 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 20:36:12,819 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:36:23,787 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 20:36:25,410 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 20:36:25,421 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 20:36:25,422 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:36:25,422 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 20:36:25,423 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 20:36:25,428 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 20:36:26,074 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+09 juil. 2022 20:36:26,077 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 20:36:27,935 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@15186ce0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 20:36:29,394 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 20:36:29,435 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 20:36:29,927 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:37:45,794 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 20:37:47,434 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 20:37:47,443 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 20:37:47,443 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:37:47,443 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 20:37:47,444 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 20:37:47,447 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 20:37:48,123 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+09 juil. 2022 20:37:48,150 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 20:37:50,179 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@15186ce0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 20:37:51,661 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 20:37:51,704 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 20:37:52,253 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:40:38,685 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 20:40:39,839 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 20:40:39,852 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 20:40:39,853 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:40:39,853 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 20:40:39,854 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 20:40:39,860 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 20:40:40,560 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+09 juil. 2022 20:40:40,582 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 20:40:42,649 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@75dd0f94] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 20:40:44,202 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 20:40:44,245 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 20:40:44,761 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:50:34,516 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 20:50:36,089 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 20:50:36,099 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 20:50:36,099 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:50:36,100 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 20:50:36,100 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 20:50:36,104 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 20:50:36,641 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+09 juil. 2022 20:50:36,650 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 20:50:38,550 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@15186ce0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 20:50:40,099 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 20:50:40,142 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 20:50:40,634 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:57:58,496 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 20:58:00,065 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 20:58:00,074 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 20:58:00,074 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 20:58:00,074 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 20:58:00,075 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 20:58:00,078 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 20:58:00,622 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+09 juil. 2022 20:58:00,640 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 20:58:02,693 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@15186ce0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 20:58:04,151 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 20:58:04,193 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 20:58:04,764 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:00:13,990 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 21:00:15,543 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 21:00:15,552 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 21:00:15,553 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:00:15,553 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 21:00:15,553 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 21:00:15,557 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 21:00:16,101 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+09 juil. 2022 21:00:16,104 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 21:00:17,883 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@15186ce0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:00:19,444 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 21:00:19,488 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 21:00:20,137 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:00:20,183 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:05:36,532 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 21:05:38,068 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 21:05:38,079 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 21:05:38,079 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:05:38,079 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 21:05:38,079 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 21:05:38,084 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 21:05:38,693 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+09 juil. 2022 21:05:38,695 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 21:05:40,591 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3ef0e576] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:05:40,919 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5ad6f98e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:05:41,347 [main] WARN  {org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl} - GenerationTarget encountered exception accepting command : Error executing DDL "alter table Employe add constraint UK_o55w1lond12rsh0qdrlro7km5 unique (email)" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table Employe add constraint UK_o55w1lond12rsh0qdrlro7km5 unique (email)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:502) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:486) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:402) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:176) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:144) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:128) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:254) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at java.util.HashMap.forEach(HashMap.java:1337) ~[?:?]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:333) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at com.rekest.utils.HibernateSession.<init>(HibernateSession.java:27) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.init(HibernateSession.java:67) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSessionFactory(HibernateSession.java:60) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSession(HibernateSession.java:38) ~[classes/:?]
+	at com.rekest.dao.impl.HibernateDao.list(HibernateDao.java:115) ~[classes/:?]
+	at com.rekest.feature.impl.Feature.listerDemandes(Feature.java:593) ~[classes/:?]
+	at com.rekest.runtime.TestMain.main(TestMain.java:36) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Specified key was too long; max key length is 1000 bytes
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	... 19 more
+09 juil. 2022 21:05:41,361 [main] WARN  {org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl} - GenerationTarget encountered exception accepting command : Error executing DDL "alter table Employe add constraint UK_f1opyvibhja1xo5t1uxiokjpm unique (telephone)" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table Employe add constraint UK_f1opyvibhja1xo5t1uxiokjpm unique (telephone)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:502) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:486) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:402) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:176) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:144) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:128) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:254) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at java.util.HashMap.forEach(HashMap.java:1337) ~[?:?]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:333) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at com.rekest.utils.HibernateSession.<init>(HibernateSession.java:27) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.init(HibernateSession.java:67) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSessionFactory(HibernateSession.java:60) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSession(HibernateSession.java:38) ~[classes/:?]
+	at com.rekest.dao.impl.HibernateDao.list(HibernateDao.java:115) ~[classes/:?]
+	at com.rekest.feature.impl.Feature.listerDemandes(Feature.java:593) ~[classes/:?]
+	at com.rekest.runtime.TestMain.main(TestMain.java:36) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Specified key was too long; max key length is 1000 bytes
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	... 19 more
+09 juil. 2022 21:05:42,768 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 21:05:42,812 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 21:05:43,409 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:05:43,418 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:05:43,420 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:10:10,509 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 21:10:11,783 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 21:10:11,792 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 21:10:11,793 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:10:11,793 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 21:10:11,793 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 21:10:11,798 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 21:10:12,393 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+09 juil. 2022 21:10:12,402 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 21:10:14,202 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3ef0e576] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:10:14,413 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5ad6f98e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:10:14,824 [main] WARN  {org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl} - GenerationTarget encountered exception accepting command : Error executing DDL "alter table Employe add constraint UK_o55w1lond12rsh0qdrlro7km5 unique (email)" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table Employe add constraint UK_o55w1lond12rsh0qdrlro7km5 unique (email)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:502) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:486) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:402) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:176) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:144) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:128) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:254) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at java.util.HashMap.forEach(HashMap.java:1337) ~[?:?]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:333) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at com.rekest.utils.HibernateSession.<init>(HibernateSession.java:27) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.init(HibernateSession.java:67) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSessionFactory(HibernateSession.java:60) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSession(HibernateSession.java:38) ~[classes/:?]
+	at com.rekest.dao.impl.HibernateDao.list(HibernateDao.java:115) ~[classes/:?]
+	at com.rekest.feature.impl.Feature.listerDemandes(Feature.java:593) ~[classes/:?]
+	at com.rekest.runtime.TestMain.main(TestMain.java:36) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Specified key was too long; max key length is 1000 bytes
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	... 19 more
+09 juil. 2022 21:10:14,835 [main] WARN  {org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl} - GenerationTarget encountered exception accepting command : Error executing DDL "alter table Employe add constraint UK_f1opyvibhja1xo5t1uxiokjpm unique (telephone)" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table Employe add constraint UK_f1opyvibhja1xo5t1uxiokjpm unique (telephone)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:502) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:486) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:402) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:176) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:144) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:128) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:254) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at java.util.HashMap.forEach(HashMap.java:1337) ~[?:?]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:333) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at com.rekest.utils.HibernateSession.<init>(HibernateSession.java:27) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.init(HibernateSession.java:67) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSessionFactory(HibernateSession.java:60) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSession(HibernateSession.java:38) ~[classes/:?]
+	at com.rekest.dao.impl.HibernateDao.list(HibernateDao.java:115) ~[classes/:?]
+	at com.rekest.feature.impl.Feature.listerDemandes(Feature.java:593) ~[classes/:?]
+	at com.rekest.runtime.TestMain.main(TestMain.java:36) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Specified key was too long; max key length is 1000 bytes
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	... 19 more
+09 juil. 2022 21:10:16,130 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 21:10:16,172 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 21:10:16,784 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:10:16,793 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:10:16,794 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:16:43,791 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 21:16:45,601 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 21:16:45,614 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 21:16:45,614 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:16:45,615 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 21:16:45,615 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 21:16:45,621 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 21:16:46,195 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+09 juil. 2022 21:16:46,208 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 21:16:48,068 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3ef0e576] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:16:48,209 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6e46891d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:16:48,607 [main] WARN  {org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl} - GenerationTarget encountered exception accepting command : Error executing DDL "alter table Employe add constraint UK_o55w1lond12rsh0qdrlro7km5 unique (email)" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table Employe add constraint UK_o55w1lond12rsh0qdrlro7km5 unique (email)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:502) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:486) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:402) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:176) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:144) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:128) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:254) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at java.util.HashMap.forEach(HashMap.java:1337) ~[?:?]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:333) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at com.rekest.utils.HibernateSession.<init>(HibernateSession.java:27) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.init(HibernateSession.java:67) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSessionFactory(HibernateSession.java:60) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSession(HibernateSession.java:38) ~[classes/:?]
+	at com.rekest.dao.impl.HibernateDao.list(HibernateDao.java:115) ~[classes/:?]
+	at com.rekest.feature.impl.Feature.listerDemandes(Feature.java:593) ~[classes/:?]
+	at com.rekest.runtime.TestMain.main(TestMain.java:36) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Specified key was too long; max key length is 1000 bytes
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	... 19 more
+09 juil. 2022 21:16:48,632 [main] WARN  {org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl} - GenerationTarget encountered exception accepting command : Error executing DDL "alter table Employe add constraint UK_f1opyvibhja1xo5t1uxiokjpm unique (telephone)" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table Employe add constraint UK_f1opyvibhja1xo5t1uxiokjpm unique (telephone)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:502) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:486) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:402) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:176) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:144) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:128) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:254) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at java.util.HashMap.forEach(HashMap.java:1337) ~[?:?]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:333) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at com.rekest.utils.HibernateSession.<init>(HibernateSession.java:27) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.init(HibernateSession.java:67) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSessionFactory(HibernateSession.java:60) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSession(HibernateSession.java:38) ~[classes/:?]
+	at com.rekest.dao.impl.HibernateDao.list(HibernateDao.java:115) ~[classes/:?]
+	at com.rekest.feature.impl.Feature.listerDemandes(Feature.java:593) ~[classes/:?]
+	at com.rekest.runtime.TestMain.main(TestMain.java:36) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Specified key was too long; max key length is 1000 bytes
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	... 19 more
+09 juil. 2022 21:16:49,912 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 21:16:49,955 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 21:16:50,548 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:16:50,556 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:16:50,558 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:30:21,231 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 21:30:22,731 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 21:30:22,744 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 21:30:22,745 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:30:22,745 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 21:30:22,745 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 21:30:22,751 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 21:30:23,338 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+09 juil. 2022 21:30:23,342 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 21:30:25,286 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@785a4557] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:30:25,546 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3316527e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:30:25,976 [main] WARN  {org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl} - GenerationTarget encountered exception accepting command : Error executing DDL "alter table Employe add constraint UK_o55w1lond12rsh0qdrlro7km5 unique (email)" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table Employe add constraint UK_o55w1lond12rsh0qdrlro7km5 unique (email)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:502) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:486) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:402) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:176) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:144) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:128) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:254) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at java.util.HashMap.forEach(HashMap.java:1337) ~[?:?]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:333) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at com.rekest.utils.HibernateSession.<init>(HibernateSession.java:27) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.init(HibernateSession.java:67) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSessionFactory(HibernateSession.java:60) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSession(HibernateSession.java:38) ~[classes/:?]
+	at com.rekest.dao.impl.HibernateDao.list(HibernateDao.java:115) ~[classes/:?]
+	at com.rekest.feature.impl.Feature.listerDemandes(Feature.java:593) ~[classes/:?]
+	at com.rekest.runtime.TestMain.main(TestMain.java:36) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Specified key was too long; max key length is 1000 bytes
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	... 19 more
+09 juil. 2022 21:30:25,989 [main] WARN  {org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl} - GenerationTarget encountered exception accepting command : Error executing DDL "alter table Employe add constraint UK_f1opyvibhja1xo5t1uxiokjpm unique (telephone)" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table Employe add constraint UK_f1opyvibhja1xo5t1uxiokjpm unique (telephone)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:502) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:486) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:402) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:176) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:144) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:128) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:254) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at java.util.HashMap.forEach(HashMap.java:1337) ~[?:?]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:333) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at com.rekest.utils.HibernateSession.<init>(HibernateSession.java:27) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.init(HibernateSession.java:67) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSessionFactory(HibernateSession.java:60) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSession(HibernateSession.java:38) ~[classes/:?]
+	at com.rekest.dao.impl.HibernateDao.list(HibernateDao.java:115) ~[classes/:?]
+	at com.rekest.feature.impl.Feature.listerDemandes(Feature.java:593) ~[classes/:?]
+	at com.rekest.runtime.TestMain.main(TestMain.java:36) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Specified key was too long; max key length is 1000 bytes
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	... 19 more
+09 juil. 2022 21:30:27,214 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 21:30:27,238 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 21:30:27,840 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:30:27,851 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:30:27,854 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:32:08,987 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 21:32:10,702 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 21:32:10,711 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 21:32:10,711 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:32:10,712 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 21:32:10,712 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 21:32:10,717 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 21:32:11,457 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+09 juil. 2022 21:32:11,461 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 21:32:13,899 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3ef0e576] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:32:14,065 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6e46891d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:32:14,480 [main] WARN  {org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl} - GenerationTarget encountered exception accepting command : Error executing DDL "alter table Employe add constraint UK_o55w1lond12rsh0qdrlro7km5 unique (email)" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table Employe add constraint UK_o55w1lond12rsh0qdrlro7km5 unique (email)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:502) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:486) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:402) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:176) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:144) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:128) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:254) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at java.util.HashMap.forEach(HashMap.java:1337) ~[?:?]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:333) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at com.rekest.utils.HibernateSession.<init>(HibernateSession.java:27) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.init(HibernateSession.java:67) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSessionFactory(HibernateSession.java:60) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSession(HibernateSession.java:38) ~[classes/:?]
+	at com.rekest.dao.impl.HibernateDao.list(HibernateDao.java:115) ~[classes/:?]
+	at com.rekest.feature.impl.Feature.listerDemandes(Feature.java:593) ~[classes/:?]
+	at com.rekest.runtime.TestMain.main(TestMain.java:36) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Specified key was too long; max key length is 1000 bytes
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	... 19 more
+09 juil. 2022 21:32:14,508 [main] WARN  {org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl} - GenerationTarget encountered exception accepting command : Error executing DDL "alter table Employe add constraint UK_f1opyvibhja1xo5t1uxiokjpm unique (telephone)" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table Employe add constraint UK_f1opyvibhja1xo5t1uxiokjpm unique (telephone)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:502) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:486) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:402) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:176) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:144) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:128) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:254) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at java.util.HashMap.forEach(HashMap.java:1337) ~[?:?]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:333) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at com.rekest.utils.HibernateSession.<init>(HibernateSession.java:27) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.init(HibernateSession.java:67) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSessionFactory(HibernateSession.java:60) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSession(HibernateSession.java:38) ~[classes/:?]
+	at com.rekest.dao.impl.HibernateDao.list(HibernateDao.java:115) ~[classes/:?]
+	at com.rekest.feature.impl.Feature.listerDemandes(Feature.java:593) ~[classes/:?]
+	at com.rekest.runtime.TestMain.main(TestMain.java:36) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Specified key was too long; max key length is 1000 bytes
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	... 19 more
+09 juil. 2022 21:32:15,785 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 21:32:15,839 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 21:32:16,834 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:32:16,852 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:32:16,860 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:45:49,023 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 21:45:50,668 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 21:45:50,689 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 21:45:50,690 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:45:50,691 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 21:45:50,692 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 21:45:50,701 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 21:45:51,505 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+09 juil. 2022 21:45:51,515 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 21:45:53,521 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3ef0e576] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:45:54,178 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5ad6f98e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:45:54,510 [main] WARN  {org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl} - GenerationTarget encountered exception accepting command : Error executing DDL "alter table Employe add constraint UK_o55w1lond12rsh0qdrlro7km5 unique (email)" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table Employe add constraint UK_o55w1lond12rsh0qdrlro7km5 unique (email)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:502) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:486) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:402) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:176) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:144) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:128) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:254) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at java.util.HashMap.forEach(HashMap.java:1337) ~[?:?]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:333) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at com.rekest.utils.HibernateSession.<init>(HibernateSession.java:27) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.init(HibernateSession.java:67) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSessionFactory(HibernateSession.java:60) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSession(HibernateSession.java:38) ~[classes/:?]
+	at com.rekest.dao.impl.HibernateDao.list(HibernateDao.java:115) ~[classes/:?]
+	at com.rekest.feature.impl.Feature.listerDemandes(Feature.java:593) ~[classes/:?]
+	at com.rekest.runtime.TestMain.main(TestMain.java:36) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Specified key was too long; max key length is 1000 bytes
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	... 19 more
+09 juil. 2022 21:45:54,520 [main] WARN  {org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl} - GenerationTarget encountered exception accepting command : Error executing DDL "alter table Employe add constraint UK_f1opyvibhja1xo5t1uxiokjpm unique (telephone)" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table Employe add constraint UK_f1opyvibhja1xo5t1uxiokjpm unique (telephone)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:502) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:486) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:402) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:176) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:144) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:128) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:254) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at java.util.HashMap.forEach(HashMap.java:1337) ~[?:?]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:333) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	at com.rekest.utils.HibernateSession.<init>(HibernateSession.java:27) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.init(HibernateSession.java:67) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSessionFactory(HibernateSession.java:60) ~[classes/:?]
+	at com.rekest.utils.HibernateSession.getSession(HibernateSession.java:38) ~[classes/:?]
+	at com.rekest.dao.impl.HibernateDao.list(HibernateDao.java:115) ~[classes/:?]
+	at com.rekest.feature.impl.Feature.listerDemandes(Feature.java:593) ~[classes/:?]
+	at com.rekest.runtime.TestMain.main(TestMain.java:36) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Specified key was too long; max key length is 1000 bytes
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-6.0.2.Final.jar:6.0.2.Final]
+	... 19 more
+09 juil. 2022 21:45:55,832 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 21:45:55,877 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 21:45:56,560 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:45:56,569 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:45:56,571 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:51:08,298 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 21:51:09,947 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 21:51:09,960 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 21:51:09,961 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:51:09,961 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 21:51:09,962 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 21:51:09,968 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 21:51:10,542 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect 
+09 juil. 2022 21:51:10,550 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL55Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 21:51:12,680 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3ef0e576] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:51:14,267 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5ad6f98e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:51:19,617 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 21:51:19,665 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 21:51:20,414 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:51:20,423 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:51:20,425 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:51:47,815 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 21:51:49,241 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 21:51:49,250 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 21:51:49,250 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:51:49,251 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 21:51:49,251 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 21:51:49,256 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 21:51:49,887 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+09 juil. 2022 21:51:49,901 [main] WARN  {org.hibernate.orm.deprecation} - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead 
+09 juil. 2022 21:51:51,738 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3ef0e576] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:51:52,887 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5ad6f98e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:51:57,803 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 21:51:57,853 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 21:51:58,557 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:51:58,566 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:51:58,567 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:52:05,215 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 21:52:06,660 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 21:52:06,668 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 21:52:06,669 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:52:06,669 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 21:52:06,669 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 21:52:06,673 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 21:52:07,256 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect 
+09 juil. 2022 21:52:09,160 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3bab95ca] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:52:10,501 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2913ca3e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:52:16,057 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 21:52:16,087 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 21:52:16,683 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:52:16,691 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 21:52:16,693 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:59:50,663 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 21:59:52,361 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 21:59:52,373 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 21:59:52,374 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 21:59:52,374 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 21:59:52,375 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 21:59:52,380 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 21:59:53,028 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect 
+09 juil. 2022 21:59:55,252 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3bab95ca] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 21:59:56,658 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2913ca3e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 22:00:01,929 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 22:00:01,977 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 22:00:02,375 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 22:01:10,552 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 22:01:11,882 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 22:01:11,891 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 22:01:11,891 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 22:01:11,892 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 22:01:11,892 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 22:01:11,896 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 22:01:12,558 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect 
+09 juil. 2022 22:01:14,401 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3bab95ca] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 22:01:15,711 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2913ca3e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 22:01:21,176 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 22:01:21,223 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 22:01:22,015 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 22:01:22,018 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 22:04:55,530 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 22:04:57,086 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 22:04:57,096 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 22:04:57,096 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 22:04:57,097 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 22:04:57,098 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 22:04:57,101 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 22:04:57,810 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect 
+09 juil. 2022 22:04:59,935 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@60ed0b9d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 22:05:00,125 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 22:05:00,143 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 22:05:00,245 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Begin transaction. 
+09 juil. 2022 22:05:00,540 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Record is Successully created 
+09 juil. 2022 22:05:00,543 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Begin transaction. 
+09 juil. 2022 22:05:00,592 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Record is Successully created 
+09 juil. 2022 22:05:01,142 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 22:05:01,145 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Email de l'employe null 
+09 juil. 2022 22:05:01,145 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Email de l'employe null 
+09 juil. 2022 22:05:01,147 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 22:05:49,781 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 22:05:51,114 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 22:05:51,128 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 22:05:51,128 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 22:05:51,129 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 22:05:51,129 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 22:05:51,135 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 22:05:51,825 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect 
+09 juil. 2022 22:05:53,715 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@60ed0b9d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 22:05:53,899 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 22:05:53,932 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 22:05:54,106 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Begin transaction. 
+09 juil. 2022 22:05:54,446 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Record is Successully created 
+09 juil. 2022 22:05:54,448 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Begin transaction. 
+09 juil. 2022 22:05:54,466 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Record is Successully created 
+09 juil. 2022 22:05:54,986 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 22:05:54,989 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Email de l'employe nomtest 
+09 juil. 2022 22:05:54,989 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Email de l'employe SYLLA 
+09 juil. 2022 22:05:54,989 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Email de l'employe nomtest 
+09 juil. 2022 22:05:54,989 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Email de l'employe SYLLA 
+09 juil. 2022 22:05:54,991 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 22:09:52,407 [main] INFO  {org.hibernate.Version} - HHH000412: Hibernate ORM core version 6.0.2.Final 
+09 juil. 2022 22:09:53,785 [main] WARN  {org.hibernate.orm.connections.pooling} - HHH10001002: Using built-in connection pool (not intended for production use) 
+09 juil. 2022 22:09:53,795 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver 
+09 juil. 2022 22:09:53,795 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 
+09 juil. 2022 22:09:53,795 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001001: Connection properties: {password=****, user=root} 
+09 juil. 2022 22:09:53,796 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001003: Autocommit mode: false 
+09 juil. 2022 22:09:53,800 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001115: Connection pool size: 20 (min=1) 
+09 juil. 2022 22:09:54,516 [main] INFO  {SQL dialect} - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect 
+09 juil. 2022 22:09:56,565 [main] INFO  {org.hibernate.orm.connections.access} - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@60ed0b9d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode. 
+09 juil. 2022 22:09:56,752 [main] INFO  {org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator} - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+09 juil. 2022 22:09:56,769 [main] INFO  {com.rekest.utils.HibernateSession} - HibernateSession created. 
+09 juil. 2022 22:09:56,847 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Begin transaction. 
+09 juil. 2022 22:09:56,926 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Record is Successully created 
+09 juil. 2022 22:09:57,333 [main] INFO  {com.rekest.dao.impl.HibernateDao} - Records Successfully read. 
+09 juil. 2022 22:09:57,337 [main] INFO  {org.hibernate.orm.connections.pooling} - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/rekest_db?serverTimezone=UTC] 

@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Role {
+	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
 	@Column(name="id_role")
@@ -18,9 +19,12 @@ public class Role {
 	public Role(String intitule) {
 		this.intitule = intitule;
 	}
-	
-	public Role() {}
 
+
+	public Role() {
+		
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -36,4 +40,6 @@ public class Role {
 	public void setIntitule(String intitule) {
 		this.intitule = intitule;
 	}
+
+	public static void copy(Role role, Role entity) {}
 }
