@@ -2,7 +2,10 @@ package com.rekest.feature;
 
 import java.util.List;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 525d8a4180204715af19c3f6fc7bbe6d65793e7b
 import com.rekest.entities.Demande;
 import com.rekest.entities.Departement;
 import com.rekest.entities.Note;
@@ -533,16 +536,34 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
+<<<<<<< HEAD
 	public Employe rechercherEmploye ( Integer primaryKey)  throws DAOException;	
 	
 	
+=======
+	public Employe rechercherEmploye ( Integer primaryKey)  throws Exception;	
+	
+	
+	/**
+	 * TODO
+	 * @param Demande
+	 * @return
+	 */
+	//public void rafraichirDemande (Demande Demande) throws Exception 
+
+
+>>>>>>> 525d8a4180204715af19c3f6fc7bbe6d65793e7b
 
 	/**
 	 * Return a list of all 'Demandes'.
 	 * 
 	 * @return
 	 */
+<<<<<<< HEAD
 	public List<Demande> listerDemandes () throws DAOException ;
+=======
+	public List<Demande> listerDemandes () throws Exception ;
+>>>>>>> 525d8a4180204715af19c3f6fc7bbe6d65793e7b
 
 	/**
 	 * Return a list of all 'Demande' according to the filters.
@@ -551,7 +572,11 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
+<<<<<<< HEAD
 	public List<Demande> listerDemandes ( String whereClause)  throws DAOException ;
+=======
+	public List<Demande> listerDemandes ( String whereClause)  throws Exception ;
+>>>>>>> 525d8a4180204715af19c3f6fc7bbe6d65793e7b
 	
 	/**
 	 * Delete the 'Demande' set in parameter. 
@@ -559,7 +584,11 @@ public interface IFeature {
 	 * 
 	 * @param service
 	 */
+<<<<<<< HEAD
 	public void supprimerDemande (Demande Demande) throws DAOException ;
+=======
+	public void supprimerDemande (Demande Demande) throws Exception ;
+>>>>>>> 525d8a4180204715af19c3f6fc7bbe6d65793e7b
 
 	/**
 	 * Update the 'Demande' set in parameter. 
@@ -567,7 +596,11 @@ public interface IFeature {
 	 * 
 	 * @param service
 	 */
+<<<<<<< HEAD
 	public void modifierDemande (Demande Demande) throws DAOException ;
+=======
+	public void modifierDemande (Demande Demande) throws Exception ;
+>>>>>>> 525d8a4180204715af19c3f6fc7bbe6d65793e7b
 
 	/**
 	 * Save the 'Demande' set in parameter. 
@@ -575,7 +608,11 @@ public interface IFeature {
 	 * 
 	 * @param service
 	 */
+<<<<<<< HEAD
 	public void creerDemande (Demande Demande) throws DAOException ;
+=======
+	public void creerDemande (Demande Demande) throws Exception ;
+>>>>>>> 525d8a4180204715af19c3f6fc7bbe6d65793e7b
 	
 
 
@@ -586,7 +623,11 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
+<<<<<<< HEAD
 	public Demande rechercherDemande( String whereClause)  throws DAOException ;
+=======
+	public Demande rechercherDemande( String whereClause)  throws Exception ;
+>>>>>>> 525d8a4180204715af19c3f6fc7bbe6d65793e7b
 
 	/**
 	 * Find and return the 'Demande' set in parameter if it exist, else null.
@@ -595,7 +636,11 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
+<<<<<<< HEAD
 	public Demande rechercherDemande( Integer primaryKey)  throws DAOException;
+=======
+	public Demande rechercherDemande( Integer primaryKey)  throws Exception;
+>>>>>>> 525d8a4180204715af19c3f6fc7bbe6d65793e7b
 	
 	
 	/**
@@ -610,7 +655,11 @@ public interface IFeature {
 	 * 
 	 * @return
 	 */
+<<<<<<< HEAD
 	public List<Note> listerNotes () throws DAOException ;
+=======
+	public List<Note> listerNotes () throws Exception ;
+>>>>>>> 525d8a4180204715af19c3f6fc7bbe6d65793e7b
 
 	/**
 	 * Return a list of all 'note' according to the filters.
@@ -619,7 +668,11 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
+<<<<<<< HEAD
 	public List<Note> listerNotes ( String whereClause)  throws DAOException ;
+=======
+	public List<Note> listerNotes ( String whereClause)  throws Exception ;
+>>>>>>> 525d8a4180204715af19c3f6fc7bbe6d65793e7b
 	
 	/**
 	 * Delete the 'note' set in parameter. 
@@ -627,7 +680,11 @@ public interface IFeature {
 	 * 
 	 * @param service
 	 */
+<<<<<<< HEAD
 	public void supprimerNote (Note note) throws DAOException ;
+=======
+	public void supprimerNote (Note note) throws Exception ;
+>>>>>>> 525d8a4180204715af19c3f6fc7bbe6d65793e7b
 
 	/**
 	 * Update the 'note' set in parameter. 
@@ -635,7 +692,11 @@ public interface IFeature {
 	 * 
 	 * @param service
 	 */
+<<<<<<< HEAD
 	public void modifierNote (Note note) throws DAOException ;
+=======
+	public void modifierNote (Note note) throws Exception ;
+>>>>>>> 525d8a4180204715af19c3f6fc7bbe6d65793e7b
 
 	/**
 	 * Save the 'note' set in parameter. 
@@ -643,7 +704,11 @@ public interface IFeature {
 	 * 
 	 * @param service
 	 */
+<<<<<<< HEAD
 	public void creerNote (Note note) throws DAOException ;
+=======
+	public void creerNote (Note note) throws Exception ;
+>>>>>>> 525d8a4180204715af19c3f6fc7bbe6d65793e7b
 	
 
 
@@ -654,7 +719,11 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
+<<<<<<< HEAD
 	public Note rechercherNote( String whereClause)  throws DAOException ;
+=======
+	public Note rechercherNote( String whereClause)  throws Exception ;
+>>>>>>> 525d8a4180204715af19c3f6fc7bbe6d65793e7b
 
 	/**
 	 * Find and return the 'note' set in parameter if it exist, else null.
@@ -663,6 +732,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
+<<<<<<< HEAD
 	public Note rechercherNote( Integer primaryKey)  throws DAOException;
 	
 	/**
@@ -737,6 +807,9 @@ public interface IFeature {
 	 * @return
 	 */
 	public ObservableList<Demande> getCurrentDemandesByServiceObservableList () throws DAOException;
+=======
+	public Note rechercherNote( Integer primaryKey)  throws Exception;
+>>>>>>> 525d8a4180204715af19c3f6fc7bbe6d65793e7b
 
 	 
 	/**
