@@ -50,8 +50,7 @@ public class Feature implements IFeature {
 	@Override
 	public List<Role> listerRoles () throws DAOException {
 
-		Role truc = new Role();
-		List<Object> objects = HibernateDao.getCurrentInstance ().list ( truc);
+		List<Object> objects = HibernateDao.getCurrentInstance ().list ( new Role());
 		List<Role> objs = new ArrayList<> ();
 		for (Object obj : objects) {
 			if (obj instanceof Role) {
@@ -806,7 +805,7 @@ public class Feature implements IFeature {
 	}
 
 	@Override
-	public void createEmptyAdressBook() {
+	public void createEmptyDemandeBook() {//jaxper
 		
 		OLDemande.clear();
 		FileDemandeManager.setDemandeFilePath(null);
@@ -822,7 +821,7 @@ public class Feature implements IFeature {
 
 
 	@Override
-	public void selectAnAddressBookToLoad(Stage primaryStage) {
+	public void selectAnDemandeBookToLoad(Stage primaryStage) {
 
 
 		FileChooser fileChooser = new FileChooser();

@@ -23,12 +23,12 @@ public interface IFeature {
 	
 	
 	
-	public void createEmptyAdressBook();
+	public void createEmptyDemandeBook();
 
 	/**
 	 * @param primaryStage
 	 */
-	public void selectAnAddressBookToLoad(Stage primaryStage);
+	public void selectAnDemandeBookToLoad(Stage primaryStage);
 
 	/**
 	 * @return
