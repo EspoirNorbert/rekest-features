@@ -54,10 +54,7 @@ public class FileDemandeManager {
             // Save the file path to the registry.
             setDemandeFilePath(file);
         } catch (Exception e) { // catches ANY exception
-        	Utilitaire.alert(AlertType.WARNING, null,
-    			"Error",
-    			"Could not save data", 
-    			"Could not save data to file:\n" + file.getPath());
+        	System.err.println(e.getMessage()+"\n"+e.fillInStackTrace());
         }
     }
     

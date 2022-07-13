@@ -725,44 +725,111 @@ public interface IFeature {
 	public Integer RetournerNombreProduitsTotal();
 	
 
+	/**
+	 * Returns a Observable list of the stored 'Demandes'
+	 * 
+	 * @return
+	 * @throws DAOException
+	 */
 	public ObservableList<Demande> loadDemandesObservableList () throws DAOException;
 
 
+	/**
+	 * @return
+	 * @throws DAOException
+	 */
 	public ObservableList<Demande> getCurrentDemandesObservableList () throws DAOException;
 	
 	
+	/**
+	 * Returns a Observable list of the stored 'Employes'
+	 * 
+	 * @return
+	 * @throws DAOException
+	 */
 	public ObservableList<Employe> loadEmployesObservableList () throws DAOException;
 
 
+	/**
+	 * 
+	 * 
+	 * @return
+	 * @throws DAOException
+	 */
 	public ObservableList<Employe> getCurrentEmployesObservableList () throws DAOException;
 
 
+	/**
+	 * Returns a Observable list of the stored 'Roles'
+	 * 
+	 * @return
+	 * @throws DAOException
+	 */
 	public ObservableList<Role> loadRoleObservableList () throws DAOException;
 
 
+	/**
+	 * @return
+	 * @throws DAOException
+	 */
 	public ObservableList<Role> getCurrentRolesObservableList () throws DAOException;
 
 
+	/**
+	 * Returns a Observable list of the stored 'Produits'
+	 * 
+	 * @return
+	 * @throws DAOException
+	 */
 	public ObservableList<Produit> loadProduitsObservableList () throws DAOException;
 
 
+	/**
+	 * @return
+	 * @throws DAOException
+	 */
 	public ObservableList<Produit> getCurrentProduitsObservableList () throws DAOException;
 
 
+	/**
+	 * Returns a Observable list of the stored 'Services'
+	 * 
+	 * @return
+	 * @throws DAOException
+	 */
 	public ObservableList<Service> loadServicesObservableList () throws DAOException;
 
 
+	/**
+	 * 
+	 * 
+	 * @return
+	 * @throws DAOException
+	 */
 	public ObservableList<Service> getCurrentServicesObservableList () throws DAOException;
 
 
+	/**
+	 * Returns a Observable list of the stored 'Departement'
+	 * 
+	 * @return
+	 * @throws DAOException
+	 */
 	public ObservableList<Departement> loadDepartementsObservableList () throws DAOException;
 
 
+	/**
+	 * @return
+	 * @throws DAOException
+	 */
 	public ObservableList<Departement> getCurrentDepartementsObservableList () throws DAOException;
 
 	
 	 
 	/**
+	 * Todo
+	 * Returns a Observable list of the stored 'Demandes'
+	 * 
 	 * @return
 	 */
 	public ObservableList<Demande> loadDemandesByServiceObservableList (Service service) throws DAOException;
@@ -774,6 +841,9 @@ public interface IFeature {
 
 	 
 	/**
+	 * Todo
+	 * Returns a Observable list of the stored 'Demandes' by direction
+	 * 
 	 * @return
 	 */
 	public ObservableList<Demande> loadDemandesByDirectionObservableList (Object direction) throws DAOException;
@@ -782,7 +852,7 @@ public interface IFeature {
 
 
 	/**
-	 * Retourne l'utilisateur identifié, sinon null
+	 * Returns the user identified, else null
 	 * 
 	 * @param login
 	 * @param password

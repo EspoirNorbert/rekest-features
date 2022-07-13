@@ -1,5 +1,7 @@
 package com.rekest.runtime;
 
+import java.io.File;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,6 +16,7 @@ import com.rekest.entities.employes.Manager;
 import com.rekest.entities.employes.Utilisateur;
 import com.rekest.exeptions.DAOException;
 import com.rekest.feature.impl.Feature;
+import com.rekest.utils.FileDemandeManager;
 
 import javafx.collections.ObservableList;
 
@@ -33,18 +36,16 @@ public class TestMain {
 		  
 		  
 		  try {
-			Demande demande = new Demande();
-			
-			feat.creerDemande(demande);
+
 			  
 			ObservableList<Demande> employes =  feat.loadDemandesObservableList();
+			File file = new File("C:\\Users\\DELL\\Desktop\\test.xml");
 			
+			FileDemandeManager manaf= new FileDemandeManager();
 			
-			for (Demande employe : employes) {
-				System.out.println("Email de l'employe " +employe.getId());
-				
-			}
+			manaf.saveDemandeDataToFile(file);
 			
+
 			
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block

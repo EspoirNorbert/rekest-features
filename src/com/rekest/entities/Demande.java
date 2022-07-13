@@ -100,7 +100,7 @@ public class Demande {
 
 
 	public static void copy(Demande demande, Demande entity) {
-		// TODO Auto-generated method stub
+		demande.setId(  entity.getId());
 		
 	}
 }
