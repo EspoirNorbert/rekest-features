@@ -38,16 +38,10 @@ public class TestMain {
 		  try {
 			
 			  
-			ObservableList<Demande> employes =  feat.loadDemandesObservableList();
-			File file = new File("C:\\Users\\DELL\\Desktop\\test.xml");
-			
-			FileDemandeManager manaf= new FileDemandeManager();
-			
-			manaf.saveDemandeDataToFile(file);
-			
+			  testProduit(feat);
 
 			
-		} catch (DAOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.err.println("Blem "+e.getMessage());
 		}
@@ -237,7 +231,7 @@ public class TestMain {
 		Role role1 = new Role();
 		
 		try {
-			role1 = feat.rechercherRole("WHERE nom = 'intituleTest' ");
+			role1 = feat.rechercherRole("WHERE intitule = 'intituleTest' ");
 			System.out.println("Role "+role1.getIntitule()+" found");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -254,7 +248,7 @@ public class TestMain {
 		}
 		
 		try {
-			role1 = feat.rechercherRole("WHERE nom = 'changedIntitule' ");
+			role1 = feat.rechercherRole("WHERE intitule = 'changedIntitule' ");
 			System.out.println("Role "+role1.getIntitule());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
