@@ -1,18 +1,5 @@
 package com.rekest.test;
 
-import java.util.List;
-
-import com.rekest.entities.Demande;
-import com.rekest.entities.Departement;
-import com.rekest.entities.Note;
-import com.rekest.entities.Produit;
-import com.rekest.entities.Role;
-import com.rekest.entities.Service;
-import com.rekest.entities.employes.Employe;
-import com.rekest.entities.employes.Manager;
-import com.rekest.entities.employes.Utilisateur;
-
-import javafx.collections.ObservableList;
 
 /**
  * @author DELL
@@ -20,22 +7,12 @@ import javafx.collections.ObservableList;
  */
 public interface IFeatureTests {
 
-	
-	
-	
-	
-	
 	/**
 	 * Test activerUtilisateur and desactiverUtilisateur.
 	 * Returns true if it works, else false.
 	 * 
 	 */
 	public void testActiverDesactiverUtilisateur  ()  ;	
-
-
-
-
-
 
 	/**
 	 * Test testSupprimerDemande.
@@ -48,7 +25,7 @@ public interface IFeatureTests {
 	 * Returns true if it works, else false.
 	 */
 	public  void testListerDemandes2  ( )   ;
-	
+
 	/**
 	 * Test SupprimerDemande.
 	 * Returns true if it works, else false.
@@ -78,7 +55,7 @@ public interface IFeatureTests {
 	public void testRechercherDemande ( )   ;
 
 
-	
+
 	/**
 	 * Test RechercherDemandeId.
 	 * Returns true if it works, else false.
@@ -99,7 +76,7 @@ public interface IFeatureTests {
 	 * Returns true if it works, else false.
 	 */
 	public  void testListerServices2  ( )   ;
-	
+
 	/**
 	 * Test SupprimerService.
 	 * Returns true if it works, else false.
@@ -129,7 +106,7 @@ public interface IFeatureTests {
 	public void testRechercherService ( )   ;
 
 
-	
+
 	/**
 	 * Test RechercherServiceId.
 	 * Returns true if it works, else false.
@@ -150,7 +127,7 @@ public interface IFeatureTests {
 	 * Returns true if it works, else false.
 	 */
 	public  void testListerDepartements2  ( )   ;
-	
+
 	/**
 	 * Test SupprimerDepartement.
 	 * Returns true if it works, else false.
@@ -180,7 +157,7 @@ public interface IFeatureTests {
 	public void testRechercherDepartement ( )   ;
 
 
-	
+
 	/**
 	 * Test RechercherDepartementId.
 	 * Returns true if it works, else false.
@@ -201,7 +178,7 @@ public interface IFeatureTests {
 	 * Returns true if it works, else false.
 	 */
 	public  void testListerNotes2  ( )   ;
-	
+
 	/**
 	 * Test SupprimerNote.
 	 * Returns true if it works, else false.
@@ -231,7 +208,7 @@ public interface IFeatureTests {
 	public void testRechercherNote ( )   ;
 
 
-	
+
 	/**
 	 * Test RechercherNoteId.
 	 * Returns true if it works, else false.
@@ -252,7 +229,7 @@ public interface IFeatureTests {
 	 * Returns true if it works, else false.
 	 */
 	public  void testListerRoles2  ( )   ;
-	
+
 	/**
 	 * Test SupprimerRole.
 	 * Returns true if it works, else false.
@@ -282,7 +259,7 @@ public interface IFeatureTests {
 	public void testRechercherRole ( )   ;
 
 
-	
+
 	/**
 	 * Test RechercherRoleId.
 	 * Returns true if it works, else false.
@@ -303,7 +280,7 @@ public interface IFeatureTests {
 	 * Returns true if it works, else false.
 	 */
 	public  void testListerManagers2  ( )   ;
-	
+
 	/**
 	 * Test SupprimerManager.
 	 * Returns true if it works, else false.
@@ -333,7 +310,7 @@ public interface IFeatureTests {
 	public void testRechercherManager ( )   ;
 
 
-	
+
 	/**
 	 * Test RechercherManagerId.
 	 * Returns true if it works, else false.
@@ -354,7 +331,7 @@ public interface IFeatureTests {
 	 * Returns true if it works, else false.
 	 */
 	public  void testListerEmployes2  ( )   ;
-	
+
 	/**
 	 * Test SupprimerEmploye.
 	 * Returns true if it works, else false.
@@ -384,7 +361,7 @@ public interface IFeatureTests {
 	public void testRechercherEmploye ( )   ;
 
 
-	
+
 	/**
 	 * Test RechercherEmploye.
 	 * Returns true if it works, else false.
@@ -405,7 +382,7 @@ public interface IFeatureTests {
 	 * Returns true if it works, else false.
 	 */
 	public  void testListerUtilisateurs2  ( )   ;
-	
+
 	/**
 	 * Test SupprimerUtilisateur.
 	 * Returns true if it works, else false.
@@ -435,7 +412,7 @@ public interface IFeatureTests {
 	public void testRechercherUtilisateur ( )   ;
 
 
-	
+
 	/**
 	 * Test RechercherUtilisateurId.
 	 * Returns true if it works, else false.
@@ -456,7 +433,7 @@ public interface IFeatureTests {
 	 * Returns true if it works, else false.
 	 */
 	public  void testListerProduits2  ( )   ;
-	
+
 	/**
 	 * Test SupprimerProduit.
 	 * Returns true if it works, else false.
@@ -486,7 +463,7 @@ public interface IFeatureTests {
 	public void testRechercherProduit ( )   ;
 
 
-	
+
 	/**
 	 * Test RechercherProduitId.
 	 * Returns true if it works, else false.
@@ -495,7 +472,7 @@ public interface IFeatureTests {
 	 */
 	public void testRechercherProduitId ( )   ;	
 
-	
+
 
 
 
@@ -565,8 +542,8 @@ public interface IFeatureTests {
 	public void testLoadDepartementsObservableList ()  ;
 
 
-	
-	 
+
+
 	/**
 	 * Test loadDemandesByServiceObservableList.
 	 * Returns true if it works, else false.
@@ -576,7 +553,7 @@ public interface IFeatureTests {
 
 
 
-	 
+
 	/**
 
 	 * Test LoadDemandesByDirectionObservableList.
@@ -592,20 +569,20 @@ public interface IFeatureTests {
 	 * Returns true if it works, else false.
 	 */
 	public  void testValiderIdentifiants()  ;
-	
+
 	/**
 	 * Test repondreDemande.
 	 * Returns true if it works, else false. 
 	 */
 	public void testRepondreDemande()  ; 
-	
-	
+
+
 	/**
 	 * Test associerService.
 	 * Returns true if it works, else false.
 	 */
 	public void testAssocierService()  ;
-	
-	
-	
+
+
+
 }

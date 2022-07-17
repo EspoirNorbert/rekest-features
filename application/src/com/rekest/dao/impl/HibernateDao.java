@@ -23,8 +23,9 @@ public class HibernateDao implements IDao{
 	private static Session session = null;
 	private static Transaction transaction = null;
 	private static HibernateDao daoInstance = null;
+	
 
-	private HibernateDao() {}
+	protected HibernateDao() {}
 
 	public static HibernateDao getCurrentInstance () {
 		if (daoInstance == null) daoInstance = new HibernateDao();
@@ -39,6 +40,8 @@ public class HibernateDao implements IDao{
 			logger.info("Begin transaction.");// begin transaction
 			session.persist(entity);
 			transaction.commit();
+			
+		
 			logger.info("Record is Successully created");  //  end transaction
 		} catch (Exception e) {
 			throw new DAOException("ERROR:" + e.getClass() + ":" + e.getMessage());
@@ -195,6 +198,39 @@ public class HibernateDao implements IDao{
 
 	public static void closeSession() {
 		HibernateSession.close();		
+	}
+
+	@Override
+	public Object findUserByNumber(String whereClause) throws DAOException {
+		Object entity = null;
+		try {
+			session = HibernateSession.getSession();
+			@SuppressWarnings("deprecation")
+			Query<?> query = session.createQuery("From Employe where telephone = " +whereClause); 
+			entity = query.getSingleResult();
+			if (entity != null) logger.info("Record Successfully read.");
+			else logger.info("Record not found.");
+		} catch (Exception e) {
+			throw new DAOException("ERROR:" + e.getClass() + ":" + e.getMessage());
+		}
+		return entity;
+	}
+
+	@Override
+	public Object findProductByName(String whereClause) throws DAOException {
+		Object entity = null;
+		try {
+			session = HibernateSession.getSession();
+			@SuppressWarnings("deprecation")
+			Query<?> query = session.createQuery("From Produit where nom = :name");
+			query.setParameter("name", whereClause);
+			entity = query.getSingleResult();
+			if (entity != null) logger.info("Record Successfully read.");
+			else logger.info("Record not found.");
+		} catch (Exception e) {
+			throw new DAOException("ERROR:" + e.getClass() + ":" + e.getMessage());
+		}
+		return entity;
 	}
 
 }

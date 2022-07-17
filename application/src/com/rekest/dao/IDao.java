@@ -3,10 +3,13 @@ package com.rekest.dao;
 import java.util.List;
 
 import com.rekest.entities.Demande;
+import com.rekest.entities.Departement;
 import com.rekest.entities.Service;
 import com.rekest.entities.employes.Employe;
 import com.rekest.entities.employes.Utilisateur;
 import com.rekest.exeptions.DAOException;
+
+import javafx.collections.ObservableList;
 
 
 /**
@@ -30,14 +33,26 @@ public interface IDao {
 	 */
 	public void delete(Object entity) throws DAOException ;
 
-	/** Find entity by integer
-	 * @param entityClass
-	 * @param primaryKey
+
+	public Object find(Object entityClass, Integer primaryKey) throws DAOException ;
+	
+	/** Find user by email
+	 * @param users
+	 * @param whereClause
 	 * @return
 	 * @throws DAOException 
 	 * @ 
 	 */
-	public Object find(Object entityClass, Integer primaryKey) throws DAOException ;
+	public Object findUserByNumber(String whereClause) throws DAOException ;
+
+	/** Find entity by clause
+	 * @param entityClass
+	 * @param whereClause
+	 * @return
+	 * @throws DAOException 
+	 * @ 
+	 */
+	public Object findProductByName(String whereClause) throws DAOException ;
 	
 	/** Find entity by clause
 	 * @param entityClass
@@ -47,8 +62,7 @@ public interface IDao {
 	 * @ 
 	 */
 	public Object find(Class<?> entityClass, String whereClause) throws DAOException ;
-
-
+	
 	/** List entities
 	 * @param entityClass
 	 * @return
@@ -112,18 +126,20 @@ public interface IDao {
 	 */
 	public default void associateService(Employe employe, Service service) throws DAOException{};
 
-	/**
-	 * Refresh Observable list
-	*/
-	public default void refresh() {}
-
 
 	/**
-	 * Definir la reponse de la demande (rejeter , cloturée ...)
+	 * Definir la reponse de la demande (rejeter , cloturï¿½e ...)
 	 * @param demande
 	 * @param reponse
 	 * @throws Exception
 	 */
 	public void requestResponse(Demande demande, String reponse) throws DAOException;
 	
+	/**
+	 * @return
+	 * @throws DAOException
+	 */
+	public default ObservableList<Departement> departementlistObservable() throws DAOException {
+		return null;
+	}
 }
