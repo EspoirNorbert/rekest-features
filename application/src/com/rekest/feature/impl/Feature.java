@@ -30,6 +30,7 @@ import com.rekest.observableList.impl.ObservableListProduit;
 import com.rekest.observableList.impl.ObservableListRole;
 import com.rekest.observableList.impl.ObservableListService;
 import com.rekest.observableList.impl.ObservableListUtilisateur;
+import com.rekest.utils.ErrorLogFileManager;
 import com.rekest.utils.Utilitaire;
 
 import javafx.collections.ObservableList;
@@ -70,6 +71,16 @@ public class Feature implements IFeature {
 	
 	private Faker faker = new Faker();
 
+	
+	private static void AlertError (Exception e,String context) {
+	
+		Utilitaire.alert(AlertType.ERROR, null,
+				"Error", e.getClass() +
+				"Error while "+context,
+				e.getMessage());
+		e.printStackTrace();
+	
+	}
 
 	@Override
 	public void initDepartement() {
@@ -209,11 +220,8 @@ public class Feature implements IFeature {
 				}
 			}
 		} catch (DAOException e) {
-			Utilitaire.alert(AlertType.ERROR, null,
-					"Error", e.getClass() +
-					"Error while get departements",
-					e.getMessage());
-			e.printStackTrace();
+			AlertError(e,"get departements");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return departements;
 	}
@@ -231,11 +239,8 @@ public class Feature implements IFeature {
 				}
 			}
 		} catch (DAOException e) {
-			Utilitaire.alert(AlertType.ERROR, null,
-					"Error", e.getClass() +
-					"Error while get departements",
-					e.getMessage());
-			e.printStackTrace();
+			AlertError(e,"get departements");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 
 		return objs;
@@ -248,11 +253,8 @@ public class Feature implements IFeature {
 			loadDepartementsObservableList();
 			return true;
 		} catch (DAOException e) {
-			Utilitaire.alert(AlertType.ERROR, null,
-					"Error", e.getClass() +
-					"Error while delete an",
-					e.getMessage());
-			e.printStackTrace();
+			AlertError(e,"delete departement");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -266,11 +268,8 @@ public class Feature implements IFeature {
 			loadDepartementsObservableList();
 			return true;
 		} catch (DAOException e) {
-			Utilitaire.alert(AlertType.ERROR, null,
-					"Error", e.getClass() +
-					"Error while edit department",
-					e.getMessage());
-			e.printStackTrace();
+			AlertError(e,"update departement");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 	}
@@ -283,8 +282,8 @@ public class Feature implements IFeature {
 			loadDepartementsObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"create departement");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -298,8 +297,8 @@ public class Feature implements IFeature {
 		try {
 			return (Departement) dao.find (  Departement.class, whereClause);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find departement");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
@@ -309,8 +308,8 @@ public class Feature implements IFeature {
 		try {
 			return (Departement) dao.find ( new Departement ( ) , primaryKey);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find departement");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
@@ -325,8 +324,8 @@ public class Feature implements IFeature {
 			loadUtilisateursObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"enabling user");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 	}
@@ -339,8 +338,8 @@ public class Feature implements IFeature {
 			loadUtilisateursObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"desabling user");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 	}
@@ -367,8 +366,8 @@ public class Feature implements IFeature {
 				}
 			}
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"get users");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return objs;
 	}
@@ -386,10 +385,9 @@ public class Feature implements IFeature {
 				}
 			}
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"get users");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
-
 
 
 		return objs;
@@ -402,8 +400,8 @@ public class Feature implements IFeature {
 			loadUtilisateursObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"delete user");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -417,8 +415,8 @@ public class Feature implements IFeature {
 			loadUtilisateursObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"update user");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 	}
@@ -431,8 +429,8 @@ public class Feature implements IFeature {
 			loadUtilisateursObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"create user");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -447,8 +445,8 @@ public class Feature implements IFeature {
 		try {
 			return (Utilisateur) dao.find (  Utilisateur.class, whereClause);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find user");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
@@ -458,8 +456,8 @@ public class Feature implements IFeature {
 		try {
 			return (Utilisateur) dao.find ( new Utilisateur ( ) , primaryKey);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find user");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
@@ -478,8 +476,8 @@ public class Feature implements IFeature {
 				}
 			}
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"get roles");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return objs;
 	}
@@ -497,12 +495,9 @@ public class Feature implements IFeature {
 				}
 			}
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"get roles");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
-
-
-
 		return objs;
 	}
 
@@ -513,8 +508,8 @@ public class Feature implements IFeature {
 			loadRoleObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"delete role");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -528,8 +523,8 @@ public class Feature implements IFeature {
 			loadRoleObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"update role");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 	}
@@ -542,8 +537,8 @@ public class Feature implements IFeature {
 			loadRoleObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"create role");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -558,8 +553,8 @@ public class Feature implements IFeature {
 		try {
 			return (Role) dao.find (  Role.class, whereClause);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find role");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
@@ -569,8 +564,8 @@ public class Feature implements IFeature {
 		try {
 			return (Role) dao.find ( new Role ( ) , primaryKey);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find role");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
@@ -589,8 +584,8 @@ public class Feature implements IFeature {
 				}
 			}
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"get managers");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return objs;
 	}
@@ -608,8 +603,8 @@ public class Feature implements IFeature {
 				}
 			}
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"get managers");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return objs;
 	}
@@ -621,8 +616,8 @@ public class Feature implements IFeature {
 			loadManagerObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"delete manager");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -636,8 +631,8 @@ public class Feature implements IFeature {
 			loadManagerObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"update manager");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 	}
@@ -650,8 +645,8 @@ public class Feature implements IFeature {
 			loadManagerObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"create manager");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -666,8 +661,8 @@ public class Feature implements IFeature {
 		try {
 			return (Manager) dao.find (  Manager.class, whereClause);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find manager");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
@@ -677,8 +672,8 @@ public class Feature implements IFeature {
 		try {
 			return (Manager) dao.find ( new Manager ( ) , primaryKey);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find manager");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
@@ -697,8 +692,8 @@ public class Feature implements IFeature {
 				}
 			}
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"get employes");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return objs;
 	}
@@ -716,8 +711,8 @@ public class Feature implements IFeature {
 				}
 			}
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"get employes");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 
 
@@ -732,9 +727,8 @@ public class Feature implements IFeature {
 			loadEmployesObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			System.err.println("BLEM EMPLOYE");
-			e.printStackTrace();
+			AlertError(e,"delete employe");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -748,8 +742,8 @@ public class Feature implements IFeature {
 			loadEmployesObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"update employe");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 	}
@@ -762,8 +756,8 @@ public class Feature implements IFeature {
 			loadEmployesObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"create employe");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -778,8 +772,8 @@ public class Feature implements IFeature {
 		try {
 			return (Employe) dao.find (  Employe.class, whereClause);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find employe");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
@@ -789,8 +783,8 @@ public class Feature implements IFeature {
 		try {
 			return (Employe) dao.find ( new Employe ( ) , primaryKey);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find employe");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
@@ -809,8 +803,8 @@ public class Feature implements IFeature {
 				}
 			}
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"get services");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return objs;
 	}
@@ -829,8 +823,8 @@ public class Feature implements IFeature {
 			}
 
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"get services");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 
 
@@ -845,8 +839,8 @@ public class Feature implements IFeature {
 			loadServicesObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"delete service");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -860,8 +854,8 @@ public class Feature implements IFeature {
 			loadServicesObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"update service");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 	}
@@ -874,8 +868,8 @@ public class Feature implements IFeature {
 			loadServicesObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"create service");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -890,8 +884,8 @@ public class Feature implements IFeature {
 		try {
 			return (Service) dao.find (  Service.class, whereClause);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find service");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
@@ -901,8 +895,8 @@ public class Feature implements IFeature {
 		try {
 			return (Service) dao.find ( new Service ( ) , primaryKey);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find service");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
@@ -921,8 +915,8 @@ public class Feature implements IFeature {
 				}
 			}
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"get produits");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return objs;
 	}
@@ -940,8 +934,8 @@ public class Feature implements IFeature {
 				}
 			}
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"get produits");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 
 
@@ -956,8 +950,8 @@ public class Feature implements IFeature {
 			loadProduitsObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"delete produit");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -971,8 +965,8 @@ public class Feature implements IFeature {
 			loadProduitsObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"update produit");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 	}
@@ -985,8 +979,8 @@ public class Feature implements IFeature {
 			loadProduitsObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"cretae produit");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -1001,8 +995,8 @@ public class Feature implements IFeature {
 		try {
 			return (Produit) dao.find (  Produit.class, whereClause);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find produit");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
@@ -1012,31 +1006,28 @@ public class Feature implements IFeature {
 		try {
 			return (Produit) dao.find ( new Produit ( ) , primaryKey);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find produit");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
 
 	@Override
 	public List<Note> listerNotes ()    {
-		Note truc = new Note();
+		
 		List<Note> objs = new ArrayList<> ();
 		List<Object> objects;
 		try {
-			objects = dao.list ( truc);
+			objects = dao.list ( new Note());
 			for  (Object obj : objects) {
 				if  (obj instanceof Note) {
 					objs.add (  (Note) obj);
 				}
 			}
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"get notes");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
-
-
-
 		return objs;
 	}
 
@@ -1053,8 +1044,8 @@ public class Feature implements IFeature {
 				}
 			}
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"get notes");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return objs;
 
@@ -1068,8 +1059,8 @@ public class Feature implements IFeature {
 			loadNoteObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"delete note");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -1084,8 +1075,8 @@ public class Feature implements IFeature {
 			loadNoteObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"update note");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -1099,8 +1090,8 @@ public class Feature implements IFeature {
 			loadNoteObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"create note");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -1112,21 +1103,19 @@ public class Feature implements IFeature {
 		try {
 			return   (Note) dao.find ( Note.class, whereClause);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find note");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
 
 	@Override
 	public Note rechercherNote (Integer primaryKey)   {
-
-
 		try {
 			return   (Note) dao.find ( new Note(), primaryKey);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find note");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
@@ -1145,8 +1134,8 @@ public class Feature implements IFeature {
 				}
 			}
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"get demandes");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 
 
@@ -1167,8 +1156,8 @@ public class Feature implements IFeature {
 				}
 			}
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"get demandes");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 
 		return objs;
@@ -1183,8 +1172,8 @@ public class Feature implements IFeature {
 			loadDemandesObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"delete demande");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 
@@ -1198,8 +1187,8 @@ public class Feature implements IFeature {
 			loadDemandesObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"update demande");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 	}
@@ -1211,8 +1200,8 @@ public class Feature implements IFeature {
 			loadDemandesObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"create demande");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}	
 	}
@@ -1222,8 +1211,8 @@ public class Feature implements IFeature {
 		try {
 			return   (Demande) dao.find ( Demande.class, whereClause);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find demande");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
@@ -1234,8 +1223,8 @@ public class Feature implements IFeature {
 		try {
 			return   (Demande) dao.find ( new Demande(), primaryKey);
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"find demande");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return null;
 	}
@@ -1277,7 +1266,8 @@ public class Feature implements IFeature {
 			observableListRole.clear();
 			observableListRole.addAll(  dao.list ( new Role() ));
 		} catch (DAOException e) {
-			e.printStackTrace();
+			AlertError(e,"loading roles");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return observableListRole.getData();
 	}
@@ -1289,8 +1279,8 @@ public class Feature implements IFeature {
 			observableListProduit.clear();
 			observableListProduit.addAll(  dao.list ( new Produit() ));
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"loading produits");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return observableListProduit.getData();
 
@@ -1303,8 +1293,8 @@ public class Feature implements IFeature {
 			observableListService.clear();
 			observableListService.addAll(  dao.list ( new Service() ));
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"loading services");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return observableListService.getData();
 	}
@@ -1317,8 +1307,8 @@ public class Feature implements IFeature {
 			observableListDepartement.clear();
 			observableListDepartement.addAll(  dao.list ( new Departement() ));
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"loading departement");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return observableListDepartement.getData();
 	}
@@ -1330,8 +1320,8 @@ public class Feature implements IFeature {
 			observableListDemande.clear();
 			observableListDemande.addAll(  dao.list ( new Demande() ));
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"loading demandes");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return observableListDemande.getData();
 	}
@@ -1343,8 +1333,8 @@ public class Feature implements IFeature {
 			observableListEmploye.clear();
 			observableListEmploye.addAll(  dao.list ( new Employe() ));
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"loading employes");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 
 		return observableListEmploye.getData();
@@ -1372,8 +1362,8 @@ public class Feature implements IFeature {
 			observableListManager.clear();
 			observableListManager.addAll(  dao.list ( new Manager() ));
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"loading manages");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 
 		return observableListManager.getData();
@@ -1386,8 +1376,8 @@ public class Feature implements IFeature {
 			observableListNote.clear();
 			observableListNote.addAll(  dao.list ( new Note() ));
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"loading notes");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 
 		return observableListNote.getData();
@@ -1400,8 +1390,8 @@ public class Feature implements IFeature {
 			observableListUtilisateur.clear();
 			observableListUtilisateur.addAll(  dao.list ( new Utilisateur() ));
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"loading utilisateurs");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 
 		return observableListUtilisateur.getData();
@@ -1412,8 +1402,8 @@ public class Feature implements IFeature {
 			dao.requestResponse (demande, reponse);
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"requesting demande");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}	
 	}
@@ -1427,8 +1417,8 @@ public class Feature implements IFeature {
 			obj = HibernateDao.getCurrentInstance().validateCredential( login,  password);
 
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"validating credentials");
+			ErrorLogFileManager.appendError(e.getMessage());
 		}
 		return obj;
 	}
@@ -1441,8 +1431,8 @@ public class Feature implements IFeature {
 			loadEmployesObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			AlertError(e,"associating service");
+			ErrorLogFileManager.appendError(e.getMessage());
 			return false;
 		}
 

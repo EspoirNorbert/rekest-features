@@ -13,6 +13,7 @@ import com.rekest.entities.employes.Employe;
 import com.rekest.entities.employes.Manager;
 import com.rekest.entities.employes.Utilisateur;
 import com.rekest.feature.impl.Feature;
+import com.rekest.utils.ErrorLogFileManager;
 
 
 
@@ -33,7 +34,8 @@ public class Main {
 		  try {
 			
 			  
-			  testProduit(feat);
+			  
+			  ErrorLogFileManager.appendError("ça marche ");
 
 			
 		} catch (Exception e) {
