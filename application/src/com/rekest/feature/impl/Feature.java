@@ -3,6 +3,8 @@ package com.rekest.feature.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.github.javafaker.Faker;
+import com.rekest.dao.IDao;
 import com.rekest.dao.impl.HibernateDao;
 import com.rekest.entities.Demande;
 import com.rekest.entities.Departement;
@@ -10,6 +12,10 @@ import com.rekest.entities.Note;
 import com.rekest.entities.Produit;
 import com.rekest.entities.Role;
 import com.rekest.entities.Service;
+import com.rekest.entities.employes.Administrateur;
+import com.rekest.entities.employes.ChefService;
+import com.rekest.entities.employes.Directeur;
+import com.rekest.entities.employes.DirecteurGeneral;
 import com.rekest.entities.employes.Employe;
 import com.rekest.entities.employes.Manager;
 import com.rekest.entities.employes.Utilisateur;
@@ -24,97 +30,246 @@ import com.rekest.observableList.impl.ObservableListProduit;
 import com.rekest.observableList.impl.ObservableListRole;
 import com.rekest.observableList.impl.ObservableListService;
 import com.rekest.observableList.impl.ObservableListUtilisateur;
+import com.rekest.utils.Utilitaire;
 
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert.AlertType;
 
 public class Feature implements IFeature {
 
-	
 	private static Feature instance = null;
+	private static IDao dao = HibernateDao.getCurrentInstance();
 	
-	private Feature () {}
+	private ObservableListDepartement observableListDepartement;
+	private ObservableListEmploye observableListEmploye ;
+	private ObservableListProduit observableListProduit ;
+	private ObservableListService observableListService ;
+	private ObservableListRole observableListRole;
+	private ObservableListDemande observableListDemande ;
+	private ObservableListManager observableListManager ;
+	private ObservableListNote observableListNote ;
+	private ObservableListUtilisateur observableListUtilisateur;
+
+	
+	private Feature () {
+		observableListDepartement = new ObservableListDepartement();
+		observableListEmploye = new ObservableListEmploye();
+		observableListProduit = new ObservableListProduit();
+		observableListService = new ObservableListService();
+		observableListRole = new ObservableListRole();
+		observableListDemande = new ObservableListDemande();
+		observableListManager = new ObservableListManager();
+		observableListNote = new ObservableListNote();
+		observableListUtilisateur = new ObservableListUtilisateur();
+	}
 
 	public static Feature getCurrentInstance () {
 		if (instance == null) instance = new Feature ();
 		return instance;
 	}
 	
-	public ObservableListDepartement OLDepartement = new ObservableListDepartement();
-	public ObservableListEmploye OLEmploye = new ObservableListEmploye();
-	public ObservableListProduit OLProduit = new ObservableListProduit();
-	public ObservableListService OLService = new ObservableListService();
-	public ObservableListRole OLRole = new ObservableListRole();
-	public ObservableListDemande OLDemande = new ObservableListDemande();
-	public ObservableListManager OLManager = new ObservableListManager();
-	public ObservableListNote OLNote = new ObservableListNote();
-	public ObservableListUtilisateur OLUtilisateur = new ObservableListUtilisateur();
+	private Faker faker = new Faker();
+
+
+	@Override
+	public void initDepartement() {
+		try {
+			for (int i = 0; i <= 10; i++) {
+				Departement department = 
+						new Departement(faker.commerce().department());
+				dao.save(department);
+			}
+		} catch (DAOException e) {
+			System.err.println(e.getMessage());
+		}
+	}
+
+	@Override
+	public void initEmploye() {
+		try {
+			for (int i = 0; i <= 10; i++) {
+				Employe employe = new Employe(
+						faker.name().lastName(),
+						faker.name().firstName(),
+						faker.phoneNumber().cellPhone(), faker.internet().emailAddress(), faker.address().fullAddress());
+				dao.save(employe);
+			}
+		} catch (DAOException e) {
+			System.err.println(e.getMessage());
+		}
+	}
+
+	@Override
+	public void initAdmin() {
+		try {
+			dao.save(createDefaultAdmin());
+			for (int i = 0; i <= 3; i++) {
+				Administrateur admin = new Administrateur(
+						 faker.name().lastName(),
+						 faker.name().firstName(),
+						faker.phoneNumber().cellPhone(), faker.internet().emailAddress(), faker.address().fullAddress());
+
+				dao.save(admin);
+			}
+		} catch (DAOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public void initManagers() {
+		try {
+			// List<Manager> managers = new ArrayList<>();
+			for (int i = 0; i <= 10; i++) {
+				ChefService chefService = new ChefService(faker.name().firstName(), faker.name().lastName(),
+						faker.phoneNumber().cellPhone(), faker.internet().emailAddress(), faker.address().fullAddress());
+				Utilitaire.generateLoginAndPassword(chefService);
+				dao.save(chefService);
+				Directeur directeur = new Directeur(faker.name().firstName(), faker.name().lastName(),
+						faker.phoneNumber().cellPhone(), faker.internet().emailAddress(), faker.address().fullAddress());
+				Utilitaire.generateLoginAndPassword(directeur);
+				dao.save(directeur);
+				DirecteurGeneral directeurGeneral = new DirecteurGeneral(faker.name().firstName(),
+						faker.name().lastName(), faker.phoneNumber().cellPhone(), faker.internet().emailAddress(),
+						faker.address().fullAddress());
+				Utilitaire.generateLoginAndPassword(directeurGeneral);
+				dao.save(directeur);
+			}
+		} catch (DAOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public Administrateur createDefaultAdmin() {
+		Administrateur admin =  new Administrateur("Administrator", "System", "+221771234500", "rekest.app@rekest.sn",
+				"Terrain foyer Rocade Fann Bel Air, BP 10 000 Dakar Liberté – SENEGAL");
+		admin.setLogin("admin");
+		admin.setPassword("admin");
+		return admin;
+	}
+
+	@Override
+	public void initAllEntity() {
+		this.initAdmin();
+		this.initEmploye();
+		this.initManagers();
+		this.initDepartement();
+	}
+	
+	
+	public ObservableListDemande getObservableListDemande() {
+		return observableListDemande;
+	}
+	
+	public ObservableListDepartement getObservableListDepartement() {
+		return observableListDepartement;
+	}
+	
+	public ObservableListEmploye getObservableListEmploye() {
+		return observableListEmploye;
+	}
+	
+	public ObservableListManager getObservableListManager() {
+		return observableListManager;
+	}
+	
+	public ObservableListNote getObservableListNote() {
+		return observableListNote;
+	}
+	
+	public ObservableListProduit getObservableListProduit() {
+		return observableListProduit;
+	}
+	
+	public ObservableListRole getObservableListRole() {
+		return observableListRole;
+	}
+	
+	public ObservableListService getObservableListService() {
+		return observableListService;
+	}
+	
+	public ObservableListUtilisateur getObservableListUtilisateur() {
+		return observableListUtilisateur;
+	}
 
 
 	@Override
 	public List<Departement> listerDepartements ()   {
 
-		List<Object> objects;
-		List<Departement> objs = new ArrayList<> ();
+		List<Object> objects =  null;
+		List<Departement> departements = new ArrayList<> ();
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( new Departement());
-			
+			objects = dao.list ( new Departement());
+
 			for (Object obj : objects) {
 				if (obj instanceof Departement) {
-					objs.add ( (Departement) obj);
+					departements.add ( (Departement) obj);
 				}
 			}
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
+			Utilitaire.alert(AlertType.ERROR, null,
+					"Error", e.getClass() +
+					"Error while get departements",
+					e.getMessage());
 			e.printStackTrace();
 		}
-		return objs;
+		return departements;
 	}
 
 	@Override
 	public List<Departement> listerDepartements (String whereClause)  {
-		
+
 		List<Object> objects;
 		List<Departement> objs = new ArrayList<> ();
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( Departement.class, whereClause);
+			objects = dao.list ( Departement.class, whereClause);
 			for (Object obj : objects) {
 				if (obj instanceof Departement) {
 					objs.add ( (Departement) obj);
 				}
 			}
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
+			Utilitaire.alert(AlertType.ERROR, null,
+					"Error", e.getClass() +
+					"Error while get departements",
+					e.getMessage());
 			e.printStackTrace();
 		}
-		
 
-		
 		return objs;
 	}
 
 	@Override
 	public boolean supprimerDepartement (Departement departement)   {
-		 try {
-			HibernateDao.getCurrentInstance ().delete ( departement);
+		try {
+			dao.delete ( departement);
 			loadDepartementsObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
+			Utilitaire.alert(AlertType.ERROR, null,
+					"Error", e.getClass() +
+					"Error while delete an",
+					e.getMessage());
 			e.printStackTrace();
 			return false;
 		}
-		
+
 	}
 
 	@Override
 	public boolean modifierDepartement (Departement departement)   {
 
 		try {
-			HibernateDao.getCurrentInstance ().update ( departement);
+			dao.update ( departement);
 			loadDepartementsObservableList();
 			return true;
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
+			Utilitaire.alert(AlertType.ERROR, null,
+					"Error", e.getClass() +
+					"Error while edit department",
+					e.getMessage());
 			e.printStackTrace();
 			return false;
 		}
@@ -122,9 +277,9 @@ public class Feature implements IFeature {
 
 	@Override
 	public boolean creerDepartement (Departement departement)   {
-	
+
 		try {
-			HibernateDao.getCurrentInstance ().save ( departement);
+			dao.save ( departement);
 			loadDepartementsObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -133,16 +288,15 @@ public class Feature implements IFeature {
 			return false;
 		}
 
-		
 	}
 
 
-	
+
 	@Override
 	public Departement rechercherDepartement (String whereClause)   {
-		
+
 		try {
-			return (Departement) HibernateDao.getCurrentInstance ().find (  Departement.class, whereClause);
+			return (Departement) dao.find (  Departement.class, whereClause);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -153,7 +307,7 @@ public class Feature implements IFeature {
 	@Override
 	public Departement rechercherDepartement (Integer primaryKey)  {
 		try {
-			return (Departement) HibernateDao.getCurrentInstance ().find ( new Departement ( ) , primaryKey);
+			return (Departement) dao.find ( new Departement ( ) , primaryKey);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -165,9 +319,9 @@ public class Feature implements IFeature {
 
 	@Override
 	public boolean activerUtilisateur (Utilisateur utilisateur)   {
-		
+
 		try {
-			HibernateDao.getCurrentInstance ().enableAccount (utilisateur);
+			dao.enableAccount (utilisateur);
 			loadUtilisateursObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -179,9 +333,9 @@ public class Feature implements IFeature {
 
 	@Override
 	public boolean desactiverUtilisateur (Utilisateur utilisateur)   {
-		
+
 		try {
-			HibernateDao.getCurrentInstance ().disableAccount (utilisateur);
+			dao.disableAccount (utilisateur);
 			loadUtilisateursObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -195,9 +349,9 @@ public class Feature implements IFeature {
 	@Override
 	public boolean rafraichirUtilisateur (Utilisateur utilisateur) {
 		// TODO Auto-generated method stub
-		return HibernateDao.getCurrentInstance ().;
+		return dao.;
 	}
-	*/
+	 */
 
 	@Override
 	public List<Utilisateur> listerUtilisateurs ()   {
@@ -205,8 +359,8 @@ public class Feature implements IFeature {
 		List<Object> objects;
 		List<Utilisateur> objs = new ArrayList<> ();
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( new Utilisateur());
-			
+			objects = dao.list ( new Utilisateur());
+
 			for (Object obj : objects) {
 				if (obj instanceof Utilisateur) {
 					objs.add ( (Utilisateur) obj);
@@ -221,11 +375,11 @@ public class Feature implements IFeature {
 
 	@Override
 	public List<Utilisateur> listerUtilisateurs (String whereClause)  {
-		
+
 		List<Object> objects;
 		List<Utilisateur> objs = new ArrayList<> ();
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( Utilisateur.class, whereClause);
+			objects = dao.list ( Utilisateur.class, whereClause);
 			for (Object obj : objects) {
 				if (obj instanceof Utilisateur) {
 					objs.add ( (Utilisateur) obj);
@@ -235,16 +389,16 @@ public class Feature implements IFeature {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
-		
+
+
 		return objs;
 	}
 
 	@Override
 	public boolean supprimerUtilisateur (Utilisateur utilisateur)   {
-		 try {
-			HibernateDao.getCurrentInstance ().delete ( utilisateur);
+		try {
+			dao.delete ( utilisateur);
 			loadUtilisateursObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -252,14 +406,14 @@ public class Feature implements IFeature {
 			e.printStackTrace();
 			return false;
 		}
-		
+
 	}
 
 	@Override
 	public boolean modifierUtilisateur (Utilisateur utilisateur)   {
 
 		try {
-			HibernateDao.getCurrentInstance ().update ( utilisateur);
+			dao.update ( utilisateur);
 			loadUtilisateursObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -271,9 +425,9 @@ public class Feature implements IFeature {
 
 	@Override
 	public boolean creerUtilisateur (Utilisateur utilisateur)   {
-	
+
 		try {
-			HibernateDao.getCurrentInstance ().save ( utilisateur);
+			dao.save ( utilisateur);
 			loadUtilisateursObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -282,16 +436,16 @@ public class Feature implements IFeature {
 			return false;
 		}
 
-		
+
 	}
 
 
-	
+
 	@Override
 	public Utilisateur rechercherUtilisateur (String whereClause)   {
-		
+
 		try {
-			return (Utilisateur) HibernateDao.getCurrentInstance ().find (  Utilisateur.class, whereClause);
+			return (Utilisateur) dao.find (  Utilisateur.class, whereClause);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -302,7 +456,7 @@ public class Feature implements IFeature {
 	@Override
 	public Utilisateur rechercherUtilisateur (Integer primaryKey)  {
 		try {
-			return (Utilisateur) HibernateDao.getCurrentInstance ().find ( new Utilisateur ( ) , primaryKey);
+			return (Utilisateur) dao.find ( new Utilisateur ( ) , primaryKey);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -316,8 +470,8 @@ public class Feature implements IFeature {
 		List<Object> objects;
 		List<Role> objs = new ArrayList<> ();
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( new Role());
-			
+			objects = dao.list ( new Role());
+
 			for (Object obj : objects) {
 				if (obj instanceof Role) {
 					objs.add ( (Role) obj);
@@ -332,11 +486,11 @@ public class Feature implements IFeature {
 
 	@Override
 	public List<Role> listerRoles (String whereClause)  {
-		
+
 		List<Object> objects;
 		List<Role> objs = new ArrayList<> ();
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( Role.class, whereClause);
+			objects = dao.list ( Role.class, whereClause);
 			for (Object obj : objects) {
 				if (obj instanceof Role) {
 					objs.add ( (Role) obj);
@@ -346,16 +500,16 @@ public class Feature implements IFeature {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
-		
+
+
 		return objs;
 	}
 
 	@Override
 	public boolean supprimerRole (Role role)   {
-		 try {
-			HibernateDao.getCurrentInstance ().delete ( role);
+		try {
+			dao.delete ( role);
 			loadRoleObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -363,14 +517,14 @@ public class Feature implements IFeature {
 			e.printStackTrace();
 			return false;
 		}
-		
+
 	}
 
 	@Override
 	public boolean modifierRole (Role role)   {
 
 		try {
-			HibernateDao.getCurrentInstance ().update ( role);
+			dao.update ( role);
 			loadRoleObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -382,9 +536,9 @@ public class Feature implements IFeature {
 
 	@Override
 	public boolean creerRole (Role role)   {
-	
+
 		try {
-			HibernateDao.getCurrentInstance ().save ( role);
+			dao.save ( role);
 			loadRoleObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -393,16 +547,16 @@ public class Feature implements IFeature {
 			return false;
 		}
 
-		
+
 	}
 
 
-	
+
 	@Override
 	public Role rechercherRole (String whereClause)   {
-		
+
 		try {
-			return (Role) HibernateDao.getCurrentInstance ().find (  Role.class, whereClause);
+			return (Role) dao.find (  Role.class, whereClause);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -413,7 +567,7 @@ public class Feature implements IFeature {
 	@Override
 	public Role rechercherRole (Integer primaryKey)  {
 		try {
-			return (Role) HibernateDao.getCurrentInstance ().find ( new Role ( ) , primaryKey);
+			return (Role) dao.find ( new Role ( ) , primaryKey);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -427,8 +581,8 @@ public class Feature implements IFeature {
 		List<Object> objects;
 		List<Manager> objs = new ArrayList<> ();
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( new Manager());
-			
+			objects = dao.list ( new Manager());
+
 			for (Object obj : objects) {
 				if (obj instanceof Manager) {
 					objs.add ( (Manager) obj);
@@ -443,11 +597,11 @@ public class Feature implements IFeature {
 
 	@Override
 	public List<Manager> listerManagers (String whereClause)  {
-		
+
 		List<Object> objects;
 		List<Manager> objs = new ArrayList<> ();
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( Manager.class, whereClause);
+			objects = dao.list ( Manager.class, whereClause);
 			for (Object obj : objects) {
 				if (obj instanceof Manager) {
 					objs.add ( (Manager) obj);
@@ -462,8 +616,8 @@ public class Feature implements IFeature {
 
 	@Override
 	public boolean supprimerManager (Manager manager)   {
-		 try {
-			HibernateDao.getCurrentInstance ().delete ( manager);
+		try {
+			dao.delete ( manager);
 			loadManagerObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -471,14 +625,14 @@ public class Feature implements IFeature {
 			e.printStackTrace();
 			return false;
 		}
-		
+
 	}
 
 	@Override
 	public boolean modifierManager (Manager manager)   {
 
 		try {
-			HibernateDao.getCurrentInstance ().update ( manager);
+			dao.update ( manager);
 			loadManagerObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -490,9 +644,9 @@ public class Feature implements IFeature {
 
 	@Override
 	public boolean creerManager (Manager manager)   {
-	
+
 		try {
-			HibernateDao.getCurrentInstance ().save ( manager);
+			dao.save ( manager);
 			loadManagerObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -501,16 +655,16 @@ public class Feature implements IFeature {
 			return false;
 		}
 
-		
+
 	}
 
 
-	
+
 	@Override
 	public Manager rechercherManager (String whereClause)   {
-		
+
 		try {
-			return (Manager) HibernateDao.getCurrentInstance ().find (  Manager.class, whereClause);
+			return (Manager) dao.find (  Manager.class, whereClause);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -521,7 +675,7 @@ public class Feature implements IFeature {
 	@Override
 	public Manager rechercherManager (Integer primaryKey)  {
 		try {
-			return (Manager) HibernateDao.getCurrentInstance ().find ( new Manager ( ) , primaryKey);
+			return (Manager) dao.find ( new Manager ( ) , primaryKey);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -535,8 +689,8 @@ public class Feature implements IFeature {
 		List<Object> objects;
 		List<Employe> objs = new ArrayList<> ();
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( new Employe());
-			
+			objects = dao.list ( new Employe());
+
 			for (Object obj : objects) {
 				if (obj instanceof Employe) {
 					objs.add ( (Employe) obj);
@@ -551,11 +705,11 @@ public class Feature implements IFeature {
 
 	@Override
 	public List<Employe> listerEmployes (String whereClause)  {
-		
+
 		List<Object> objects;
 		List<Employe> objs = new ArrayList<> ();
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( Employe.class, whereClause);
+			objects = dao.list ( Employe.class, whereClause);
 			for (Object obj : objects) {
 				if (obj instanceof Employe) {
 					objs.add ( (Employe) obj);
@@ -565,16 +719,16 @@ public class Feature implements IFeature {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
-		
+
+
 		return objs;
 	}
 
 	@Override
 	public boolean supprimerEmploye (Employe employe)   {
-		 try {
-			HibernateDao.getCurrentInstance ().delete ( employe);
+		try {
+			dao.delete ( employe);
 			loadEmployesObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -583,14 +737,14 @@ public class Feature implements IFeature {
 			e.printStackTrace();
 			return false;
 		}
-		
+
 	}
 
 	@Override
 	public boolean modifierEmploye (Employe employe)   {
 
 		try {
-			HibernateDao.getCurrentInstance ().update ( employe);
+			dao.update ( employe);
 			loadEmployesObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -602,9 +756,9 @@ public class Feature implements IFeature {
 
 	@Override
 	public boolean creerEmploye (Employe employe)   {
-	
+
 		try {
-			HibernateDao.getCurrentInstance ().save ( employe);
+			dao.save ( employe);
 			loadEmployesObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -613,16 +767,16 @@ public class Feature implements IFeature {
 			return false;
 		}
 
-		
+
 	}
 
 
-	
+
 	@Override
 	public Employe rechercherEmploye (String whereClause)   {
-		
+
 		try {
-			return (Employe) HibernateDao.getCurrentInstance ().find (  Employe.class, whereClause);
+			return (Employe) dao.find (  Employe.class, whereClause);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -633,7 +787,7 @@ public class Feature implements IFeature {
 	@Override
 	public Employe rechercherEmploye (Integer primaryKey)  {
 		try {
-			return (Employe) HibernateDao.getCurrentInstance ().find ( new Employe ( ) , primaryKey);
+			return (Employe) dao.find ( new Employe ( ) , primaryKey);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -647,8 +801,8 @@ public class Feature implements IFeature {
 		List<Object> objects;
 		List<Service> objs = new ArrayList<> ();
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( new Service());
-			
+			objects = dao.list ( new Service());
+
 			for (Object obj : objects) {
 				if (obj instanceof Service) {
 					objs.add ( (Service) obj);
@@ -663,31 +817,31 @@ public class Feature implements IFeature {
 
 	@Override
 	public List<Service> listerServices (String whereClause)  {
-		
+
 		List<Object> objects;
 		List<Service> objs = new ArrayList<> ();
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( Service.class, whereClause);
+			objects = dao.list ( Service.class, whereClause);
 			for (Object obj : objects) {
 				if (obj instanceof Service) {
 					objs.add ( (Service) obj);
 				}
 			}
-			
+
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
-		
+
+
 		return objs;
 	}
 
 	@Override
 	public boolean supprimerService (Service service)   {
-		 try {
-			HibernateDao.getCurrentInstance ().delete ( service);
+		try {
+			dao.delete ( service);
 			loadServicesObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -695,14 +849,14 @@ public class Feature implements IFeature {
 			e.printStackTrace();
 			return false;
 		}
-		
+
 	}
 
 	@Override
 	public boolean modifierService (Service service)   {
 
 		try {
-			HibernateDao.getCurrentInstance ().update ( service);
+			dao.update ( service);
 			loadServicesObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -714,9 +868,9 @@ public class Feature implements IFeature {
 
 	@Override
 	public boolean creerService (Service service)   {
-	
+
 		try {
-			HibernateDao.getCurrentInstance ().save ( service);
+			dao.save ( service);
 			loadServicesObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -725,16 +879,16 @@ public class Feature implements IFeature {
 			return false;
 		}
 
-		
+
 	}
 
 
-	
+
 	@Override
 	public Service rechercherService (String whereClause)   {
-		
+
 		try {
-			return (Service) HibernateDao.getCurrentInstance ().find (  Service.class, whereClause);
+			return (Service) dao.find (  Service.class, whereClause);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -745,7 +899,7 @@ public class Feature implements IFeature {
 	@Override
 	public Service rechercherService (Integer primaryKey)  {
 		try {
-			return (Service) HibernateDao.getCurrentInstance ().find ( new Service ( ) , primaryKey);
+			return (Service) dao.find ( new Service ( ) , primaryKey);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -759,8 +913,8 @@ public class Feature implements IFeature {
 		List<Object> objects;
 		List<Produit> objs = new ArrayList<> ();
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( new Produit());
-			
+			objects = dao.list ( new Produit());
+
 			for (Object obj : objects) {
 				if (obj instanceof Produit) {
 					objs.add ( (Produit) obj);
@@ -775,11 +929,11 @@ public class Feature implements IFeature {
 
 	@Override
 	public List<Produit> listerProduits (String whereClause)  {
-		
+
 		List<Object> objects;
 		List<Produit> objs = new ArrayList<> ();
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( Produit.class, whereClause);
+			objects = dao.list ( Produit.class, whereClause);
 			for (Object obj : objects) {
 				if (obj instanceof Produit) {
 					objs.add ( (Produit) obj);
@@ -789,16 +943,16 @@ public class Feature implements IFeature {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
-		
+
+
 		return objs;
 	}
 
 	@Override
 	public boolean supprimerProduit (Produit produit)   {
-		 try {
-			HibernateDao.getCurrentInstance ().delete ( produit);
+		try {
+			dao.delete ( produit);
 			loadProduitsObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -806,14 +960,14 @@ public class Feature implements IFeature {
 			e.printStackTrace();
 			return false;
 		}
-		
+
 	}
 
 	@Override
 	public boolean modifierProduit (Produit produit)   {
 
 		try {
-			HibernateDao.getCurrentInstance ().update ( produit);
+			dao.update ( produit);
 			loadProduitsObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -825,9 +979,9 @@ public class Feature implements IFeature {
 
 	@Override
 	public boolean creerProduit (Produit produit)   {
-	
+
 		try {
-			HibernateDao.getCurrentInstance ().save ( produit);
+			dao.save ( produit);
 			loadProduitsObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -836,16 +990,16 @@ public class Feature implements IFeature {
 			return false;
 		}
 
-		
+
 	}
 
 
-	
+
 	@Override
 	public Produit rechercherProduit (String whereClause)   {
-		
+
 		try {
-			return (Produit) HibernateDao.getCurrentInstance ().find (  Produit.class, whereClause);
+			return (Produit) dao.find (  Produit.class, whereClause);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -856,21 +1010,21 @@ public class Feature implements IFeature {
 	@Override
 	public Produit rechercherProduit (Integer primaryKey)  {
 		try {
-			return (Produit) HibernateDao.getCurrentInstance ().find ( new Produit ( ) , primaryKey);
+			return (Produit) dao.find ( new Produit ( ) , primaryKey);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
+
 	@Override
 	public List<Note> listerNotes ()    {
 		Note truc = new Note();
 		List<Note> objs = new ArrayList<> ();
 		List<Object> objects;
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( truc);
+			objects = dao.list ( truc);
 			for  (Object obj : objects) {
 				if  (obj instanceof Note) {
 					objs.add (  (Note) obj);
@@ -880,9 +1034,9 @@ public class Feature implements IFeature {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
-		
+
+
 		return objs;
 	}
 
@@ -892,7 +1046,7 @@ public class Feature implements IFeature {
 		List<Object> objects;
 		List<Note> objs = new ArrayList<> ();
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( Note.class, whereClause);
+			objects = dao.list ( Note.class, whereClause);
 			for  (Object obj : objects) {
 				if  (obj instanceof Note) {
 					objs.add (  (Note) obj);
@@ -903,14 +1057,14 @@ public class Feature implements IFeature {
 			e.printStackTrace();
 		}
 		return objs;
-		
+
 	}
 
 	@Override
 	public boolean supprimerNote (Note note)   {
-		
+
 		try {
-			HibernateDao.getCurrentInstance ().delete ( note);
+			dao.delete ( note);
 			loadNoteObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -918,15 +1072,15 @@ public class Feature implements IFeature {
 			e.printStackTrace();
 			return false;
 		}
-		
-		
+
+
 	}
 
 	@Override
 	public boolean modifierNote (Note note)   {
-		
-		 try {
-			HibernateDao.getCurrentInstance ().update ( note);
+
+		try {
+			dao.update ( note);
 			loadNoteObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -934,14 +1088,14 @@ public class Feature implements IFeature {
 			e.printStackTrace();
 			return false;
 		}
-		
+
 	}
 
 	@Override
 	public boolean creerNote (Note note)   {
 
-		 try {
-			HibernateDao.getCurrentInstance ().save ( note); 
+		try {
+			dao.save ( note); 
 			loadNoteObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -949,14 +1103,14 @@ public class Feature implements IFeature {
 			e.printStackTrace();
 			return false;
 		}
-		
+
 	}
 
 	@Override
 	public Note rechercherNote (String whereClause)   {
-		
+
 		try {
-			return   (Note) HibernateDao.getCurrentInstance ().find ( Note.class, whereClause);
+			return   (Note) dao.find ( Note.class, whereClause);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -969,22 +1123,22 @@ public class Feature implements IFeature {
 
 
 		try {
-			return   (Note) HibernateDao.getCurrentInstance ().find ( new Note(), primaryKey);
+			return   (Note) dao.find ( new Note(), primaryKey);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
-	
+
+
 	@Override
 	public List<Demande> listerDemandes ()    {
-		
+
 		List<Demande> objs = new ArrayList<> ();
 		List<Object> objects;
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( new Demande());
+			objects = dao.list ( new Demande());
 			for  (Object obj : objects) {
 				if  (obj instanceof Demande) {
 					objs.add (  (Demande) obj);
@@ -995,7 +1149,7 @@ public class Feature implements IFeature {
 			e.printStackTrace();
 		}
 
-		
+
 		return objs;
 	}
 
@@ -1005,8 +1159,8 @@ public class Feature implements IFeature {
 		List<Object> objects;
 		List<Demande> objs = new ArrayList<> ();
 		try {
-			objects = HibernateDao.getCurrentInstance ().list ( Demande.class, whereClause);
-			
+			objects = dao.list ( Demande.class, whereClause);
+
 			for  (Object obj : objects) {
 				if  (obj instanceof Demande) {
 					objs.add (  (Demande) obj);
@@ -1016,16 +1170,16 @@ public class Feature implements IFeature {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return objs;
-		
+
 	}
 
 	@Override
 	public boolean supprimerDemande (Demande demande)   {
-		
+
 		try {
-			HibernateDao.getCurrentInstance ().delete ( demande);
+			dao.delete ( demande);
 			loadDemandesObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -1033,14 +1187,14 @@ public class Feature implements IFeature {
 			e.printStackTrace();
 			return false;
 		}
-		
+
 	}
 
 	@Override
 	public boolean modifierDemande (Demande demande)   {
-		
-		 try {
-			HibernateDao.getCurrentInstance ().update ( demande);
+
+		try {
+			dao.update ( demande);
 			loadDemandesObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -1052,8 +1206,8 @@ public class Feature implements IFeature {
 
 	@Override
 	public boolean creerDemande (Demande demande)   {
-		 try {
-			HibernateDao.getCurrentInstance ().save ( demande);
+		try {
+			dao.save ( demande);
 			loadDemandesObservableList();
 			return true;
 		} catch (DAOException e) {
@@ -1066,7 +1220,7 @@ public class Feature implements IFeature {
 	@Override
 	public Demande rechercherDemande (String whereClause)   {
 		try {
-			return   (Demande) HibernateDao.getCurrentInstance ().find ( Demande.class, whereClause);
+			return   (Demande) dao.find ( Demande.class, whereClause);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -1076,9 +1230,9 @@ public class Feature implements IFeature {
 
 	@Override
 	public Demande rechercherDemande (Integer primaryKey)   {
-		
+
 		try {
-			return   (Demande) HibernateDao.getCurrentInstance ().find ( new Demande(), primaryKey);
+			return   (Demande) dao.find ( new Demande(), primaryKey);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -1090,7 +1244,7 @@ public class Feature implements IFeature {
 	public String getTheDaoImplementationClassname () {
 		return null;
 	}
-	
+
 
 	@Override
 	public Integer RetournerNombreDemandesTotal () {
@@ -1116,88 +1270,84 @@ public class Feature implements IFeature {
 	public Integer RetournerNombreProduitsTotal () {
 		return listerProduits().size();
 	}
-	
+
 	@Override
 	public ObservableList<Role> loadRoleObservableList()   {
-
-	
 		try {
-			OLRole.clear();
-			OLRole.addAll(  HibernateDao.getCurrentInstance ().list ( new Role() ));
+			observableListRole.clear();
+			observableListRole.addAll(  dao.list ( new Role() ));
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return OLRole.getData();
-		
+		return observableListRole.getData();
 	}
 
 	@Override
 	public ObservableList<Produit> loadProduitsObservableList()   {
 
 		try {
-			OLProduit.clear();
-			OLProduit.addAll(  HibernateDao.getCurrentInstance ().list ( new Produit() ));
+			observableListProduit.clear();
+			observableListProduit.addAll(  dao.list ( new Produit() ));
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return OLProduit.getData();
-		
+		return observableListProduit.getData();
+
 	}
 
 	@Override
 	public ObservableList<Service> loadServicesObservableList()   {
 
 		try {
-			OLService.clear();
-			OLService.addAll(  HibernateDao.getCurrentInstance ().list ( new Service() ));
+			observableListService.clear();
+			observableListService.addAll(  dao.list ( new Service() ));
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return OLService.getData();
+		return observableListService.getData();
 	}
 
 	@Override
 	public ObservableList<Departement> loadDepartementsObservableList()   {
-		
-		
+
+
 		try {
-			OLDepartement.clear();
-			OLDepartement.addAll(  HibernateDao.getCurrentInstance ().list ( new Departement() ));
+			observableListDepartement.clear();
+			observableListDepartement.addAll(  dao.list ( new Departement() ));
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return OLDepartement.getData();
+		return observableListDepartement.getData();
 	}
 
 	@Override
 	public ObservableList<Demande> loadDemandesObservableList ()  {
-		
+
 		try {
-			OLDemande.clear();
-			OLDemande.addAll(  HibernateDao.getCurrentInstance ().list ( new Demande() ));
+			observableListDemande.clear();
+			observableListDemande.addAll(  dao.list ( new Demande() ));
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return OLDemande.getData();
+		return observableListDemande.getData();
 	}
 
 	@Override
 	public ObservableList<Employe> loadEmployesObservableList ()  {
-		
+
 		try {
-			OLEmploye.clear();
-			OLEmploye.addAll(  HibernateDao.getCurrentInstance ().list ( new Employe() ));
+			observableListEmploye.clear();
+			observableListEmploye.addAll(  dao.list ( new Employe() ));
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		return OLEmploye.getData();
+
+		return observableListEmploye.getData();
 	}
 
 
@@ -1217,49 +1367,49 @@ public class Feature implements IFeature {
 
 	@Override
 	public ObservableList<Manager> loadManagerObservableList() {
-		
+
 		try {
-			OLManager.clear();
-			OLManager.addAll(  HibernateDao.getCurrentInstance ().list ( new Manager() ));
+			observableListManager.clear();
+			observableListManager.addAll(  dao.list ( new Manager() ));
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		return OLManager.getData();
+
+		return observableListManager.getData();
 	}
 
 	@Override
 	public ObservableList<Note> loadNoteObservableList() {
-		
+
 		try {
-			OLNote.clear();
-			OLNote.addAll(  HibernateDao.getCurrentInstance ().list ( new Note() ));
+			observableListNote.clear();
+			observableListNote.addAll(  dao.list ( new Note() ));
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		return OLNote.getData();
+
+		return observableListNote.getData();
 	}
-	
+
 	@Override
 	public ObservableList<Utilisateur> loadUtilisateursObservableList() {
-		
+
 		try {
-			OLUtilisateur.clear();
-			OLUtilisateur.addAll(  HibernateDao.getCurrentInstance ().list ( new Utilisateur() ));
+			observableListUtilisateur.clear();
+			observableListUtilisateur.addAll(  dao.list ( new Utilisateur() ));
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		return OLUtilisateur.getData();
+
+		return observableListUtilisateur.getData();
 	}
 	@Override
 	public boolean repondreDemande (Demande demande, String reponse)    {
 		try {
-			HibernateDao.getCurrentInstance ().requestResponse (demande, reponse);
+			dao.requestResponse (demande, reponse);
 			return true;
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
@@ -1270,12 +1420,12 @@ public class Feature implements IFeature {
 
 	@Override
 	public Object validerIdentifiants(String login, String password)   {
-		
+
 		Object obj = new Object();
-		
+
 		try {
 			obj = HibernateDao.getCurrentInstance().validateCredential( login,  password);
-			
+
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -1285,7 +1435,7 @@ public class Feature implements IFeature {
 
 	@Override
 	public boolean associerService(Employe employe, Service service)   {
-		
+
 		try {
 			HibernateDao.getCurrentInstance().associateService( employe, service) ;
 			loadEmployesObservableList();
@@ -1295,57 +1445,50 @@ public class Feature implements IFeature {
 			e.printStackTrace();
 			return false;
 		}
-		
+
 	}
 
-
-
-
-
-
-/*
- * 
- * 
- * 
- * 
+	/*
+	 * 
+	 * 
+	 * 
+	 * 
 	@Override
 	public boolean setDemandeList (List<Demande> demandes) {
 		clearDemandeList ();
 		getCurrentDemandeObservableList ().addAll (demandes);    
 	}
-	
+
 		@Override
 	public boolean setProduitList (List<Produit> produits) {
 		clearProduitList ();
 		getCurrentProduitObservableList ().addAll (produits);    
 	}
-	
+
 		@Override
 	public boolean setEmployeList (List<Employe> employes) {
 		clearEmployeList ();
 		getCurrentEmployeObservableList ().addAll (employes);    
 	}
-	
+
 		@Override
 	public boolean setServiceList (List<Service> services) {
 		clearServiceList ();
 		getCurrentServiceObservableList ().addAll (services);    
 	}
-		
+
 		@Override
 	public boolean setServiceList (List<Service> services) {
 		clearServiceList ();
 		getCurrentServiceObservableList ().addAll (services);    
 	}
-		
+
 		@Override
 	public boolean setServiceList (List<Service> services) {
 		clearServiceList ();
 		getCurrentServiceObservableList ().addAll (services);    
 	}
-	
-	
- */
-	
+	 */
+
 
 }

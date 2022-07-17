@@ -881,7 +881,7 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testLoadDemandesObservableList() {
 		feat.creerDemande( new Demande());
-		assertEquals(feat.OLDemande.getData(), feat.listerDemandes());
+		assertEquals(feat.getObservableListDemande().getData(), feat.listerDemandes());
 		
 		feat.supprimerDemande(feat.listerDemandes().get(0));
 	}
@@ -891,7 +891,7 @@ public class FeatureTest implements IFeatureTests {
 	public void testLoadEmployesObservableList() {
 		
 		feat.creerEmploye( new Employe());
-		assertEquals(feat.OLEmploye.getData(), feat.listerEmployes());
+		assertEquals(feat.getObservableListEmploye().getData(), feat.listerEmployes());
 		
 		feat.supprimerEmploye(feat.listerEmployes().get(0));
 	}
@@ -901,7 +901,7 @@ public class FeatureTest implements IFeatureTests {
 	public void testLoadRolesObservableList() {
 		
 		feat.creerRole( new Role());
-		assertEquals(feat.OLRole.getData(), feat.listerRoles());
+		assertEquals(feat.getObservableListRole().getData(), feat.listerRoles());
 		
 		feat.supprimerRole(feat.listerRoles().get(0));
 	}
@@ -911,7 +911,7 @@ public class FeatureTest implements IFeatureTests {
 	public void testLoadServicesObservableList() {
 		
 		feat.creerService( new Service());
-		assertEquals(feat.OLService.getData(), feat.listerServices());
+		assertEquals(feat.getObservableListService().getData(), feat.listerServices());
 		
 		feat.supprimerService(feat.listerServices().get(0));
 	}
@@ -920,7 +920,7 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testLoadDepartementsObservableList() {
 		feat.creerDepartement( new Departement());
-		assertEquals(feat.OLDepartement.getData(), feat.listerDepartements());
+		assertEquals(feat.getObservableListDepartement().getData(), feat.listerDepartements());
 		
 		feat.supprimerDepartement(feat.listerDepartements().get(0));
 		
@@ -929,7 +929,7 @@ public class FeatureTest implements IFeatureTests {
 	@Override
 	public void testLoadUtilisateursObservableList() {
 		feat.creerUtilisateur( new Utilisateur());
-		assertEquals(feat.OLUtilisateur.getData(), feat.listerUtilisateurs());
+		assertEquals(feat.getObservableListUtilisateur().getData(), feat.listerUtilisateurs());
 		
 		feat.supprimerUtilisateur(feat.listerUtilisateurs().get(0));
 		
@@ -939,7 +939,7 @@ public class FeatureTest implements IFeatureTests {
 	@Override
 	public void testLoadManagersObservableList() {
 		feat.creerManager( new Manager());
-		assertEquals(feat.OLManager.getData(), feat.listerManagers());
+		assertEquals(feat.getObservableListManager().getData(), feat.listerManagers());
 		
 		feat.supprimerManager(feat.listerManagers().get(0));
 		
@@ -949,7 +949,7 @@ public class FeatureTest implements IFeatureTests {
 	@Override
 	public void testLoadNotesObservableList() {
 		feat.creerNote( new Note());
-		assertEquals(feat.OLNote.getData(), feat.listerNotes());
+		assertEquals(feat.getObservableListNote().getData(), feat.listerNotes());
 		
 		feat.supprimerNote(feat.listerNotes().get(0));
 		

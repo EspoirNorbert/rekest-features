@@ -2,26 +2,27 @@ package com.rekest.feature;
 
 import java.util.List;
 
-
 import com.rekest.entities.Demande;
 import com.rekest.entities.Departement;
 import com.rekest.entities.Note;
 import com.rekest.entities.Produit;
 import com.rekest.entities.Role;
 import com.rekest.entities.Service;
+import com.rekest.entities.employes.Administrateur;
 import com.rekest.entities.employes.Employe;
 import com.rekest.entities.employes.Manager;
 import com.rekest.entities.employes.Utilisateur;
-import com.rekest.exeptions.DAOException;
 
 import javafx.collections.ObservableList;
-import javafx.stage.Stage;
 
+/**
+ * 
+ * @author Pape Omar Sylla
+ *
+ */
 public interface IFeature {
 
 	
-
-
 	/**
 	 * Returns a list of all 'services'.
 	 * 
@@ -82,9 +83,6 @@ public interface IFeature {
 	 */
 	public Service rechercherService( Integer primaryKey)   ;	
 	
-	
-	
-
 
 	/**
 	 * Returns a list of all 'departements'.
@@ -554,7 +552,6 @@ public interface IFeature {
 
 	public List<Demande> listerDemandes ( String whereClause)    ;
 
-
 	
 	/**
 	 * Delete the 'Demande' set in parameter. 
@@ -811,7 +808,6 @@ public interface IFeature {
 	public ObservableList<Demande> loadDemandesByServiceObservableList (Service service)  ;
 
 
-	 
 	/**
 	 * Todo
 	 * Returns a Observable list of the stored 'Demandes' by direction.
@@ -853,5 +849,19 @@ public interface IFeature {
 	 * @ 
 	 */
 	public boolean associerService(Employe employe, Service service)  ;
+	
+	/**
+	 * Others methodes
+	 */
+	default void refresh() {};
+	default void initDepartement() {}
+	default void initEmploye() {}
+	default void initService() {}
+	default void initRole() {}
+	default void initProduit() {}
+	default void initAdmin() {}
+	default  void initManagers() {}
+	default Administrateur createDefaultAdmin() {return null;}
+	default void initAllEntity() {}
 	
 }

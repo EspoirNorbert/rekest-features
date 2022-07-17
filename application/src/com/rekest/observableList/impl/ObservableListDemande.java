@@ -32,7 +32,7 @@ public class ObservableListDemande implements IObservableList<Demande> {
 	public void update(Demande entity) {
 		 int index = roleData.lastIndexOf(entity);
 	        if (index >= 0) {
-	            Demande.copy(roleData.get(index), entity);            
+	            //Demande.copy(roleData.get(index), entity);            
 	        }
 	}
 

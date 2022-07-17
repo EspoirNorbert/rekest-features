@@ -16,15 +16,12 @@ public class Note {
 	
 	private String message;
 	
+	public Note() {}
+	
 	public Note(String message) {
 		this.message = message;
 	}
 
-
-	public Note() {
-		
-	}
-	
 	public int getId() {
 		return id;
 	}

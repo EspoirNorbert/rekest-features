@@ -29,20 +29,14 @@ public class Service {
 	@JoinColumn(name="id_service")
 	private List<Employe> employes = new ArrayList<>();
 
-	public List<Employe> getEmployes() {
-		return employes;
-	}
-
 	@OneToOne(targetEntity=ChefService.class)
 	@JoinColumn(name = "id_chefservice")
 	private ChefService chefService;
+	
+	public Service() {}
 
 	public Service(String nom) {
 		this.nom = nom;
-	}
-
-	public Service() {
-		
 	}
 
 	public int getId() {
@@ -75,5 +69,9 @@ public class Service {
 
 	public static void copy(Service service, Service entity) {
 		
+	}
+
+	public List<Employe> getEmployes() {
+		return employes;
 	}
 }

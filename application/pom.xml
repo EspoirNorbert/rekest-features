@@ -29,6 +29,13 @@
 		<version>1.18.24</version>
 		<scope>provided</scope>
 	</dependency>
+		<!-- FAKER -->
+		<!-- https://mavenlibs.com/maven/dependency/com.github.javafaker/javafaker -->
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>1.0.2</version>
+		</dependency>
 	<!-- Fontawesome -->
 	<dependency>
 	    <groupId>de.jensd</groupId>

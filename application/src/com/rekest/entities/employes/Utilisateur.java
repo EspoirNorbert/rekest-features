@@ -1,7 +1,7 @@
 package com.rekest.entities.employes;
 
-import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.rekest.entities.Demande;
@@ -48,8 +48,12 @@ public class Utilisateur extends Employe {
 	
 	public Utilisateur(String nom, String prenom) {
 		super(nom, prenom);
-		this.createdAt = (Date) new Date(new java.util.Date().getTime());
+		this.createdAt = new java.util.Date();
 		Utilitaire.generateLoginAndPassword(this);
+	}
+	
+	public Utilisateur() {
+		super();
 	}
 
 	public Utilisateur(String nom, String prenom, String telephone, String email, String adresse) {
@@ -57,18 +61,15 @@ public class Utilisateur extends Employe {
 		this.telephone = telephone;
 		this.email = email;
 		this.adresse = adresse;
+		this.createdAt = new java.util.Date();
 		Utilitaire.generateLoginAndPassword(this);
-	}
-	
-	public Utilisateur()
-	{
-		super();
 	}
 	
 	public Utilisateur(String nom, String prenom, String login, String password) {
 		super(nom, prenom);
 		this.login = login;
 		this.password = password;
+		this.createdAt = new java.util.Date();
 	}
 
 	public String getLogin() {

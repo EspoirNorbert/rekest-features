@@ -19,13 +19,10 @@ public class Produit {
 	private String type;
 	private String description;
 	
+	public Produit() {}
+	
 	public Produit(String nom) {
 		this.nom = nom;
-	}
-	
-
-	public Produit() {
-		
 	}
 	
 	public Produit(String nom ,double prix, int quantite , String type , String description) {
