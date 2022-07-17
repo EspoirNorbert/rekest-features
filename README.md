@@ -1,1 +1,3 @@
-Commande ECHO activ‚e.
+# Rekest - Features
+
+Module de gestion des fonctionnalités de l'application ***REKEST*** 
