@@ -1,11 +1,10 @@
 package com.rekest.test.impl;
-<<<<<<< HEAD
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-=======
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
->>>>>>> d688d9767f5640942c65ab40cb4f5d4fcd722d85
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
+
+
 
 import java.util.ArrayList;
 import java.util.List;

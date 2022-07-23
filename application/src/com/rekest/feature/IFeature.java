@@ -1021,16 +1021,6 @@ public Service rechercherNotification( Integer primaryKey)   ;
 	 */
 	public ObservableList<Departement> loadDepartementsObservableList ()  ;
 	
-	
-	/**
-	 * Returns a Observable list of the stored 'Notifications'
-	 * 
-	 * @return
-	 * @ 
-	 */
-	public ObservableList<Notification> loadNotificationObservableList ()  ;
-
-
 
 
 	
