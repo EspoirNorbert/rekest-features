@@ -12,10 +12,12 @@ import com.rekest.exeptions.DAOException;
 import javafx.collections.ObservableList;
 
 
-
-
 /**
  * @author Illiassou
+ *
+ */
+/**
+ * @author illiassou
  *
  */
 public interface IDao {
@@ -120,14 +122,16 @@ public interface IDao {
 	 */
 	public default void disableAccount(Utilisateur entity) throws DAOException{};
 
-	/**
-	 * Associate an employe to a service
-	 * @param employe
-	 * @param service
-	 * @throws DAOException
-	 */
+	
+	
 	public default void associateService(Employe employe, Service service) throws DAOException{};
 
+	/**
+	 * @param employe
+	 * @param departement
+	 * @throws DAOException
+	 */
+	public default void associateDepartement(Service service, Departement departement) throws DAOException{};
 
 	/**
 	 * Definir la reponse de la demande (rejeter , clotur�e ...)

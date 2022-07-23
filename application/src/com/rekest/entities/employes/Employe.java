@@ -116,6 +116,11 @@ public class Employe {
 		demandes_soumises.add(demande);
 	}
 	
+	public int getChefdeServiceId()
+	{
+		return 0;
+	}
+	
 	public static void copy(Employe employe, Employe entity) {}
 	
 }

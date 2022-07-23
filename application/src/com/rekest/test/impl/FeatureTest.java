@@ -1,11 +1,11 @@
 package com.rekest.test.impl;
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.rekest.entities.Demande;
 import com.rekest.entities.Departement;
@@ -29,15 +29,15 @@ public class FeatureTest implements IFeatureTests {
 	public void testActiverDesactiverUtilisateur() {
 		Utilisateur user  =  new Utilisateur("testu","testu");
 		
-		feat.creerUtilisateur(user);
-		feat.desactiverUtilisateur(user);
+		feat.createUtilisateur(user);
+		feat.enableUtilisateur(user);
 		
 		assertEquals(user.isEnable(), false);	
-		feat.activerUtilisateur(user);
+		feat.disableUtilisateur(user);
 		
 		assertEquals(user.isEnable(), true);
 		
-		feat.supprimerUtilisateur(user);
+		feat.deleteUtilisateur(user);
 		
 	}
 
@@ -46,13 +46,13 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testListerProduits() {
 		Produit obj  =  new Produit("testu");
-		feat.creerProduit(obj);
+		feat.createProduit(obj);
 		List<Produit> liste  = new ArrayList<Produit>();
 		
 		liste.add(obj);
-		assertEquals( feat.listerProduits(),liste );
+		assertEquals( feat.listProduits(),liste );
 		
-		feat.supprimerProduit(obj);
+		feat.deleteProduit(obj);
 		
 	}
 
@@ -61,13 +61,13 @@ public class FeatureTest implements IFeatureTests {
 	public void testListerProduits2() {
 		
 		Produit obj  =  new Produit("testu");
-		feat.creerProduit(obj);
+		feat.createProduit(obj);
 		List<Produit> liste  =  new ArrayList<Produit>();
 		
 		liste.add(obj);
-		assertEquals( feat.listerProduits("WHERE nom = 'testu' "),liste );
+		assertEquals( feat.listProduits("WHERE nom = 'testu' "),liste );
 		
-		feat.supprimerProduit(obj);
+		feat.deleteProduit(obj);
 		
 	}
 
@@ -76,11 +76,11 @@ public class FeatureTest implements IFeatureTests {
 	public void testSupprimerProduit() {
 		
 		Produit obj  =  new Produit("testu");
-		feat.creerProduit(obj);
+		feat.createProduit(obj);
 		
-		assertEquals( feat.rechercherProduit("WHERE nom = 'testu' "),obj );
-		feat.supprimerProduit(obj);
-		assertEquals( feat.rechercherProduit("WHERE nom = 'testu' "),null );
+		assertEquals( feat.findProduit("WHERE nom = 'testu' "),obj );
+		feat.deleteProduit(obj);
+		assertEquals( feat.findProduit("WHERE nom = 'testu' "),null );
 		
 		
 		
@@ -90,13 +90,13 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testModifierProduit() {
 		Produit obj  =  new Produit("testu");
-		feat.creerProduit(obj);
+		feat.createProduit(obj);
 		
 		obj.setNom("newname");
-		feat.modifierProduit(obj);
+		feat.updateProduit(obj);
 		
-		assertEquals( feat.rechercherProduit("WHERE nom = 'newname' "),obj );
-		feat.supprimerProduit(obj);
+		assertEquals( feat.findProduit("WHERE nom = 'newname' "),obj );
+		feat.deleteProduit(obj);
 		
 	}
 
@@ -104,33 +104,33 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testCreerProduit() {
 		Produit obj  =  new Produit("testu");
-		feat.creerProduit(obj);
+		feat.createProduit(obj);
 
 		
-		assertEquals( feat.rechercherProduit("WHERE nom = 'testu' "),obj );
-		feat.supprimerProduit(obj);
+		assertEquals( feat.findProduit("WHERE nom = 'testu' "),obj );
+		feat.deleteProduit(obj);
 	}
 
 	@Override
 	@Test
 	public void testRechercherProduit() {
 		Produit obj  =  new Produit("testu");
-		feat.creerProduit(obj);
+		feat.createProduit(obj);
 
 		
-		assertEquals( feat.rechercherProduit("WHERE nom = 'testu' "),obj );
-		feat.supprimerProduit(obj);
+		assertEquals( feat.findProduit("WHERE nom = 'testu' "),obj );
+		feat.deleteProduit(obj);
 	}
 
 	@Override
 	@Test
 	public void testRechercherProduitId() {
 		Produit obj  =  new Produit("testu");
-		feat.creerProduit(obj);
+		feat.createProduit(obj);
 
 		
-		assertEquals( feat.rechercherProduit(obj.getId()),obj );
-		feat.supprimerProduit(obj);
+		assertEquals( feat.findProduit(obj.getId()),obj );
+		feat.deleteProduit(obj);
 	}
 
 	@Override
@@ -138,13 +138,13 @@ public class FeatureTest implements IFeatureTests {
 	public void testListerDemandes() {
 		Demande obj  =  new Demande();
 		obj.setEtat("testu");
-		feat.creerDemande(obj);
+		feat.createDemande(obj);
 		List<Demande> liste  =  new ArrayList<Demande>();
 		
 		liste.add(obj);
-		assertEquals( feat.listerDemandes(),liste );
+		assertEquals( feat.listDemandes(),liste );
 		
-		feat.supprimerDemande(obj);
+		feat.deleteDemande(obj);
 		
 	}
 
@@ -154,13 +154,13 @@ public class FeatureTest implements IFeatureTests {
 		
 		Demande obj  =  new Demande();
 		obj.setEtat("testu");
-		feat.creerDemande(obj);
+		feat.createDemande(obj);
 		List<Demande> liste  =   new ArrayList<Demande>();
 		
 		liste.add(obj);
-		assertEquals( feat.listerDemandes("WHERE etat = 'testu' "),liste );
+		assertEquals( feat.listDemandes("WHERE etat = 'testu' "),liste );
 		
-		feat.supprimerDemande(obj);
+		feat.deleteDemande(obj);
 		
 	}
 
@@ -170,11 +170,11 @@ public class FeatureTest implements IFeatureTests {
 		
 		Demande obj  =  new Demande();
 		obj.setEtat("testu");
-		feat.creerDemande(obj);
+		feat.createDemande(obj);
 		
-		assertEquals( feat.rechercherDemande("WHERE etat = 'testu' "),obj );
-		feat.supprimerDemande(obj);
-		assertEquals( feat.rechercherDemande("WHERE etat = 'testu' "),null );
+		assertEquals( feat.findDemande("WHERE etat = 'testu' "),obj );
+		feat.deleteDemande(obj);
+		assertEquals( feat.findDemande("WHERE etat = 'testu' "),null );
 		
 		
 		
@@ -185,13 +185,13 @@ public class FeatureTest implements IFeatureTests {
 	public void testModifierDemande() {
 		Demande obj  =  new Demande();
 		obj.setEtat("testu");
-		feat.creerDemande(obj);
+		feat.createDemande(obj);
 		
 		obj.setEtat("newname");
-		feat.modifierDemande(obj);
+		feat.updateDemande(obj);
 		
-		assertEquals( feat.rechercherDemande("WHERE etat = 'newname' "),obj );
-		feat.supprimerDemande(obj);
+		assertEquals( feat.findDemande("WHERE etat = 'newname' "),obj );
+		feat.deleteDemande(obj);
 		
 	}
 
@@ -200,11 +200,11 @@ public class FeatureTest implements IFeatureTests {
 	public void testCreerDemande() {
 		Demande obj  =  new Demande();
 		obj.setEtat("testu");
-		feat.creerDemande(obj);
+		feat.createDemande(obj);
 
 		
-		assertEquals( feat.rechercherDemande(obj.getId()),obj );
-		feat.supprimerDemande(obj);
+		assertEquals( feat.findDemande(obj.getId()),obj );
+		feat.deleteDemande(obj);
 	}
 
 	@Override
@@ -212,11 +212,11 @@ public class FeatureTest implements IFeatureTests {
 	public void testRechercherDemande() {
 		Demande obj  =  new Demande();
 		obj.setEtat("testu");
-		feat.creerDemande(obj);
+		feat.createDemande(obj);
 
 		
-		assertEquals( feat.rechercherDemande("WHERE etat = 'testu' "),obj );
-		feat.supprimerDemande(obj);
+		assertEquals( feat.findDemande("WHERE etat = 'testu' "),obj );
+		feat.deleteDemande(obj);
 	}
 
 	@Override
@@ -224,24 +224,24 @@ public class FeatureTest implements IFeatureTests {
 	public void testRechercherDemandeId() {
 		Demande obj  =  new Demande();
 		obj.setEtat("testu");
-		feat.creerDemande(obj);
+		feat.createDemande(obj);
 
 		
-		assertEquals( feat.rechercherDemande(obj.getId()),obj );
-		feat.supprimerDemande(obj);
+		assertEquals( feat.findDemande(obj.getId()),obj );
+		feat.deleteDemande(obj);
 	}
 
 	@Override
 	@Test
 	public void testListerDepartements() {
 		Departement obj  =  new Departement("testu");
-		feat.creerDepartement(obj);
+		feat.createDepartement(obj);
 		List<Departement> liste  =   new ArrayList<Departement>(); 
 		
 		liste.add(obj);
-		assertEquals( feat.listerDepartements(),liste );
+		assertEquals( feat.listDepartements(),liste );
 		
-		feat.supprimerDepartement(obj);
+		feat.deleteDepartement(obj);
 		
 	}
 
@@ -250,13 +250,13 @@ public class FeatureTest implements IFeatureTests {
 	public void testListerDepartements2() {
 		
 		Departement obj  =  new Departement("testu");
-		feat.creerDepartement(obj);
+		feat.createDepartement(obj);
 		List<Departement> liste  =   new ArrayList<Departement>();  
 		
 		liste.add(obj);
-		assertEquals( feat.listerDepartements("WHERE nom = 'testu' "),liste );
+		assertEquals( feat.listDepartements("WHERE nom = 'testu' "),liste );
 		
-		feat.supprimerDepartement(obj);
+		feat.deleteDepartement(obj);
 		
 	}
 
@@ -265,11 +265,13 @@ public class FeatureTest implements IFeatureTests {
 	public void testSupprimerDepartement() {
 		
 		Departement obj  =  new Departement("testu");
-		feat.creerDepartement(obj);
+		feat.createDepartement(obj);
+	
 		
-		assertEquals( feat.rechercherDepartement("WHERE nom = 'testu' "),obj );
-		feat.supprimerDepartement(obj);
-		assertEquals( feat.rechercherDepartement("WHERE nom = 'testu' "),null );
+
+		assertEquals( feat.findDepartement("WHERE nom = 'testu' "),obj );
+		feat.deleteDepartement(obj);
+		assertEquals( feat.findDepartement("WHERE nom = 'testu' "),null );
 		
 		
 		
@@ -279,13 +281,13 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testModifierDepartement() {
 		Departement obj  =  new Departement("testu");
-		feat.creerDepartement(obj);
+		feat.createDepartement(obj);
 		
 		obj.setNom("newname");
-		feat.modifierDepartement(obj);
+		feat.updateDepartement(obj);
 		
-		assertEquals( feat.rechercherDepartement("WHERE nom = 'newname' "),obj );
-		feat.supprimerDepartement(obj);
+		assertEquals( feat.findDepartement("WHERE nom = 'newname' "),obj );
+		feat.deleteDepartement(obj);
 		
 	}
 
@@ -293,46 +295,46 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testCreerDepartement() {
 		Departement obj  =  new Departement("testu");
-		feat.creerDepartement(obj);
+		feat.createDepartement(obj);
 
 		
-		assertEquals( feat.rechercherDepartement("WHERE nom = 'testu' "),obj );
-		feat.supprimerDepartement(obj);
+		assertEquals( feat.findDepartement("WHERE nom = 'testu' "),obj );
+		feat.deleteDepartement(obj);
 	}
 
 	@Override
 	@Test
 	public void testRechercherDepartement() {
 		Departement obj  =  new Departement("testu");
-		feat.creerDepartement(obj);
+		feat.createDepartement(obj);
 
 		
-		assertEquals( feat.rechercherDepartement("WHERE nom = 'testu' "),obj );
-		feat.supprimerDepartement(obj);
+		assertEquals( feat.findDepartement("WHERE nom = 'testu' "),obj );
+		feat.deleteDepartement(obj);
 	}
 
 	@Override
 	@Test
 	public void testRechercherDepartementId() {
 		Departement obj  =  new Departement("testu");
-		feat.creerDepartement(obj);
+		feat.createDepartement(obj);
 
 		
-		assertEquals( feat.rechercherDepartement(obj.getId()),obj );
-		feat.supprimerDepartement(obj);
+		assertEquals( feat.findDepartement(obj.getId()),obj );
+		feat.deleteDepartement(obj);
 	}
 
 	@Override
 	@Test
 	public void testListerManagers() {
 		Manager obj  =  new Manager("testu","testu","testu","testu");
-		feat.creerManager(obj);
+		feat.createManager(obj);
 		List<Manager> liste  =   new ArrayList<Manager>();  
 		
 		liste.add(obj);
-		assertEquals( feat.listerManagers(),liste );
+		assertEquals( feat.listManagers(),liste );
 		
-		feat.supprimerManager(obj);
+		feat.deleteManager(obj);
 		
 	}
 
@@ -341,13 +343,13 @@ public class FeatureTest implements IFeatureTests {
 	public void testListerManagers2() {
 		
 		Manager obj  =  new Manager("testu","testu","testu","testu");
-		feat.creerManager(obj);
+		feat.createManager(obj);
 		List<Manager> liste  =  new ArrayList<Manager>();  
 		
 		liste.add(obj);
-		assertEquals( feat.listerManagers("WHERE nom = 'testu' "),liste );
+		assertEquals( feat.listManagers("WHERE nom = 'testu' "),liste );
 		
-		feat.supprimerManager(obj);
+		feat.deleteManager(obj);
 		
 	}
 
@@ -356,11 +358,11 @@ public class FeatureTest implements IFeatureTests {
 	public void testSupprimerManager() {
 		
 		Manager obj  =  new Manager("testu","testu","testu","testu");
-		feat.creerManager(obj);
+		feat.createManager(obj);
 		
-		assertEquals( feat.rechercherManager("WHERE nom = 'testu' "),obj );
-		feat.supprimerManager(obj);
-		assertEquals( feat.rechercherManager("WHERE nom = 'testu' "),null );
+		assertEquals( feat.findManager("WHERE nom = 'testu' "),obj );
+		feat.deleteManager(obj);
+		assertEquals( feat.findManager("WHERE nom = 'testu' "),null );
 		
 		
 		
@@ -370,13 +372,13 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testModifierManager() {
 		Manager obj  =  new Manager("testu","testu","testu","testu");
-		feat.creerManager(obj);
+		feat.createManager(obj);
 		
 		obj.setNom("newname");
-		feat.modifierManager(obj);
+		feat.updateManager(obj);
 		
-		assertEquals( feat.rechercherManager("WHERE nom = 'newname' "),obj );
-		feat.supprimerManager(obj);
+		assertEquals( feat.findManager("WHERE nom = 'newname' "),obj );
+		feat.deleteManager(obj);
 		
 	}
 
@@ -384,46 +386,46 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testCreerManager() {
 		Manager obj  =  new Manager("testu","testu","testu","testu");
-		feat.creerManager(obj);
+		feat.createManager(obj);
 
 		
-		assertEquals( feat.rechercherManager("WHERE nom = 'testu' "),obj );
-		feat.supprimerManager(obj);
+		assertEquals( feat.findManager("WHERE nom = 'testu' "),obj );
+		feat.deleteManager(obj);
 	}
 
 	@Override
 	@Test
 	public void testRechercherManager() {
 		Manager obj  =  new Manager("testu","testu","testu","testu");
-		feat.creerManager(obj);
+		feat.createManager(obj);
 
 		
-		assertEquals( feat.rechercherManager("WHERE nom = 'testu' "),obj );
-		feat.supprimerManager(obj);
+		assertEquals( feat.findManager("WHERE nom = 'testu' "),obj );
+		feat.deleteManager(obj);
 	}
 
 	@Override
 	@Test
 	public void testRechercherManagerId() {
 		Manager obj  =  new Manager("testu","testu","testu","testu");
-		feat.creerManager(obj);
+		feat.createManager(obj);
 
 		
-		assertEquals( feat.rechercherManager(obj.getId()),obj );
-		feat.supprimerManager(obj);
+		assertEquals( feat.findManager(obj.getId()),obj );
+		feat.deleteManager(obj);
 	}
 
 	@Override
 	@Test
 	public void testListerServices() {
 		Service obj  =  new Service("testu");
-		feat.creerService(obj);
+		feat.createService(obj);
 		List<Service> liste  =  new ArrayList<Service>();  
 		
 		liste.add(obj);
-		assertEquals( feat.listerServices(),liste );
+		assertEquals( feat.listServices(),liste );
 		
-		feat.supprimerService(obj);
+		feat.deleteService(obj);
 		
 	}
 
@@ -432,13 +434,13 @@ public class FeatureTest implements IFeatureTests {
 	public void testListerServices2() {
 		
 		Service obj  =  new Service("testu");
-		feat.creerService(obj);
+		feat.createService(obj);
 		List<Service> liste  =  new ArrayList<Service>();   
 		
 		liste.add(obj);
-		assertEquals( feat.listerServices("WHERE nom = 'testu' "),liste );
+		assertEquals( feat.listServices("WHERE nom = 'testu' "),liste );
 		
-		feat.supprimerService(obj);
+		feat.deleteService(obj);
 		
 	}
 
@@ -447,11 +449,25 @@ public class FeatureTest implements IFeatureTests {
 	public void testSupprimerService() {
 		
 		Service obj  =  new Service("testu");
-		feat.creerService(obj);
+		feat.createService(obj);
 		
-		assertEquals( feat.rechercherService("WHERE nom = 'testu' "),obj );
-		feat.supprimerService(obj);
-		assertEquals( feat.rechercherService("WHERE nom = 'testu' "),null );
+		
+		Utilisateur user = new Utilisateur("nom","prenom");
+		feat.createUtilisateur(user);
+		feat.associateService(user, obj);
+		
+
+		assertEquals( feat.findService("WHERE nom = 'testu' "),obj );
+		feat.deleteService(obj);
+		
+		
+		
+		for (Employe emp : feat.getObservableListEmploye().getData()) {
+			System.out.println("L'employe pose blem"+emp);
+			assertFalse(true);
+		}
+		
+		assertEquals( feat.findService("WHERE nom = 'testu' "),null );
 		
 		
 		
@@ -461,13 +477,13 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testModifierService() {
 		Service obj  =  new Service("testu");
-		feat.creerService(obj);
+		feat.createService(obj);
 		
 		obj.setNom("newname");
-		feat.modifierService(obj);
+		feat.updateService(obj);
 		
-		assertEquals( feat.rechercherService("WHERE nom = 'newname' "),obj );
-		feat.supprimerService(obj);
+		assertEquals( feat.findService("WHERE nom = 'newname' "),obj );
+		feat.deleteService(obj);
 		
 		
 	}
@@ -476,46 +492,46 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testCreerService() {
 		Service obj  =  new Service("testu");
-		feat.creerService(obj);
+		feat.createService(obj);
 
 		
-		assertEquals( feat.rechercherService("WHERE nom = 'testu' "),obj );
-		feat.supprimerService(obj);
+		assertEquals( feat.findService("WHERE nom = 'testu' "),obj );
+		feat.deleteService(obj);
 	}
 
 	@Override
 	@Test
 	public void testRechercherService() {
 		Service obj  =  new Service("testu");
-		feat.creerService(obj);
+		feat.createService(obj);
 
 		
-		assertEquals( feat.rechercherService("WHERE nom = 'testu' "),obj );
-		feat.supprimerService(obj);
+		assertEquals( feat.findService("WHERE nom = 'testu' "),obj );
+		feat.deleteService(obj);
 	}
 
 	@Override
 	@Test
 	public void testRechercherServiceId() {
 		Service obj  =  new Service("testu");
-		feat.creerService(obj);
+		feat.createService(obj);
 
 		
-		assertEquals( feat.rechercherService(obj.getId()),obj );
-		feat.supprimerService(obj);
+		assertEquals( feat.findService(obj.getId()),obj );
+		feat.deleteService(obj);
 	}
 
 	@Override
 	@Test
 	public void testListerEmployes() {
 		Employe obj  =  new Employe("testu","testu");
-		feat.creerEmploye(obj);
+		feat.createEmploye(obj);
 		List<Employe> liste  = new ArrayList<Employe>();   ;
 		
 		liste.add(obj);
-		assertEquals( feat.listerEmployes(),liste );
+		assertEquals( feat.listEmployes(),liste );
 		
-		feat.supprimerEmploye(obj);
+		feat.deleteEmploye(obj);
 		
 	}
 
@@ -524,13 +540,13 @@ public class FeatureTest implements IFeatureTests {
 	public void testListerEmployes2() {
 		
 		Employe obj  =  new Employe("testu","testu");
-		feat.creerEmploye(obj);
+		feat.createEmploye(obj);
 		List<Employe> liste  =  new ArrayList<Employe>();   ;
 		
 		liste.add(obj);
-		assertEquals( feat.listerEmployes("WHERE nom = 'testu' "),liste );
+		assertEquals( feat.listEmployes("WHERE nom = 'testu' "),liste );
 		
-		feat.supprimerEmploye(obj);
+		feat.deleteEmploye(obj);
 		
 	}
 
@@ -539,11 +555,11 @@ public class FeatureTest implements IFeatureTests {
 	public void testSupprimerEmploye() {
 		
 		Employe obj  =  new Employe("testu","testu");
-		feat.creerEmploye(obj);
+		feat.createEmploye(obj);
 		
-		assertEquals( feat.rechercherEmploye("WHERE nom = 'testu' "),obj );
-		feat.supprimerEmploye(obj);
-		assertEquals( feat.rechercherEmploye("WHERE nom = 'testu' "),null );
+		assertEquals( feat.findEmploye("WHERE nom = 'testu' "),obj );
+		feat.deleteEmploye(obj);
+		assertEquals( feat.findEmploye("WHERE nom = 'testu' "),null );
 		
 		
 		
@@ -553,13 +569,13 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testModifierEmploye() {
 		Employe obj  =  new Employe("testu","testu");
-		feat.creerEmploye(obj);
+		feat.createEmploye(obj);
 		
 		obj.setNom("newname");
-		feat.modifierEmploye(obj);
+		feat.updateEmploye(obj);
 		
-		assertEquals( feat.rechercherEmploye("WHERE nom = 'newname' "),obj );
-		feat.supprimerEmploye(obj);
+		assertEquals( feat.findEmploye("WHERE nom = 'newname' "),obj );
+		feat.deleteEmploye(obj);
 		
 	}
 
@@ -567,46 +583,46 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testCreerEmploye() {
 		Employe obj  =  new Employe("testu","testu");
-		feat.creerEmploye(obj);
+		feat.createEmploye(obj);
 
 		
-		assertEquals( feat.rechercherEmploye("WHERE nom = 'testu' "),obj );
-		feat.supprimerEmploye(obj);
+		assertEquals( feat.findEmploye("WHERE nom = 'testu' "),obj );
+		feat.deleteEmploye(obj);
 	}
 
 	@Override
 	@Test
 	public void testRechercherEmploye() {
 		Employe obj  =  new Employe("testu","testu");
-		feat.creerEmploye(obj);
+		feat.createEmploye(obj);
 
 		
-		assertEquals( feat.rechercherEmploye("WHERE nom = 'testu' "),obj );
-		feat.supprimerEmploye(obj);
+		assertEquals( feat.findEmploye("WHERE nom = 'testu' "),obj );
+		feat.deleteEmploye(obj);
 	}
 
 	@Override
 	@Test
 	public void testRechercherEmployeId() {
 		Employe obj  =  new Employe("testu","testu");
-		feat.creerEmploye(obj);
+		feat.createEmploye(obj);
 
 		
-		assertEquals( feat.rechercherEmploye(obj.getId()),obj );
-		feat.supprimerEmploye(obj);
+		assertEquals( feat.findEmploye(obj.getId()),obj );
+		feat.deleteEmploye(obj);
 	}
 
 	@Override
 	@Test
 	public void testListerUtilisateurs() {
 		Utilisateur obj  =  new Utilisateur("testu","testu");
-		feat.creerUtilisateur(obj);
+		feat.createUtilisateur(obj);
 		List<Utilisateur> liste  =  new ArrayList<Utilisateur>();
 		
 		liste.add(obj);
-		assertEquals( feat.listerUtilisateurs(),liste );
+		assertEquals( feat.listUtilisateurs(),liste );
 		
-		feat.supprimerUtilisateur(obj);
+		feat.deleteUtilisateur(obj);
 		
 	}
 
@@ -615,13 +631,13 @@ public class FeatureTest implements IFeatureTests {
 	public void testListerUtilisateurs2() {
 		
 		Utilisateur obj  =  new Utilisateur("testu","testu");
-		feat.creerUtilisateur(obj);
+		feat.createUtilisateur(obj);
 		List<Utilisateur> liste  =   new ArrayList<Utilisateur>();
 		
 		liste.add(obj);
-		assertEquals( feat.listerUtilisateurs("WHERE nom = 'testu' "),liste );
+		assertEquals( feat.listUtilisateurs("WHERE nom = 'testu' "),liste );
 		
-		feat.supprimerUtilisateur(obj);
+		feat.deleteUtilisateur(obj);
 		
 	}
 
@@ -630,11 +646,11 @@ public class FeatureTest implements IFeatureTests {
 	public void testSupprimerUtilisateur() {
 		
 		Utilisateur obj  =  new Utilisateur("testu","testu");
-		feat.creerUtilisateur(obj);
+		feat.createUtilisateur(obj);
 		
-		assertEquals( feat.rechercherUtilisateur("WHERE nom = 'testu' "),obj );
-		feat.supprimerUtilisateur(obj);
-		assertEquals( feat.rechercherUtilisateur("WHERE nom = 'testu' "),null );
+		assertEquals( feat.findUtilisateur("WHERE nom = 'testu' "),obj );
+		feat.deleteUtilisateur(obj);
+		assertEquals( feat.findUtilisateur("WHERE nom = 'testu' "),null );
 		
 		
 		
@@ -644,13 +660,13 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testModifierUtilisateur() {
 		Utilisateur obj  =  new Utilisateur("testu","testu");
-		feat.creerUtilisateur(obj);
+		feat.createUtilisateur(obj);
 		
 		obj.setNom("newname");
-		feat.modifierUtilisateur(obj);
+		feat.updateUtilisateur(obj);
 		
-		assertEquals( feat.rechercherUtilisateur("WHERE nom = 'newname' "),obj );
-		feat.supprimerUtilisateur(obj);
+		assertEquals( feat.findUtilisateur("WHERE nom = 'newname' "),obj );
+		feat.deleteUtilisateur(obj);
 		
 	}
 
@@ -658,46 +674,46 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testCreerUtilisateur() {
 		Utilisateur obj  =  new Utilisateur("testu","testu");
-		feat.creerUtilisateur(obj);
+		feat.createUtilisateur(obj);
 
 		
-		assertEquals( feat.rechercherUtilisateur(obj.getId()),obj );
-		feat.supprimerUtilisateur(obj);
+		assertEquals( feat.findUtilisateur(obj.getId()),obj );
+		feat.deleteUtilisateur(obj);
 	}
 
 	@Override
 	@Test
 	public void testRechercherUtilisateur() {
 		Utilisateur obj  =  new Utilisateur("testu","testu");
-		feat.creerUtilisateur(obj);
+		feat.createUtilisateur(obj);
 
 		
-		assertEquals( feat.rechercherUtilisateur("WHERE nom = 'testu' "),obj );
-		feat.supprimerUtilisateur(obj);
+		assertEquals( feat.findUtilisateur("WHERE nom = 'testu' "),obj );
+		feat.deleteUtilisateur(obj);
 	}
 
 	@Override
 	@Test
 	public void testRechercherUtilisateurId() {
 		Utilisateur obj  =  new Utilisateur("testu","testu");
-		feat.creerUtilisateur(obj);
+		feat.createUtilisateur(obj);
 
 		
-		assertEquals( feat.rechercherUtilisateur(obj.getId()),obj );
-		feat.supprimerUtilisateur(obj);
+		assertEquals( feat.findUtilisateur(obj.getId()),obj );
+		feat.deleteUtilisateur(obj);
 	}
 
 	@Override
 	@Test
 	public void testListerNotes() {
 		Note obj  =  new Note("testu");
-		feat.creerNote(obj);
+		feat.createNote(obj);
 		List<Note> liste  =   new ArrayList<Note>();
 		
 		liste.add(obj);
-		assertEquals( feat.listerNotes(),liste );
+		assertEquals( feat.listNotes(),liste );
 		
-		feat.supprimerNote(obj);
+		feat.deleteNote(obj);
 		
 	}
 
@@ -706,13 +722,13 @@ public class FeatureTest implements IFeatureTests {
 	public void testListerNotes2() {
 		
 		Note obj  =  new Note("testu");
-		feat.creerNote(obj);
+		feat.createNote(obj);
 		List<Note> liste  =   new ArrayList<Note>();
 		
 		liste.add(obj);
-		assertEquals( feat.listerNotes("WHERE message = 'testu' "),liste );
+		assertEquals( feat.listNotes("WHERE message = 'testu' "),liste );
 		
-		feat.supprimerNote(obj);
+		feat.deleteNote(obj);
 		
 	}
 
@@ -721,15 +737,15 @@ public class FeatureTest implements IFeatureTests {
 	public void testSupprimerNote() {
 		
 		Note obj  =  new Note("testu");
-		feat.creerNote(obj);
+		feat.createNote(obj);
 		System.err.println("Note ID ="+obj.getId());
-		Note obj2 =  feat.rechercherNote("WHERE message = 'testu' ");
+		Note obj2 =  feat.findNote("WHERE message = 'testu' ");
 		assertEquals(obj2,obj );
-		feat.supprimerNote(obj);
+		feat.deleteNote(obj);
 		
-		obj2 =  feat.rechercherNote("WHERE message = 'testu' ");
+		obj2 =  feat.findNote("WHERE message = 'testu' ");
 		
-		assertEquals( feat.rechercherNote("WHERE message = 'testu' "),null );
+		assertEquals( feat.findNote("WHERE message = 'testu' "),null );
 		
 		
 		
@@ -739,13 +755,13 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testModifierNote() {
 		Note obj  =  new Note("testu");
-		feat.creerNote(obj);
+		feat.createNote(obj);
 		
 		obj.setMessage("newname");
-		feat.modifierNote(obj);
+		feat.updateNote(obj);
 		
-		assertEquals( feat.rechercherNote("WHERE message = 'newname' "),obj );
-		feat.supprimerNote(obj);
+		assertEquals( feat.findNote("WHERE message = 'newname' "),obj );
+		feat.deleteNote(obj);
 		
 	}
 
@@ -753,44 +769,44 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testCreerNote() {
 		Note obj  =  new Note("testu");
-		feat.creerNote(obj);
+		feat.createNote(obj);
 
 		
-		assertEquals( feat.rechercherNote("WHERE message = 'testu' "),obj );
-		feat.supprimerNote(obj);
+		assertEquals( feat.findNote("WHERE message = 'testu' "),obj );
+		feat.deleteNote(obj);
 	}
 
 	@Override
 	@Test
 	public void testRechercherNote() {
 		Note obj  =  new Note("testu");
-		feat.creerNote(obj);
+		feat.createNote(obj);
 		
-		assertEquals( feat.rechercherNote("WHERE message = 'testu' "),obj );
-		feat.supprimerNote(obj);
+		assertEquals( feat.findNote("WHERE message = 'testu' "),obj );
+		feat.deleteNote(obj);
 	}
 
 	@Override
 	@Test
 	public void testRechercherNoteId() {
 		Note obj  =  new Note("testu");
-		feat.creerNote(obj);
+		feat.createNote(obj);
 		System.out.println("Note id :"+obj.getId());
-		assertEquals( feat.rechercherNote(obj.getId()),obj );
-		feat.supprimerNote(obj);
+		assertEquals( feat.findNote(obj.getId()),obj );
+		feat.deleteNote(obj);
 	}
 
 	@Override
 	@Test
 	public void testListerRoles() {
 		Role obj  =  new Role("testu");
-		feat.creerRole(obj);
+		feat.createRole(obj);
 		List<Role> liste  =   new ArrayList<Role>();
 		
 		liste.add(obj);
-		assertEquals( feat.listerRoles(),liste );
+		assertEquals( feat.listRoles(),liste );
 		
-		feat.supprimerRole(obj);
+		feat.deleteRole(obj);
 		
 	}
 
@@ -799,13 +815,13 @@ public class FeatureTest implements IFeatureTests {
 	public void testListerRoles2() {
 		
 		Role obj  =  new Role("testu");
-		feat.creerRole(obj);
+		feat.createRole(obj);
 		List<Role> liste  =   new ArrayList<Role>();
 		
 		liste.add(obj);
-		assertEquals( feat.listerRoles("WHERE intitule = 'testu' "),liste );
+		assertEquals( feat.listRoles("WHERE intitule = 'testu' "),liste );
 		
-		feat.supprimerRole(obj);
+		feat.deleteRole(obj);
 		
 	}
 
@@ -814,11 +830,11 @@ public class FeatureTest implements IFeatureTests {
 	public void testSupprimerRole() {
 		
 		Role obj  =  new Role("testu");
-		feat.creerRole(obj);
+		feat.createRole(obj);
 		
-		assertEquals( feat.rechercherRole("WHERE intitule = 'testu' ").getIntitule(),obj.getIntitule() );
-		feat.supprimerRole(obj);
-		assertEquals( feat.rechercherRole("WHERE intitule = 'testu' "),null );
+		assertEquals( feat.findRole("WHERE intitule = 'testu' ").getIntitule(),obj.getIntitule() );
+		feat.deleteRole(obj);
+		assertEquals( feat.findRole("WHERE intitule = 'testu' "),null );
 		
 		
 		
@@ -828,13 +844,13 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testModifierRole() {
 		Role obj  =  new Role("testu");
-		feat.creerRole(obj);
+		feat.createRole(obj);
 		
 		obj.setIntitule("newname");
-		feat.modifierRole(obj);
+		feat.updateRole(obj);
 		
-		assertEquals( feat.rechercherRole("WHERE intitule = 'newname' "),obj );
-		feat.supprimerRole(obj);
+		assertEquals( feat.findRole("WHERE intitule = 'newname' "),obj );
+		feat.deleteRole(obj);
 		
 	}
 
@@ -842,33 +858,33 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testCreerRole() {
 		Role obj  =  new Role("testu");
-		feat.creerRole(obj);
+		feat.createRole(obj);
 
 		
-		assertEquals( feat.rechercherRole("WHERE intitule = 'testu' "),obj );
-		feat.supprimerRole(obj);
+		assertEquals( feat.findRole("WHERE intitule = 'testu' "),obj );
+		feat.deleteRole(obj);
 	}
 
 	@Override
 	@Test
 	public void testRechercherRole() {
 		Role obj  =  new Role("testu");
-		feat.creerRole(obj);
+		feat.createRole(obj);
 
 		
-		assertEquals( feat.rechercherRole("WHERE intitule = 'testu' "),obj );
-		feat.supprimerRole(obj);
+		assertEquals( feat.findRole("WHERE intitule = 'testu' "),obj );
+		feat.deleteRole(obj);
 	}
 
 	@Override
 	@Test
 	public void testRechercherRoleId() {
 		Role obj  =  new Role("testu");
-		feat.creerRole(obj);
+		feat.createRole(obj);
 
 		
-		assertEquals( feat.rechercherRole(obj.getId()),obj );
-		feat.supprimerRole(obj);
+		assertEquals( feat.findRole(obj.getId()),obj );
+		feat.deleteRole(obj);
 	}
 
 	@Override
@@ -881,78 +897,78 @@ public class FeatureTest implements IFeatureTests {
 	@Override
 	@Test
 	public void testLoadDemandesObservableList() {
-		feat.creerDemande( new Demande());
-		assertEquals(feat.getObservableListDemande().getData(), feat.listerDemandes());
+		feat.createDemande( new Demande());
+		assertEquals(feat.getObservableListDemande().getData(), feat.listDemandes());
 		
-		feat.supprimerDemande(feat.listerDemandes().get(0));
+		feat.deleteDemande(feat.listDemandes().get(0));
 	}
 
 	@Override
 	@Test
 	public void testLoadEmployesObservableList() {
 		
-		feat.creerEmploye( new Employe());
-		assertEquals(feat.getObservableListEmploye().getData(), feat.listerEmployes());
+		feat.createEmploye( new Employe());
+		assertEquals(feat.getObservableListEmploye().getData(), feat.listEmployes());
 		
-		feat.supprimerEmploye(feat.listerEmployes().get(0));
+		feat.deleteEmploye(feat.listEmployes().get(0));
 	}
 
 	@Override
 	@Test
 	public void testLoadRolesObservableList() {
 		
-		feat.creerRole( new Role());
-		assertEquals(feat.getObservableListRole().getData(), feat.listerRoles());
+		feat.createRole( new Role());
+		assertEquals(feat.getObservableListRole().getData(), feat.listRoles());
 		
-		feat.supprimerRole(feat.listerRoles().get(0));
+		feat.deleteRole(feat.listRoles().get(0));
 	}
 
 	@Override
 	@Test
 	public void testLoadServicesObservableList() {
 		
-		feat.creerService( new Service());
-		assertEquals(feat.getObservableListService().getData(), feat.listerServices());
+		feat.createService( new Service());
+		assertEquals(feat.getObservableListService().getData(), feat.listServices());
 		
-		feat.supprimerService(feat.listerServices().get(0));
+		feat.deleteService(feat.listServices().get(0));
 	}
 
 	@Override
 	@Test
 	public void testLoadDepartementsObservableList() {
-		feat.creerDepartement( new Departement());
-		assertEquals(feat.getObservableListDepartement().getData(), feat.listerDepartements());
+		feat.createDepartement( new Departement());
+		assertEquals(feat.getObservableListDepartement().getData(), feat.listDepartements());
 		
-		feat.supprimerDepartement(feat.listerDepartements().get(0));
+		feat.deleteDepartement(feat.listDepartements().get(0));
 		
 	}
 
 	@Override
 	public void testLoadUtilisateursObservableList() {
-		feat.creerUtilisateur( new Utilisateur());
-		assertEquals(feat.getObservableListUtilisateur().getData(), feat.listerUtilisateurs());
+		feat.createUtilisateur( new Utilisateur());
+		assertEquals(feat.getObservableListUtilisateur().getData(), feat.listUtilisateurs());
 		
-		feat.supprimerUtilisateur(feat.listerUtilisateurs().get(0));
+		feat.deleteUtilisateur(feat.listUtilisateurs().get(0));
 		
 	}
 
 
 	@Override
 	public void testLoadManagersObservableList() {
-		feat.creerManager( new Manager());
-		assertEquals(feat.getObservableListManager().getData(), feat.listerManagers());
+		feat.createManager( new Manager());
+		assertEquals(feat.getObservableListManager().getData(), feat.listManagers());
 		
-		feat.supprimerManager(feat.listerManagers().get(0));
+		feat.deleteManager(feat.listManagers().get(0));
 		
 	}
 
 
 	@Override
 	public void testLoadNotesObservableList() {
-		feat.creerNote( new Note());
-		assertEquals(feat.getObservableListNote().getData(), feat.listerNotes());
+		feat.createNote( new Note());
+		assertEquals(feat.getObservableListNote().getData(), feat.listNotes());
 		
-		feat.supprimerNote(feat.listerNotes().get(0));
+		feat.deleteNote(feat.listNotes().get(0));
 		
 	}
 
@@ -975,10 +991,10 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testValiderIdentifiants() {
 		Manager obj = new Manager("testu","testu","testlogin","testpass");
-		feat.creerManager(obj);
+		feat.createManager(obj);
 		
-		assertEquals( (Manager) feat.validerIdentifiants("testlogin","testpass"), obj);
-		feat.supprimerManager(obj);
+		assertEquals( (Manager) feat.validateCredential("testlogin","testpass"), obj);
+		feat.deleteManager(obj);
 		
 	}
 
@@ -987,10 +1003,10 @@ public class FeatureTest implements IFeatureTests {
 	public void testRepondreDemande() {
 		Demande obj = new Demande();
 		
-		feat.repondreDemande(obj, "accepte" );
+		feat.requestDemande(obj, "accepte" );
 		;
-		assertEquals(feat.rechercherDemande(obj.getId()).getEtat(), "accepte"  );
-		feat.supprimerDemande(obj);
+		assertEquals(feat.findDemande(obj.getId()).getEtat(), "accepte"  );
+		feat.deleteDemande(obj);
 	}
 
 	@Override
@@ -999,18 +1015,18 @@ public class FeatureTest implements IFeatureTests {
 		Employe obj1 = new Employe();
 		Service obj2 = new Service();
 		
-		feat.creerEmploye(obj1);
-		feat.creerService(obj2);
+		feat.createEmploye(obj1);
+		feat.createService(obj2);
 		
-		feat.associerService(obj1, obj2);
+		feat.associateService(obj1, obj2);
 		
-		feat.modifierEmploye(obj1);
-		feat.modifierService(obj2);
+		feat.updateEmploye(obj1);
+		feat.updateService(obj2);
 			
-		assertEquals(feat.rechercherService(obj2.getId()).getEmployes().get(0), obj1);
+		assertEquals(feat.findService(obj2.getId()), obj1);
 		
-		feat.supprimerEmploye(obj1);
-		feat.supprimerService(obj2);
+		feat.deleteEmploye(obj1);
+		feat.deleteService(obj2);
 	}
 
 

@@ -3,6 +3,7 @@
 "-//Hibernate/Hibernate Configuration DTD 5.3//EN" "http://www.hibernate.org/dtd/hibernate-configuration-5.3.dtd">
 
 <hibernate-configuration>  
+
 	<session-factory>
 		<property name="hbm2ddl.auto">create</property>
 		<property name = "hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -11,10 +12,10 @@
 		<property name = "hibernate.connection.username">root</property>
 		<property name = "hibernate.connection.password">user</property>
 
-
 		<mapping class="com.rekest.entities.employes.Employe" />
 		
 		<mapping class="com.rekest.entities.employes.ChefService" />
+		<mapping class="com.rekest.entities.employes.ChefDepartement" />
 		<mapping class="com.rekest.entities.employes.Utilisateur" />
 
 		<mapping class="com.rekest.entities.employes.DirecteurGeneral" />

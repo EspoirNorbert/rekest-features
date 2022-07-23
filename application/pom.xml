@@ -29,6 +29,22 @@
 		<version>1.18.24</version>
 		<scope>provided</scope>
 	</dependency>
+		<!-- https://mvnrepository.com/artifact/org.junit/junit5-engine -->
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>5.3.2</version>
+       
+    </dependency>
+	<!-- Apache POI -->
+
+	
+	
+	<dependency>  
+	    <groupId>org.apache.poi</groupId>  
+	    <artifactId>poi</artifactId>  
+	    <version>3.9</version>  
+	</dependency>  
 		<!-- FAKER -->
 		<!-- https://mavenlibs.com/maven/dependency/com.github.javafaker/javafaker -->
 		<dependency>

@@ -10,6 +10,7 @@ import org.hibernate.query.Query;
 
 import com.rekest.dao.IDao;
 import com.rekest.entities.Demande;
+import com.rekest.entities.Departement;
 import com.rekest.entities.Service;
 import com.rekest.entities.employes.Employe;
 import com.rekest.entities.employes.Utilisateur;
@@ -72,7 +73,7 @@ public class HibernateDao implements IDao{
 			else logger.info("Record not found.");
 		} catch (Exception e) {
 			throw new DAOException("ERROR:" + e.getClass() + ":" + e.getMessage());
-		}
+		} 
 		return entity;
 	}
 
@@ -134,7 +135,9 @@ public class HibernateDao implements IDao{
 			//Creating Transaction Object  
 			transaction = session.beginTransaction();
 			logger.info("Begin transaction.");
-			session.persist(entity);
+			
+			//@SuppressWarnings("deprecation")
+			session.saveOrUpdate(entity);
 			// Transaction Is Committed To Database
 			transaction.commit();
 			logger.info("Record Successfully updated.");
@@ -160,6 +163,11 @@ public class HibernateDao implements IDao{
 	public void associateService(Employe employe, Service service) throws DAOException{
 		service.addEmploye(employe);
 		this.update(service);
+	}
+	
+	public void associateDepartement(Service service, Departement departement) throws DAOException{
+		departement.addService(service);
+		this.update(departement);
 	}
 
 	@Override
@@ -229,7 +237,7 @@ public class HibernateDao implements IDao{
 			else logger.info("Record not found.");
 		} catch (Exception e) {
 			throw new DAOException("ERROR:" + e.getClass() + ":" + e.getMessage());
-		}
+		} 
 		return entity;
 	}
 

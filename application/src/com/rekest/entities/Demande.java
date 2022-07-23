@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.rekest.feature.impl.Feature;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -41,10 +43,30 @@ public class Demande {
 	@JoinColumn(name="id_demande")
 	private List<Note> notes = new ArrayList<>();
 
+	
+
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="id_demande")
 	private List<Notification> notifications = new ArrayList<>();
 	
+	
+	
+	public List<Note> getNotes() {
+		return notes;
+	}
+
+	public void setNotes(List<Note> notes) {
+		this.notes = notes;
+	}
+
+	public List<Notification> getNotifications() {
+		return notifications;
+	}
+
+	public void setNotifications(List<Notification> notifications) {
+		this.notifications = notifications;
+	}
+
 	
 	public Demande() {
 		  this.createdAt = new java.util.Date();
@@ -93,7 +115,11 @@ public class Demande {
 		this.notes.add(note);
 		this.updatedAt = new java.util.Date();
 	}
-//	public void addNotification(Notification notification) {
-//		this.notifications.add(notification);
-//	}
+	public void addNotification(Notification notification) {
+		this.notifications.add(notification);
+	}
+	
+	public void removeNotification(Notification notification) {
+		this.notifications.remove(notification);
+	}
 }

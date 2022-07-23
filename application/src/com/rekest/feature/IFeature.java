@@ -5,6 +5,7 @@ import java.util.List;
 import com.rekest.entities.Demande;
 import com.rekest.entities.Departement;
 import com.rekest.entities.Note;
+import com.rekest.entities.Notification;
 import com.rekest.entities.Produit;
 import com.rekest.entities.Role;
 import com.rekest.entities.Service;
@@ -12,6 +13,16 @@ import com.rekest.entities.employes.Administrateur;
 import com.rekest.entities.employes.Employe;
 import com.rekest.entities.employes.Manager;
 import com.rekest.entities.employes.Utilisateur;
+import com.rekest.observableList.impl.ObservableListDemande;
+import com.rekest.observableList.impl.ObservableListDepartement;
+import com.rekest.observableList.impl.ObservableListEmploye;
+import com.rekest.observableList.impl.ObservableListManager;
+import com.rekest.observableList.impl.ObservableListNote;
+import com.rekest.observableList.impl.ObservableListNotification;
+import com.rekest.observableList.impl.ObservableListProduit;
+import com.rekest.observableList.impl.ObservableListRole;
+import com.rekest.observableList.impl.ObservableListService;
+import com.rekest.observableList.impl.ObservableListUtilisateur;
 
 import javafx.collections.ObservableList;
 
@@ -28,7 +39,7 @@ public interface IFeature {
 	 * 
 	 * @return
 	 */
-	public List<Service> listerServices ()  ;
+	public List<Service> listServices ()  ;
 
 	/**
 	 * Returns a list of all 'services' according to the filters.
@@ -37,7 +48,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public List<Service> listerServices ( String whereClause)   ;
+	public List<Service> listServices ( String whereClause)   ;
 	
 	/**
 	 * Delete the 'service' set in parameter.
@@ -45,7 +56,7 @@ public interface IFeature {
 	 * 
 	 * @param service
 	 */
-	public boolean supprimerService (Service service)  ;
+	public boolean deleteService (Service service)  ;
 
 	/**
 	 * Update the 'service' set in parameter. 
@@ -53,7 +64,7 @@ public interface IFeature {
 	 * 
 	 * @param service
 	 */
-	public boolean modifierService (Service service)  ;
+	public boolean updateService (Service service)  ;
 
 	/**
 	 * Save the 'service' set in parameter. 
@@ -61,7 +72,7 @@ public interface IFeature {
 	 * 
 	 * @param service
 	 */
-	public boolean creerService (Service service)  ;
+	public boolean createService (Service service)  ;
 	
 
 
@@ -72,7 +83,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public Service rechercherService( String whereClause)   ;
+	public Service findService( String whereClause)   ;
 
 	/**
 	 * Find and return the 'service' set in parameter if it exist, else null.
@@ -81,7 +92,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public Service rechercherService( Integer primaryKey)   ;	
+	public Service findService( Integer primaryKey)   ;	
 	
 
 	/**
@@ -90,7 +101,7 @@ public interface IFeature {
 	 * @param 
 	 * @return
 	 */
-	public List<Departement> listerDepartements ()   ;
+	public List<Departement> listDepartements ()   ;
 
 	/**
 	 * 
@@ -100,7 +111,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public List<Departement> listerDepartements ( String whereClause)   ;
+	public List<Departement> listDepartements ( String whereClause)   ;
 	
 	/**
 	 * Delete the 'departement' set in parameter.
@@ -108,7 +119,7 @@ public interface IFeature {
 	 * 
 	 * @param departement
 	 */
-	public boolean supprimerDepartement (Departement departement)   ;
+	public boolean deleteDepartement (Departement departement)   ;
 
 	/**
 	 * Update the 'departement' set in parameter.
@@ -116,7 +127,7 @@ public interface IFeature {
 	 * 
 	 * @param departement
 	 */
-	public boolean modifierDepartement (Departement departement)   ;
+	public boolean updateDepartement (Departement departement)   ;
 
 	/**
 	 * Save the 'departement' set in parameter.
@@ -124,7 +135,7 @@ public interface IFeature {
 	 * 
 	 * @param departement
 	 */
-	public boolean creerDepartement (Departement departement)   ;
+	public boolean createDepartement (Departement departement)   ;
 
 
 	/**
@@ -134,7 +145,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public Departement rechercherDepartement ( String whereClause)   ;
+	public Departement findDepartement ( String whereClause)   ;
 
 	/**
 	 * Find the 'departement' set in parameter if it exist, else null.
@@ -143,7 +154,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public Departement rechercherDepartement ( Integer primaryKey)   ;	
+	public Departement findDepartement ( Integer primaryKey)   ;	
 	
 	
 
@@ -152,7 +163,7 @@ public interface IFeature {
 	 * 
 	 * @return
 	 */
-	public List<Manager> listerManagers ()   ;
+	public List<Manager> listManagers ()   ;
 
 	/**
 	 * Returns a list of all 'manager' according to the filters.
@@ -161,7 +172,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public List<Manager> listerManagers ( String whereClause)    ;
+	public List<Manager> listManagers ( String whereClause)    ;
 	
 	/**
 	 * Delete the 'manager' set in parameter. 
@@ -169,7 +180,7 @@ public interface IFeature {
 	 * 
 	 * @param service
 	 */
-	public boolean supprimerManager (Manager manager)   ;
+	public boolean deleteManager (Manager manager)   ;
 
 	/**
 	 * Update the 'manager' set in parameter. 
@@ -178,7 +189,7 @@ public interface IFeature {
 	 * 
 	 * @param service
 	 */
-	public boolean modifierManager (Manager manager)   ;
+	public boolean updateManager (Manager manager)   ;
 
 	/**
 	 * Save the 'manager' set in parameter. 
@@ -186,7 +197,7 @@ public interface IFeature {
 	 * 
 	 * @param service
 	 */
-	public boolean creerManager (Manager manager)   ;
+	public boolean createManager (Manager manager)   ;
 	
 
 
@@ -197,7 +208,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public Manager rechercherManager( String whereClause)    ;
+	public Manager findManager( String whereClause)    ;
 
 	/**
 	 * Find and return the 'manager' set in parameter if it exist, else null.
@@ -206,7 +217,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public Manager rechercherManager( Integer primaryKey)   ;
+	public Manager findManager( Integer primaryKey)   ;
 	
 	
 	
@@ -218,7 +229,7 @@ public interface IFeature {
 	 * @param utilisateur
 	 * @return
 	 */
-	public boolean activerUtilisateur  (Utilisateur utilisateur)  ;	
+	public boolean enableUtilisateur  (Utilisateur utilisateur)  ;	
 	
 	/**
 	 * Disable the user set in parameter.
@@ -228,7 +239,7 @@ public interface IFeature {
 	 * @param utilisateur
 	 * @return
 	 */
-	public boolean desactiverUtilisateur  (Utilisateur utilisateur)  ;	
+	public boolean disableUtilisateur  (Utilisateur utilisateur)  ;	
 	
 	/**
 	 * 
@@ -242,7 +253,7 @@ public interface IFeature {
 	 * @param persons
 	 * @return
 	 */
-	public List<Utilisateur> listerUtilisateurs  ()  ;
+	public List<Utilisateur> listUtilisateurs  ()  ;
 
 	/**
 	 * Returns a list of all 'utilisteurs' according to the filters.
@@ -251,7 +262,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public List<Utilisateur> listerUtilisateurs  ( String whereClause)   ;
+	public List<Utilisateur> listUtilisateurs  ( String whereClause)   ;
 	
 	/**
 	 * 
@@ -261,7 +272,7 @@ public interface IFeature {
 	 * 
 	 * @param utilisateur
 	 */
-	public boolean supprimerUtilisateur  (Utilisateur utilisateur)  ;
+	public boolean deleteUtilisateur  (Utilisateur utilisateur)  ;
 
 	/**
 	 * Update the 'utilisateur' set in parameter. 
@@ -270,7 +281,7 @@ public interface IFeature {
 	 * 
 	 * @param utilisateur
 	 */
-	public boolean modifierUtilisateur  (Utilisateur utilisateur)  ;
+	public boolean updateUtilisateur  (Utilisateur utilisateur)  ;
 
 	/**
 	 * Save the 'utilisateur' set in parameter. 
@@ -279,7 +290,7 @@ public interface IFeature {
 	 * 
 	 * @param utilisateur
 	 */
-	public boolean creerUtilisateur  (Utilisateur utilisateur)  ;
+	public boolean createUtilisateur  (Utilisateur utilisateur)  ;
 
 
 	/**
@@ -289,7 +300,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public Utilisateur rechercherUtilisateur ( String whereClause)   ;
+	public Utilisateur findUtilisateur ( String whereClause)   ;
 
 	/**
 	 * Find and return the 'utilisateur' set in parameter if it exist, else null.
@@ -298,7 +309,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public Utilisateur rechercherUtilisateur ( Integer primaryKey)   ;	
+	public Utilisateur findUtilisateur ( Integer primaryKey)   ;	
 	
 	
 	
@@ -327,7 +338,7 @@ public interface IFeature {
 	 * @param persons
 	 * @return
 	 */
-	public List<Produit> listerProduits  ()  ;
+	public List<Produit> listProduits  ()  ;
 
 	/**
 	 * Returns a list of all 'produits' according to the filters.
@@ -336,7 +347,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public List<Produit> listerProduits  ( String whereClause)   ;
+	public List<Produit> listProduits  ( String whereClause)   ;
 	
 	/**
 	 * Delete the 'produit' set in parameter. 
@@ -345,7 +356,7 @@ public interface IFeature {
 	 *  
 	 * @param produit
 	 */
-	public boolean supprimerProduit  (Produit produit)  ;
+	public boolean deleteProduit  (Produit produit)  ;
 
 	/**
 	 * Update the 'produit' set in parameter. 
@@ -354,7 +365,7 @@ public interface IFeature {
 	 * 
 	 * @param produit
 	 */
-	public boolean modifierProduit  (Produit produit)  ;
+	public boolean updateProduit  (Produit produit)  ;
 
 	/**
 	 * Save the 'produit' set in parameter. 
@@ -362,7 +373,7 @@ public interface IFeature {
 	 * 
 	 * @param produit
 	 */
-	public boolean creerProduit  (Produit produit)  ;
+	public boolean createProduit  (Produit produit)  ;
 
 
 	/**
@@ -372,7 +383,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public Produit rechercherProduit ( String whereClause)   ;
+	public Produit findProduit ( String whereClause)   ;
 
 	/**
 	 * Find and return the 'produit' set in parameter if it exist, else null.
@@ -381,17 +392,13 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public Produit rechercherProduit ( Integer primaryKey)   ;	
+	public Produit findProduit ( Integer primaryKey)   ;	
 
 	
 	
 	
 
 	
-	/**
-	 * TODO
-	 */
-	//public boolean rafraichirRole  (Role role)  ;
 
 
 	/**
@@ -400,7 +407,7 @@ public interface IFeature {
 	 * @param persons
 	 * @return
 	 */
-	public List<Role> listerRoles  ()  ;
+	public List<Role> listRoles  ()  ;
 
 	/**
 	 * Returns a list of all 'roles' according to the filters.
@@ -409,7 +416,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public List<Role> listerRoles  ( String whereClause)   ;
+	public List<Role> listRoles  ( String whereClause)   ;
 	
 	/**
 	 * Delete the 'role' set in parameter. 
@@ -417,7 +424,7 @@ public interface IFeature {
 	 *  
 	 * @param role
 	 */
-	public boolean supprimerRole  (Role role)  ;
+	public boolean deleteRole  (Role role)  ;
 
 	/**
 	 * Update the 'role' set in parameter. 
@@ -426,7 +433,7 @@ public interface IFeature {
 	 * 
 	 * @param role
 	 */
-	public boolean modifierRole  (Role role)  ;
+	public boolean updateRole  (Role role)  ;
 
 	/**
 	 * Save the 'role' set in parameter. 
@@ -434,7 +441,7 @@ public interface IFeature {
 	 * 
 	 * @param role
 	 */
-	public boolean creerRole  (Role role)  ;
+	public boolean createRole  (Role role)  ;
 
 
 	/**
@@ -444,7 +451,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public Role rechercherRole ( String whereClause)   ;
+	public Role findRole ( String whereClause)   ;
 	
 
 	/**
@@ -454,7 +461,70 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public Role rechercherRole ( Integer primaryKey)   ;	
+	public Role findRole ( Integer primaryKey)   ;	
+
+
+	/**
+	 * Returns a list of all 'notifications'.
+	 * 
+	 * @param persons
+	 * @return
+	 */
+	public List<Notification> listNotifications  ()  ;
+
+	/**
+	 * Returns a list of all 'notifications' according to the filters.
+	 * 
+	 * @param whereClause
+	 * @return
+	 * @ 
+	 */
+	public List<Notification> listNotifications  ( String whereClause)   ;
+	
+	/**
+	 * Delete the 'notification' set in parameter. 
+	 * Returns true if it succeeded, else false.
+	 *  
+	 * @param notification
+	 */
+	public boolean deleteNotificationFeature  (Notification notification, Utilisateur utilisateur, Demande demande) ;
+
+	/**
+	 * Update the 'notification' set in parameter. 
+	 * Returns true if it succeeded, else false.
+	 * 
+	 * 
+	 * @param notification
+	 */
+	public boolean updateNotification  (Notification notification)  ;
+
+	/**
+	 * Save the 'notification' set in parameter. 
+	 * Returns true if it succeeded, else false.
+	 * 
+	 * @param notification
+	 */
+	public boolean createNotificationFeature   (Utilisateur utilisateur, Demande demande, String message)  ;
+
+
+	/**
+	 * Find and return the 'notification' set in parameter if it exist, else null.
+	 * 
+	 * @param whereClause
+	 * @return
+	 * @ 
+	 */
+	public Notification findNotification ( String whereClause)   ;
+	
+
+	/**
+	 * Find and return the 'notification' set in parameter if it exist, else null.
+	 * 
+	 * @param primaryKey
+	 * @return
+	 * @ 
+	 */
+	public Notification findNotification ( Integer primaryKey)   ;	
 
 
 
@@ -464,7 +534,7 @@ public interface IFeature {
 	 * @param persons
 	 * @return
 	 */
-	public List<Employe> listerEmployes  ()  ;
+	public List<Employe> listEmployes  ()  ;
 
 	/**
 	 * Returns a list of all 'employes' according to the filters.
@@ -473,7 +543,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public List<Employe> listerEmployes  ( String whereClause)   ;
+	public List<Employe> listEmployes  ( String whereClause)   ;
 	
 	/**
 	 * Delete the 'employe' set in parameter. 
@@ -481,7 +551,7 @@ public interface IFeature {
 	 *  
 	 * @param employe
 	 */
-	public boolean supprimerEmploye  (Employe employe)  ;
+	public boolean deleteEmploye  (Employe employe)  ;
 
 	/**
 	 * Update the 'employe' set in parameter. 
@@ -490,7 +560,7 @@ public interface IFeature {
 	 * 
 	 * @param employe
 	 */
-	public boolean modifierEmploye  (Employe employe)  ;
+	public boolean updateEmploye  (Employe employe)  ;
 
 	/**
 	 * Save the 'employe' set in parameter. 
@@ -498,7 +568,7 @@ public interface IFeature {
 	 * 
 	 * @param employe
 	 */
-	public boolean creerEmploye  (Employe employe)  ;
+	public boolean createEmploye  (Employe employe)  ;
 
 
 	/**
@@ -508,7 +578,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public Employe rechercherEmploye ( String whereClause)   ;
+	public Employe findEmploye ( String whereClause)   ;
 
 	/**
 	 * Find and return the 'employe' set in parameter if it exist, else null.
@@ -518,7 +588,7 @@ public interface IFeature {
 	 * @ 
 	 */
 
-	public Employe rechercherEmploye ( Integer primaryKey)   ;	
+	public Employe findEmploye ( Integer primaryKey)   ;	
 	
 
 	
@@ -538,7 +608,7 @@ public interface IFeature {
 	 * @return
 	 */
 
-	public List<Demande> listerDemandes ()   ;
+	public List<Demande> listDemandes ()   ;
 
 	
 
@@ -550,7 +620,7 @@ public interface IFeature {
 	 * @ 
 	 */
 
-	public List<Demande> listerDemandes ( String whereClause)    ;
+	public List<Demande> listDemandes ( String whereClause)    ;
 
 	
 	/**
@@ -560,7 +630,7 @@ public interface IFeature {
 	 * @param service
 	 */
 
-	public boolean supprimerDemande (Demande Demande)   ;
+	public boolean deleteDemande (Demande Demande)   ;
 
 
 	/**
@@ -570,7 +640,7 @@ public interface IFeature {
 	 * @param service
 	 */
 
-	public boolean modifierDemande (Demande Demande)   ;
+	public boolean updateDemande (Demande Demande)   ;
 
 
 	/**
@@ -579,7 +649,7 @@ public interface IFeature {
 	 * 
 	 * @param service
 	 */
-	public boolean creerDemande (Demande Demande)   ;
+	public boolean createDemande (Demande Demande)   ;
 
 
 	/**
@@ -590,7 +660,7 @@ public interface IFeature {
 	 * @ 
 	 */
 
-	public Demande rechercherDemande( String whereClause)    ;
+	public Demande findDemande( String whereClause)    ;
 
 
 	/**
@@ -601,7 +671,7 @@ public interface IFeature {
 	 * @ 
 	 */
 
-	public Demande rechercherDemande( Integer primaryKey)   ;
+	public Demande findDemande( Integer primaryKey)   ;
 
 	/**
 	 * TODO
@@ -615,7 +685,7 @@ public interface IFeature {
 	 * 
 	 * @return
 	 */
-	public List<Note> listerNotes ()   ;
+	public List<Note> listNotes ()   ;
 	
 /**
 	 * Returns a list of all 'note' according to the filters.
@@ -624,7 +694,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public List<Note> listerNotes ( String whereClause)    ;
+	public List<Note> listNotes ( String whereClause)    ;
 
 	/**
 	 * Delete the 'note' set in parameter. 
@@ -632,7 +702,7 @@ public interface IFeature {
 	 * 
 	 * @param service
 	 */
-	public boolean supprimerNote (Note note)   ;
+	public boolean deleteNote (Note note)   ;
 
 	/**
 	 * Update the 'note' set in parameter. 
@@ -641,7 +711,7 @@ public interface IFeature {
 	 * @param service
 	 */
 
-	public boolean modifierNote (Note note)   ;
+	public boolean updateNote (Note note)   ;
 
 
 	/**
@@ -650,7 +720,7 @@ public interface IFeature {
 	 * 
 	 * @param service
 	 */
-	public boolean creerNote (Note note)   ;
+	public boolean createNote (Note note)   ;
 
 
 	/**
@@ -660,7 +730,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public Note rechercherNote( Integer primaryKey)   ;
+	public Note findNote( Integer primaryKey)   ;
 	
 	/**
 	 * Find and return the 'note' set in parameter if it exist, else null.
@@ -669,42 +739,115 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public Note rechercherNote (String whereClause)  ;
+	public Note findNote (String whereClause)  ;
 	
 	/**
 	 * Returns the number of 'Demandes'
 	 * 
 	 * @return
 	 */
-	public Integer RetournerNombreDemandesTotal ();
+	public Integer getNumberDemandes();
 	
 	/**
 	 * Returns the number of 'Employes'
 	 * 
 	 * @return
 	 */
-	public Integer RetournerNombreEmployesTotal ();
+	public Integer getNumberEmployes ();
 	
 	/**
 	 * Returns the number of 'Departements'
 	 * 
 	 * @return
 	 */
-	public Integer RetournerNombreDepartementsTotal ();
+	public Integer getNumberDepartements ();
 	
 	/**
 	 * Returns the number of 'Services'
 	 * 
 	 * @return
 	 */
-	public Integer RetournerNombreServicesTotal ();
+	public Integer getNumberServices ();
 	
 	/**
 	 * Returns the number of 'Produits'
 	 * 
 	 * @return
 	 */
-	public Integer RetournerNombreProduitsTotal();
+	public Integer getNumberProduits();
+	
+	
+	
+	/**
+	 * Returns the current ObservableListEmploye
+	 * 
+	 * @return
+	 */
+	public ObservableListEmploye getObservableListEmploye ();
+	
+	/**
+	 * Returns the current ObservableListManager
+	 * 
+	 * @return
+	 */	
+	public ObservableListManager getObservableListManager () ;
+	
+	/**
+	 * Returns the current ObservableListNote
+	 * 
+	 * @return
+	 */
+	public ObservableListNote getObservableListNote () ;
+	
+	/**
+	 * Returns the current ObservableListProduit
+	 * 
+	 * @return
+	 */
+	public ObservableListProduit getObservableListProduit ();
+	
+	/**
+	 * Returns the current ObservableListRole
+	 * 
+	 * @return
+	 */
+	public ObservableListRole getObservableListRole () ;
+	
+	/**
+	 * Returns the current ObservableListUtilisateur
+	 * 
+	 * @return
+	 */
+	public ObservableListUtilisateur getObservableListUtilisateur () ;
+	
+	/**
+	 * Returns the current ObservableListService
+	 * 
+	 * @return
+	 */
+	public ObservableListService getObservableListService () ;
+	
+	/**
+	 * Returns the current ObservableListDemande
+	 * 
+	 * @return
+	 */
+	public ObservableListDemande getObservableListDemande () ;
+	
+	/**
+	 * Returns the current ObservableListDepartement
+	 * 
+	 * @return
+	 */
+	public ObservableListDepartement getObservableListDepartement () ;
+	
+	
+	/**
+	 * Returns the current ObservableListNotification
+	 * 
+	 * @return
+	 */
+	public ObservableListNotification getObservableListNotification () ;
 	
 
 	/**
@@ -744,6 +887,16 @@ public interface IFeature {
 	 * @ 
 	 */
 	public ObservableList<Role> loadRoleObservableList ()  ;
+
+
+
+	/**
+	 * Returns a Observable list of the stored 'Notifications'
+	 * 
+	 * @return
+	 * @ 
+	 */
+	public ObservableList<Notification> loadNotificationObservableList ()  ;
 
 
 	/**
@@ -827,7 +980,7 @@ public interface IFeature {
 	 * @return
 	 * @ 
 	 */
-	public  Object validerIdentifiants(String login, String password)  ;
+	public  Object validateCredential(String login, String password)  ;
 	
 	/**
 	 * Method qui permet de definir la reponse de la demande (rejeter , cloturée ...).
@@ -837,31 +990,83 @@ public interface IFeature {
 	 * @param reponse
 	 * @ 
 	 */
-	public boolean repondreDemande(Demande demande, String reponse)  ; 
+	public boolean requestDemande(Demande demande, String reponse)  ; 
 	
 	
 	/**
-	 * Associate an employe to a service.
+	 * Associate a employe to a service.
 	 * Returns true if it succeeded, else false.
 	 * 
 	 * @param employe
 	 * @param service
 	 * @ 
 	 */
-	public boolean associerService(Employe employe, Service service)  ;
+	public boolean associateService(Employe employe, Service service)  ;
 	
 	/**
-	 * Others methodes
+	 * Associate a service to a departement.
+	 * Returns true if it succeeded, else false.
+	 * 
+	 * @param service
+	 * @param departement
+	 * @return
+	 */
+	public boolean associateDepartement(Service service, Departement departement) ;
+	
+	/**
+	 * 
 	 */
 	default void refresh() {};
+	
+	/**
+	 * Generate a 'departement'
+	 */
 	default void initDepartement() {}
+	
+	/**
+	 * Generate 10 'employes'
+	 */
 	default void initEmploye() {}
+	
+	/**
+	 * Generate 10 'services'
+	 */
 	default void initService() {}
+	
+	/**
+	 * Generate 10 'roles'
+	 */
 	default void initRole() {}
+	
+	/**
+	 * Generate 10 'produits'
+	 */
 	default void initProduit() {}
+	
+	/**
+	 * Generate 3 'admins'
+	 */
 	default void initAdmin() {}
+	
+	
+	/**
+	 * Generate 1 'Chef de service', 1 'directeur' and 1 'directeur general'
+	 */
 	default  void initManagers() {}
+	
+	
+	/**
+	 * Create a default admin with login="admin" and password="admin"
+	 * 
+	 * @return
+	 */
 	default Administrateur createDefaultAdmin() {return null;}
+	
+	
+	/**
+	 * Call 'init' methods
+	 * 
+	 */
 	default void initAllEntity() {}
 	
 }

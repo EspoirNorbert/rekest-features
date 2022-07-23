@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.rekest.entities.employes.ChefService;
 import com.rekest.entities.employes.Employe;
+import com.rekest.feature.impl.Feature;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -23,6 +24,8 @@ public class Service {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	@Column(name="id_service")
 	private int id;
+	
+	@Column(unique=true)
 	private String nom;
 
 	@OneToMany(cascade=CascadeType.ALL)
@@ -33,10 +36,20 @@ public class Service {
 	@JoinColumn(name = "id_chefservice")
 	private ChefService chefService;
 	
+
+	
 	public Service() {}
 
 	public Service(String nom) {
 		this.nom = nom;
+	}
+
+	public List<Employe> getEmployes() {
+		return employes;
+	}
+
+	public void setEmployes(List<Employe> employes) {
+		this.employes = employes;
 	}
 
 	public int getId() {
@@ -59,6 +72,9 @@ public class Service {
 		employes.add(employe);	
 	}
 
+	public void removeEmploye(Employe employe) {
+		employes.remove(employe);
+	}
 	public ChefService getChefService() {
 		return chefService;
 	}
@@ -69,9 +85,5 @@ public class Service {
 
 	public static void copy(Service service, Service entity) {
 		
-	}
-
-	public List<Employe> getEmployes() {
-		return employes;
 	}
 }
