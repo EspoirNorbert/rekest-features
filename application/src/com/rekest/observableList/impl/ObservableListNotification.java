@@ -1,18 +1,31 @@
 package com.rekest.observableList.impl;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d688d9767f5640942c65ab40cb4f5d4fcd722d85
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 
+<<<<<<< HEAD
 import com.rekest.entities.Notification;
 
+=======
+import com.rekest.entities.Note;
+import com.rekest.entities.Notification;
+>>>>>>> d688d9767f5640942c65ab40cb4f5d4fcd722d85
 import com.rekest.observableList.IObservableList;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+<<<<<<< HEAD
 public class ObservableListNotification implements IObservableList<Notification> {
 
+=======
+public class ObservableListNotification implements IObservableList<Notification> {    
+>>>>>>> d688d9767f5640942c65ab40cb4f5d4fcd722d85
 	
     private ObservableList<Notification> notificationData = FXCollections.observableArrayList();
 
@@ -61,12 +74,21 @@ public class ObservableListNotification implements IObservableList<Notification>
 	public void addAll(List<Object> entities) {
 		 for(Object obj : entities) {
 	            if (obj instanceof Notification) {
+<<<<<<< HEAD
 	                notificationData.add((Notification)obj);
+=======
+	            	notificationData.add((Notification)obj);
+>>>>>>> d688d9767f5640942c65ab40cb4f5d4fcd722d85
 	            }
 	        }
 	}
 
 	@Override
 	public void refresh() {}
+<<<<<<< HEAD
 	
 }
+=======
+
+}
+>>>>>>> d688d9767f5640942c65ab40cb4f5d4fcd722d85

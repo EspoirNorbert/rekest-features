@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2022-07-23T12:10:57.209335700  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Manager WHERE nom = 'testu' ]
 2022-07-23T12:11:04.288550800  ERROR:class jakarta.persistence.PersistenceException:Converting `org.hibernate.exception.SQLGrammarException` to JPA `PersistenceException` : JDBC exception executing SQL [select d1_0.id_departement,d1_0.id_chefdepartement,d1_0.nom from Departement d1_0]
 2022-07-23T12:11:09.556462300  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Departement WHERE nom = 'testu' ]
@@ -552,3 +553,9 @@
 2022-07-23T12:46:34.630659100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
 2022-07-23T12:46:34.639547300  ERROR:class java.lang.IllegalStateException:Transaction already active
 2022-07-23T12:46:34.644547700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
+=======
+2022-07-17T17:54:30.265490900  ça marche 
+2022-07-17T19:03:26.109261400  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Utilisateur WHERE nom = 'testu' ]
+2022-07-18T23:25:11.710415200  ça marche 
+2022-07-18T23:26:09.361351  ça marche 
+>>>>>>> d688d9767f5640942c65ab40cb4f5d4fcd722d85

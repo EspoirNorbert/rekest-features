@@ -741,6 +741,71 @@ public interface IFeature {
 	 */
 	public Note findNote (String whereClause)  ;
 	
+	
+///////////////
+	
+/**
+* Returns a list of all 'services'.
+* 
+* @return
+*/
+public List<Notification> listerNotifications ()  ;
+
+/**
+* Returns a list of all 'notifications' according to the filters.
+* 
+* @param whereClause
+* @return
+* @ 
+*/
+public List<Notification> listerNotifications ( String whereClause)   ;
+
+/**
+* Delete the 'notification' set in parameter.
+* Returns true if it succeeded, else false.
+* 
+* @param service
+*/
+public boolean supprimerNotification (Notification notification)  ;
+
+/**
+* Update the 'Notification' set in parameter. 
+* Returns true if it succeeded, else false.
+* 
+* @param service
+*/
+public boolean modifierNotification (Notification notification)  ;
+
+/**
+* Save the 'notification' set in parameter. 
+* Returns true if it succeeded, else false.
+* 
+* @param service
+*/
+public boolean creerNotification (Notification notification)  ;
+
+
+
+/**
+* Find and return the 'notification' set in parameter if it exist, else null.
+* 
+* @param whereClause
+* @return
+* @ 
+*/
+public Service rechercherNotification( String whereClause)   ;
+
+/**
+* Find and return the 'notification' set in parameter if it exist, else null.
+* 
+* @param primaryKey
+* @return
+* @ 
+*/
+public Service rechercherNotification( Integer primaryKey)   ;
+
+
+	
 	/**
 	 * Returns the number of 'Demandes'
 	 * 
@@ -849,6 +914,14 @@ public interface IFeature {
 	 */
 	public ObservableListNotification getObservableListNotification () ;
 	
+	
+	/**
+	 * Returns the number of 'Notifications'
+	 * 
+	 * @return
+	 */
+	public Integer RetournerNombreNotificationsTotal();
+	
 
 	/**
 	 * Returns a Observable list of the stored 'Demandes'
@@ -947,6 +1020,16 @@ public interface IFeature {
 	 * @ 
 	 */
 	public ObservableList<Departement> loadDepartementsObservableList ()  ;
+	
+	
+	/**
+	 * Returns a Observable list of the stored 'Notifications'
+	 * 
+	 * @return
+	 * @ 
+	 */
+	public ObservableList<Notification> loadNotificationObservableList ()  ;
+
 
 
 
@@ -968,9 +1051,8 @@ public interface IFeature {
 	 * @return
 	 */
 	public ObservableList<Demande> loadDemandesByDirectionObservableList (Object direction)  ;
-
-
-
+	
+	
 
 	/**
 	 * Returns the user identified, else null.
@@ -1002,6 +1084,8 @@ public interface IFeature {
 	 * @ 
 	 */
 	public boolean associateService(Employe employe, Service service)  ;
+	
+	
 	
 	/**
 	 * Associate a service to a departement.
@@ -1068,5 +1152,6 @@ public interface IFeature {
 	 * 
 	 */
 	default void initAllEntity() {}
+	
 	
 }
