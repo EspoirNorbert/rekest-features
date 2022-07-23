@@ -9,39 +9,39 @@ public interface IFeatureTests {
 
 	/**
 	 * Test activerUtilisateur and desactiverUtilisateur.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testActiverDesactiverUtilisateur  ()  ;	
 
 	/**
 	 * Test testSupprimerDemande.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void  testListerDemandes  ()  ;
 
 	/**
 	 * Test testSupprimerDemande.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public  void testListerDemandes2  ( )   ;
 
 	/**
 	 * Test SupprimerDemande.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testSupprimerDemande  ()  ;
 
 	/**
 	 * Test ModifierDemande.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testModifierDemande  ()  ;
 
 	/**
 	 * Test CreerDemande .
-	 * Returns true if it works, else false.
+	 * 
 
 	 */
 	public void testCreerDemande  ()  ;
@@ -49,7 +49,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherDemande.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testRechercherDemande ( )   ;
@@ -58,7 +58,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherDemandeId.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 * 
 	 */
@@ -67,32 +67,32 @@ public interface IFeatureTests {
 
 	/**
 	 * Test testSupprimerService.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void  testListerServices  ()  ;
 
 	/**
 	 * Test testSupprimerService.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public  void testListerServices2  ( )   ;
 
 	/**
 	 * Test SupprimerService.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testSupprimerService  ()  ;
 
 	/**
 	 * Test ModifierService.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testModifierService  ()  ;
 
 	/**
 	 * Test CreerService .
-	 * Returns true if it works, else false.
+	 * 
 
 	 */
 	public void testCreerService  ()  ;
@@ -100,7 +100,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherService.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testRechercherService ( )   ;
@@ -109,7 +109,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherServiceId.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 * 
 	 */
@@ -118,32 +118,32 @@ public interface IFeatureTests {
 
 	/**
 	 * Test testSupprimerDepartement.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void  testListerDepartements  ()  ;
 
 	/**
 	 * Test testSupprimerDepartement.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public  void testListerDepartements2  ( )   ;
 
 	/**
 	 * Test SupprimerDepartement.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testSupprimerDepartement  ()  ;
 
 	/**
 	 * Test ModifierDepartement.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testModifierDepartement  ()  ;
 
 	/**
 	 * Test CreerDepartement .
-	 * Returns true if it works, else false.
+	 * 
 
 	 */
 	public void testCreerDepartement  ()  ;
@@ -151,7 +151,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherDepartement.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testRechercherDepartement ( )   ;
@@ -160,7 +160,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherDepartementId.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 * 
 	 */
@@ -169,32 +169,32 @@ public interface IFeatureTests {
 
 	/**
 	 * Test testSupprimerNote.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void  testListerNotes  ()  ;
 
 	/**
 	 * Test testSupprimerNote.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public  void testListerNotes2  ( )   ;
 
 	/**
 	 * Test SupprimerNote.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testSupprimerNote  ()  ;
 
 	/**
 	 * Test ModifierNote.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testModifierNote  ()  ;
 
 	/**
 	 * Test CreerNote .
-	 * Returns true if it works, else false.
+	 * 
 
 	 */
 	public void testCreerNote  ()  ;
@@ -202,7 +202,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherNote.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testRechercherNote ( )   ;
@@ -211,7 +211,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherNoteId.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 * 
 	 */
@@ -220,32 +220,32 @@ public interface IFeatureTests {
 
 	/**
 	 * Test testSupprimerRole.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void  testListerRoles  ()  ;
 
 	/**
 	 * Test testSupprimerRole.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public  void testListerRoles2  ( )   ;
 
 	/**
 	 * Test SupprimerRole.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testSupprimerRole  ()  ;
 
 	/**
 	 * Test ModifierRole.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testModifierRole  ()  ;
 
 	/**
 	 * Test CreerRole .
-	 * Returns true if it works, else false.
+	 * 
 
 	 */
 	public void testCreerRole  ()  ;
@@ -253,7 +253,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherRole.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testRechercherRole ( )   ;
@@ -262,7 +262,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherRoleId.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 * 
 	 */
@@ -271,32 +271,32 @@ public interface IFeatureTests {
 
 	/**
 	 * Test testSupprimerManager.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void  testListerManagers  ()  ;
 
 	/**
 	 * Test testSupprimerManager.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public  void testListerManagers2  ( )   ;
 
 	/**
 	 * Test SupprimerManager.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testSupprimerManager  ()  ;
 
 	/**
 	 * Test ModifierManager.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testModifierManager  ()  ;
 
 	/**
 	 * Test CreerManager .
-	 * Returns true if it works, else false.
+	 * 
 
 	 */
 	public void testCreerManager  ()  ;
@@ -304,7 +304,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherManager.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testRechercherManager ( )   ;
@@ -313,7 +313,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherManagerId.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 * 
 	 */
@@ -322,32 +322,32 @@ public interface IFeatureTests {
 
 	/**
 	 * Test testSupprimerEmploye.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void  testListerEmployes  ()  ;
 
 	/**
 	 * Test testSupprimerEmploye.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public  void testListerEmployes2  ( )   ;
 
 	/**
 	 * Test SupprimerEmploye.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testSupprimerEmploye  ()  ;
 
 	/**
 	 * Test ModifierEmploye.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testModifierEmploye  ()  ;
 
 	/**
 	 * Test CreerEmploye .
-	 * Returns true if it works, else false.
+	 * 
 
 	 */
 	public void testCreerEmploye  ()  ;
@@ -355,7 +355,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherEmployeId.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testRechercherEmploye ( )   ;
@@ -364,41 +364,42 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherEmploye.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 * 
 	 */
 	public void testRechercherEmployeId ( )   ;	
 
 
+
 	/**
 	 * Test testSupprimerUtilisateur.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void  testListerUtilisateurs  ()  ;
 
 	/**
 	 * Test testSupprimerUtilisateur.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public  void testListerUtilisateurs2  ( )   ;
 
 	/**
 	 * Test SupprimerUtilisateur.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testSupprimerUtilisateur  ()  ;
 
 	/**
 	 * Test ModifierUtilisateur.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testModifierUtilisateur  ()  ;
 
 	/**
 	 * Test CreerUtilisateur .
-	 * Returns true if it works, else false.
+	 * 
 
 	 */
 	public void testCreerUtilisateur  ()  ;
@@ -406,7 +407,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherUtilisateur.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testRechercherUtilisateur ( )   ;
@@ -415,41 +416,42 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherUtilisateurId.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 * 
 	 */
 	public void testRechercherUtilisateurId ( )   ;	
 
 
+	
 	/**
 	 * Test testSupprimerProduit.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void  testListerProduits  ()  ;
 
 	/**
 	 * Test testSupprimerProduit.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public  void testListerProduits2  ( )   ;
 
 	/**
 	 * Test SupprimerProduit.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testSupprimerProduit  ()  ;
 
 	/**
 	 * Test ModifierProduit.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testModifierProduit  ()  ;
 
 	/**
 	 * Test CreerProduit .
-	 * Returns true if it works, else false.
+	 * 
 
 	 */
 	public void testCreerProduit  ()  ;
@@ -457,7 +459,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherProduitId.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 */
 	public void testRechercherProduit ( )   ;
@@ -466,7 +468,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test RechercherProduitId.
-	 * Returns true if it works, else false.
+	 * 
 	 * 
 	 * 
 	 */
@@ -478,7 +480,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test LoadProduitsObservableList.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testLoadProduitsObservableList ()  ;
 
@@ -486,7 +488,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test LoadDemandesObservableList.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testLoadDemandesObservableList ()  ;
 
@@ -494,28 +496,28 @@ public interface IFeatureTests {
 
 	/**
 	 * Test LoadEmployesObservableList.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testLoadEmployesObservableList ()  ;
 
 
 	/**
 	 * Test LoadUtilisateursObservableList.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testLoadUtilisateursObservableList ()  ;
 
 
 	/**
 	 * Test LoadManagersObservableList.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testLoadManagersObservableList ()  ;
 
 
 	/**
 	 * Test LoadNotesObservableList.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testLoadNotesObservableList ()  ;
 
@@ -523,21 +525,21 @@ public interface IFeatureTests {
 
 	/**
 	 * Test LoadRolesObservableList.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testLoadRolesObservableList ()  ;
 
 
 	/**
 	 * Test LoadServicesObservableList.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testLoadServicesObservableList ()  ;
 
 
 	/**
 	 * Test LoadDepartementsObservableList.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testLoadDepartementsObservableList ()  ;
 
@@ -546,7 +548,7 @@ public interface IFeatureTests {
 
 	/**
 	 * Test loadDemandesByServiceObservableList.
-	 * Returns true if it works, else false.
+	 * 
 	 *
 	 */
 	public void loadDemandesByServiceObservableList ()  ;
@@ -557,7 +559,7 @@ public interface IFeatureTests {
 	/**
 
 	 * Test LoadDemandesByDirectionObservableList.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testLoadDemandesByDirectionObservableList ()  ;
 
@@ -566,22 +568,30 @@ public interface IFeatureTests {
 
 	/**
 	 * Test validerIdentifiants.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public  void testValiderIdentifiants()  ;
 
 	/**
 	 * Test repondreDemande.
-	 * Returns true if it works, else false. 
+	 *  
 	 */
 	public void testRepondreDemande()  ; 
 
 
 	/**
 	 * Test associerService.
-	 * Returns true if it works, else false.
+	 * 
 	 */
 	public void testAssocierService()  ;
+
+
+
+	/**
+	 * Test associerDepartement.
+	 * 
+	 */
+	public void testAssocierDepartement()  ;
 
 
 

@@ -27,6 +27,7 @@ public class Departement {
 	@Column(name="id_departement")
 	private int id;
 	
+
 	@Column(unique=true)
 	private String nom;
 	
@@ -54,6 +55,14 @@ public class Departement {
 	
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public List<Service> getServices() {
+		return services;
+	}
+
+	public void setServices(List<Service> services) {
+		this.services = services;
 	}
 	
 	public String getNom() {

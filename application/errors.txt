@@ -1,561 +1,91 @@
-<<<<<<< HEAD
-2022-07-23T12:10:57.209335700  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Manager WHERE nom = 'testu' ]
-2022-07-23T12:11:04.288550800  ERROR:class jakarta.persistence.PersistenceException:Converting `org.hibernate.exception.SQLGrammarException` to JPA `PersistenceException` : JDBC exception executing SQL [select d1_0.id_departement,d1_0.id_chefdepartement,d1_0.nom from Departement d1_0]
-2022-07-23T12:11:09.556462300  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Departement WHERE nom = 'testu' ]
-2022-07-23T12:11:30.992996100  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Utilisateur WHERE nom = 'testu' ]
-2022-07-23T12:12:13.411221600  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Produit WHERE nom = 'testu' ]
-2022-07-23T12:12:35.624007500  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Note WHERE message = 'testu' ]
-2022-07-23T12:12:56.463076300  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Role WHERE intitule = 'testu' ]
-2022-07-23T12:13:33.446697500  ERROR:class jakarta.persistence.PersistenceException:Converting `org.hibernate.PersistentObjectException` to JPA `PersistenceException` : detached entity passed to persist: com.rekest.entities.Service
-2022-07-23T12:13:40.529642100  ERROR:class jakarta.persistence.PersistenceException:Converting `org.hibernate.PersistentObjectException` to JPA `PersistenceException` : detached entity passed to persist: com.rekest.entities.employes.Employe
-2022-07-23T12:13:47.838496  ERROR:class jakarta.persistence.PersistenceException:Converting `org.hibernate.PersistentObjectException` to JPA `PersistenceException` : detached entity passed to persist: com.rekest.entities.Service
-2022-07-23T12:14:17.896897900  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Demande WHERE etat = 'testu' ]
-2022-07-23T12:14:36.667541200  ERROR:class jakarta.persistence.PersistenceException:Converting `org.hibernate.PersistentObjectException` to JPA `PersistenceException` : detached entity passed to persist: com.rekest.entities.employes.Manager
-2022-07-23T12:14:43.431661600  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Manager WHERE nom = 'newname' ]
-2022-07-23T12:16:04.967039600  ERROR:class jakarta.persistence.PersistenceException:Converting `org.hibernate.exception.SQLGrammarException` to JPA `PersistenceException` : JDBC exception executing SQL [select u1_0.id_employe,u1_0.employe_profil,u1_0.adresse,u1_0.email,u1_0.nom,u1_0.prenom,u1_0.telephone,u1_0.created_at,u1_0.is_enable,u1_0.login,u1_0.password from Employe u1_0 where u1_0.employe_profil in('Utilisateur','ChefService','ChefDepartement','DirecteurGeneral','Directeur','Manager','Gestionnaire')]
-2022-07-23T12:16:48.505257800  ERROR:class jakarta.persistence.PersistenceException:Converting `org.hibernate.PersistentObjectException` to JPA `PersistenceException` : detached entity passed to persist: com.rekest.entities.Service
-2022-07-23T12:16:56.081708200  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Service WHERE nom = 'testu' ]
-2022-07-23T12:17:19.089671700  ERROR:class jakarta.persistence.PersistenceException:Converting `org.hibernate.PersistentObjectException` to JPA `PersistenceException` : detached entity passed to persist: com.rekest.entities.employes.Utilisateur
-2022-07-23T12:18:47.825394600  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Departement WHERE nom = 'testu' ]
-2022-07-23T12:24:42.003244800  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Employe WHERE nom = 'testu' ]
-2022-07-23T12:24:42.106615400  ERROR:class jakarta.persistence.PersistenceException:Converting `org.hibernate.exception.ConstraintViolationException` to JPA `PersistenceException` : could not execute statement
-2022-07-23T12:24:42.110244400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.119508600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.126249900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.130971500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.136393400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.139958600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.145602300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.148248900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.155272  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.160553500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.165015200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.172135400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.192723  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.200098300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.207482100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.211652800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.218245700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.231242800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.237917  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.243248200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.246248600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.254260400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.259691500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.287247200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.292276800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.296246500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.302244400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.306489200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.311244600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.317338900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.321821400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.327447400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.335249700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.342848200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.347248300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.358376400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.363245500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.372245400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.376144500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.386577400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.394245  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.404741  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.413249200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.419246700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.425244600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.430277400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.436426200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.441663500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.453250700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.462377200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.468245  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.472019500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.477251600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.481508800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.488928300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.492609300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.496320100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.505242900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.513698800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.521594400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.525375800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.528242700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.532499500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.534245900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.539497200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.544407400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.548241600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.553356  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.555461300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.559244600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.563427800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.565107400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.569979800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.574040100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.578508800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.582334800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.584710100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.588361800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.591312200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.595243100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.597988300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.602305900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.605384200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.610247  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.621298800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.625322400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.630244800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.632812800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.637082500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.639878600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.643473300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.646553  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.650510200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.653245700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.657421100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.660242900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.663465700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.666246100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.670242900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.672651  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.676919200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.680361400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.685245600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.687339300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.689353100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.691043700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.692564  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.699244800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.702286700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.706244100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.707247300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.713262900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.716249400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.721328900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.726243  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.732094300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.736243600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.743473500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.750773300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.752246900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.754308400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.757291600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.763243500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.765792600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.769244500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.772105700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.775631200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.778379500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.781513200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.784248800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:24:42.788319700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:24:42.790244600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:56.857910600  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Employe WHERE nom = 'testu' ]
-2022-07-23T12:28:56.982996  ERROR:class jakarta.persistence.PersistenceException:Converting `org.hibernate.exception.ConstraintViolationException` to JPA `PersistenceException` : could not execute statement
-2022-07-23T12:28:56.985675100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:56.996978600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.006447900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.009605600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.014521300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.017441200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.022445900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.024022200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.030005800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.033580500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.037446600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.043610800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.060442300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.065569800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.071538800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.074526300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.079108100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.088446300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.092445600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.096178300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.097947600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.103444500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.109444  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.130469300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.135090600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.138522900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.143945900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.147522500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.151444400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.156688300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.160343400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.164358400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.170357200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.176790400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.181871300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.189613900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.192888900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.197360600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.198358800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.206356900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.210360700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.221592400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.227984900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.231645200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.236358800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.239456700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.242356700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.245356900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.249576200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.252535200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.255358300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.259085900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.263473100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.266882700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.272415  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.275451600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.278778200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.284530500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.290631600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.319733  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.322358500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.325469700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.329408700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.330401100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.335794600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.340057600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.342061100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.345581300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.346841700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.351583800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.355636500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.357583900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.361699300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.365580600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.371918100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.374582800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.377783200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.382580500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.388580400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.392814200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.394582200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.398581400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.401579900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.405272400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.407579800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.409668800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.413054  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.415579900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.419080500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.421582700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.425942300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.428582  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.431998300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.434899400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.438463700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.441806300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.444656400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.447581200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.451583200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.454583300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.457709100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.460754300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.464007400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.465582500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.467039400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.468917600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.470720  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.476584100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.478582600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.481582900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.482642  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.487578500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.490946100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.494250800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.496581700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.499581100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.502580500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.508578400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.514580200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.515857700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.518043900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.520580700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.527582100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.529582900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.532582400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.534828  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.537673400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.540579300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.543579600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.546578700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:28:57.548582600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:28:57.551797400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.240100100  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Employe WHERE nom = 'testu' ]
-2022-07-23T12:31:14.359861600  ERROR:class jakarta.persistence.PersistenceException:Converting `org.hibernate.exception.ConstraintViolationException` to JPA `PersistenceException` : could not execute statement
-2022-07-23T12:31:14.362123400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.372030400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.379550100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.383627300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.387826200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.391620100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.396820800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.399551  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.405553800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.409598400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.412694  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.417387800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.430798100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.436397500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.441826900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.445006900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.449800200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.457796600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.462328600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.465599300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.467092  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.471804100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.476049300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.496800100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.500555100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.504798200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.509189500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.512409600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.515393700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.519325300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.523431700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.527845600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.535799400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.542115900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.547323400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.555149100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.558849200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.563795500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.565794200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.570798600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.575108700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.583863100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.592013500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.595800900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.601951100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.605474100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.608780800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.611924900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.615475700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.618710100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.622475800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.625852  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.629503700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.632476  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.637475700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.640476  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.643474700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.656956900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.663541900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.668476200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.671799700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.674474900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.677684  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.679048800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.682474700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.685475  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.688129  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.692840300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.694546500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.698474  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.703260  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.705474700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.709660300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.712852700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.717235300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.720476800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.723475400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.726850300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.729477300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.732828300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.735477500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.744703900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.747584600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.751474700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.753685800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.756856100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.759736600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.762781500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.765539300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.768857900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.772902900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.775981200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.779822700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.781477200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.785092100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.788012500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.791013500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.793215900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.796017900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.798828400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.802049800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.804639400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.808013800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.809545100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.811081700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.812011400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.814014100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.820013800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.823223600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.826011300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.827074900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.833458600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.836015200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.839238100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.843013900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.879066900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.882434900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.887190100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.895106900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.897013400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.898766700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.901495700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.908013700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.910610900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.913118300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.916274400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.919690100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.983014100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.986013400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.989652800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:31:14.992055700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:31:14.994011600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:33.801259600  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Employe WHERE nom = 'testu' ]
-2022-07-23T12:46:33.887887500  ERROR:class jakarta.persistence.PersistenceException:Converting `org.hibernate.exception.ConstraintViolationException` to JPA `PersistenceException` : could not execute statement
-2022-07-23T12:46:33.890982400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:33.899571300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:33.905887700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:33.909960800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:33.915074  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:33.919885700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:33.926649300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:33.929357100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:33.937141600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:33.942885500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:33.947516  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:33.953908300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:33.981888900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:33.990441600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:33.996042  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.001426100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.006885800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.018653900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.024532400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.030720300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.033433300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.040248  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.045410300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.072318600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.075251500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.079428400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.083333700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.088005900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.091758800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.096249100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.101253600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.106348  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.113816700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.120249  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.124394600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.132252600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.135263600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.140408700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.141818900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.145306500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.149869100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.158249200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.167247600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.170247800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.174926900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.177978700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.181517900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.185248800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.188784100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.192784600  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.195918200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.199784400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.203231200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.206538200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.210788200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.213074700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.217181800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.223236700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.228782700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.234029100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.237417700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.239918300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.243784500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.245876600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.251786500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.255884300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.258866400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.263783800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.265820500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.271023200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.274789  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.277256200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.280788800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.284949500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.289098100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.292829600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.296084500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.298857300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.301787100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.305408900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.308442100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.310785800  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.313859400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.317980400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.320784800  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.324309200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.327784900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.330783400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.333789  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.337047200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.339785500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.342786500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.346976100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.350788400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.353870300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.355786900  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.358786100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.361184200  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.364785300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.371120400  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.373960300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.377135100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.381357300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.382966  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.383962200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.385961600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.387960  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.395399400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.397963100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.402002600  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.402960500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.408351300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.411963700  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.515988300  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.522982200  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.528971700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.534983500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.545027  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.560436100  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.563086  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.565813  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.572870100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.580817400  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.584541900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.591542300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.598548700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.605542500  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.613543500  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.621546900  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.630659100  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-2022-07-23T12:46:34.639547300  ERROR:class java.lang.IllegalStateException:Transaction already active
-2022-07-23T12:46:34.644547700  ERROR:class org.hibernate.AssertionFailure:null id in com.rekest.entities.Service entry (don't flush the Session after an exception occurs)
-=======
-2022-07-17T17:54:30.265490900  ça marche 
-2022-07-17T19:03:26.109261400  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Utilisateur WHERE nom = 'testu' ]
-2022-07-18T23:25:11.710415200  ça marche 
-2022-07-18T23:26:09.361351  ça marche 
->>>>>>> d688d9767f5640942c65ab40cb4f5d4fcd722d85
+2022-07-23T15:56:41.407768100  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Employe WHERE nom = 'testu' ]
+2022-07-23T15:56:42.283759600  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Produit WHERE nom = 'testu' ]
+2022-07-23T15:56:42.492756600  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Note WHERE message = 'testu' ]
+2022-07-23T15:56:42.493756500  [Ljava.lang.StackTraceElement;@5552d10
+2022-07-23T15:56:42.498755600  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Note WHERE message = 'testu' ]
+2022-07-23T15:56:42.500753700  [Ljava.lang.StackTraceElement;@4a9412c4
+2022-07-23T15:56:42.535763400  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Role WHERE intitule = 'testu' ]
+2022-07-23T15:56:43.127777700  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Manager WHERE nom = 'testu' ]
+2022-07-23T15:56:43.413747600  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Utilisateur WHERE nom = 'testu' ]
+2022-07-23T15:56:43.613224100  ERROR:class jakarta.persistence.EntityNotFoundException:deleted object would be re-saved by cascade (remove deleted object from associations): [com.rekest.entities.employes.Employe#22]
+2022-07-23T15:56:43.667250900  ERROR:class jakarta.persistence.NonUniqueResultException:query did not return a unique result: 4
+2022-07-23T15:56:43.893728500  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Service WHERE nom = 'testu' ]
+2022-07-23T15:56:44.088937800  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Departement WHERE nom = 'testu' ]
+2022-07-23T16:01:12.276614800  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Employe WHERE nom = 'testu' ]
+2022-07-23T16:01:13.099546100  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Produit WHERE nom = 'testu' ]
+2022-07-23T16:01:13.312539800  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Note WHERE message = 'testu' ]
+2022-07-23T16:01:13.314541400  [Ljava.lang.StackTraceElement;@3c74d846
+2022-07-23T16:01:13.319541700  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Note WHERE message = 'testu' ]
+2022-07-23T16:01:13.320543500  [Ljava.lang.StackTraceElement;@219dd935
+2022-07-23T16:01:13.359541800  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Role WHERE intitule = 'testu' ]
+2022-07-23T16:01:13.856541100  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Manager WHERE nom = 'testu' ]
+2022-07-23T16:01:14.118351300  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Utilisateur WHERE nom = 'testu' ]
+2022-07-23T16:01:14.338770  ERROR:class jakarta.persistence.EntityNotFoundException:deleted object would be re-saved by cascade (remove deleted object from associations): [com.rekest.entities.employes.Employe#22]
+2022-07-23T16:01:14.392088700  ERROR:class jakarta.persistence.NonUniqueResultException:query did not return a unique result: 4
+2022-07-23T16:01:14.633033500  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Service WHERE nom = 'testu' ]
+2022-07-23T16:01:14.850349300  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Departement WHERE nom = 'testu' ]
+2022-07-23T16:03:53.030725800  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Employe WHERE nom = 'testu' ]
+2022-07-23T16:03:53.799325700  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Produit WHERE nom = 'testu' ]
+2022-07-23T16:03:54.031357500  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Note WHERE message = 'testu' ]
+2022-07-23T16:03:54.033324  [Ljava.lang.StackTraceElement;@78b44fcb
+2022-07-23T16:03:54.038323700  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Note WHERE message = 'testu' ]
+2022-07-23T16:03:54.039324100  [Ljava.lang.StackTraceElement;@5e9671e6
+2022-07-23T16:03:54.076328300  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Role WHERE intitule = 'testu' ]
+2022-07-23T16:03:54.594513100  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Manager WHERE nom = 'testu' ]
+2022-07-23T16:03:54.870720700  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Utilisateur WHERE nom = 'testu' ]
+2022-07-23T16:03:55.073878200  ERROR:class jakarta.persistence.EntityNotFoundException:deleted object would be re-saved by cascade (remove deleted object from associations): [com.rekest.entities.employes.Employe#22]
+2022-07-23T16:03:55.141225900  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Demande WHERE etat = 'testu' ]
+2022-07-23T16:03:55.426259300  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Service WHERE nom = 'testu' ]
+2022-07-23T16:03:55.622873100  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Departement WHERE nom = 'testu' ]
+2022-07-23T16:06:09.260038700  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Employe WHERE nom = 'testu' ]
+2022-07-23T16:06:10.125176900  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Produit WHERE nom = 'testu' ]
+2022-07-23T16:06:10.362181100  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Note WHERE message = 'testu' ]
+2022-07-23T16:06:10.363179500  [Ljava.lang.StackTraceElement;@41b2123e
+2022-07-23T16:06:10.367180200  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Note WHERE message = 'testu' ]
+2022-07-23T16:06:10.368174500  [Ljava.lang.StackTraceElement;@7ec8db0c
+2022-07-23T16:06:10.407180800  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Role WHERE intitule = 'testu' ]
+2022-07-23T16:06:10.906306400  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Manager WHERE nom = 'testu' ]
+2022-07-23T16:06:11.193043800  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Utilisateur WHERE nom = 'testu' ]
+2022-07-23T16:06:11.399381800  ERROR:class jakarta.persistence.EntityNotFoundException:deleted object would be re-saved by cascade (remove deleted object from associations): [com.rekest.entities.employes.Employe#22]
+2022-07-23T16:06:11.463355300  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Demande WHERE etat = 'testu' ]
+2022-07-23T16:06:11.727501200  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Service WHERE nom = 'testu' ]
+2022-07-23T16:06:11.928381900  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Departement WHERE nom = 'testu' ]
+2022-07-23T16:32:58.178988600  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Employe WHERE nom = 'testu' ]
+2022-07-23T16:32:58.982816600  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Produit WHERE nom = 'testu' ]
+2022-07-23T16:32:59.236800200  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Note WHERE message = 'testu' ]
+2022-07-23T16:32:59.237799600  [Ljava.lang.StackTraceElement;@138b9abe
+2022-07-23T16:32:59.240801600  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Note WHERE message = 'testu' ]
+2022-07-23T16:32:59.241797600  [Ljava.lang.StackTraceElement;@7a364e1c
+2022-07-23T16:32:59.275798600  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Role WHERE intitule = 'testu' ]
+2022-07-23T16:32:59.787774200  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Manager WHERE nom = 'testu' ]
+2022-07-23T16:33:00.054251300  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Utilisateur WHERE nom = 'testu' ]
+2022-07-23T16:33:00.243281900  ERROR:class jakarta.persistence.EntityNotFoundException:deleted object would be re-saved by cascade (remove deleted object from associations): [com.rekest.entities.employes.Employe#22]
+2022-07-23T16:33:00.317361200  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Demande WHERE etat = 'testu' ]
+2022-07-23T16:33:00.592028800  ERROR:class jakarta.persistence.EntityNotFoundException:deleted object would be re-saved by cascade (remove deleted object from associations): [com.rekest.entities.employes.Utilisateur#24]
+2022-07-23T16:33:00.832477900  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Departement WHERE nom = 'testu' ]
+2022-07-23T16:38:21.834806500  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Employe WHERE nom = 'testu' ]
+2022-07-23T16:38:22.731586200  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Produit WHERE nom = 'testu' ]
+2022-07-23T16:38:22.957586100  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Note WHERE message = 'testu' ]
+2022-07-23T16:38:22.959585300  [Ljava.lang.StackTraceElement;@23ffc910
+2022-07-23T16:38:22.962586600  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Note WHERE message = 'testu' ]
+2022-07-23T16:38:22.963586300  [Ljava.lang.StackTraceElement;@74cff17c
+2022-07-23T16:38:22.994588500  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Role WHERE intitule = 'testu' ]
+2022-07-23T16:38:23.577599100  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Manager WHERE nom = 'testu' ]
+2022-07-23T16:38:23.910000200  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Utilisateur WHERE nom = 'testu' ]
+2022-07-23T16:38:24.120618100  ERROR:class jakarta.persistence.EntityNotFoundException:deleted object would be re-saved by cascade (remove deleted object from associations): [com.rekest.entities.employes.Employe#22]
+2022-07-23T16:38:24.202146300  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Demande WHERE etat = 'testu' ]
+2022-07-23T16:38:24.485070700  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Service WHERE nom = 'testu' ]
+2022-07-23T16:38:24.681830700  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Departement WHERE nom = 'testu' ]
+2022-07-23T17:06:47.106407900  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Employe WHERE nom = 'testu' ]
+2022-07-23T17:06:47.905409  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Produit WHERE nom = 'testu' ]
+2022-07-23T17:06:48.189408400  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Note WHERE message = 'testu' ]
+2022-07-23T17:06:48.193407700  [Ljava.lang.StackTraceElement;@6bdad3bb
+2022-07-23T17:06:48.204410400  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Note WHERE message = 'testu' ]
+2022-07-23T17:06:48.207413600  [Ljava.lang.StackTraceElement;@4b62f1ba
+2022-07-23T17:06:48.243992800  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Role WHERE intitule = 'testu' ]
+2022-07-23T17:06:48.743185700  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Manager WHERE nom = 'testu' ]
+2022-07-23T17:06:49.016983400  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Utilisateur WHERE nom = 'testu' ]
+2022-07-23T17:06:49.204217300  ERROR:class jakarta.persistence.EntityNotFoundException:deleted object would be re-saved by cascade (remove deleted object from associations): [com.rekest.entities.employes.Employe#22]
+2022-07-23T17:06:49.284319  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Demande WHERE etat = 'testu' ]
+2022-07-23T17:06:49.564499  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Service WHERE nom = 'testu' ]
+2022-07-23T17:06:49.763954600  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.Departement WHERE nom = 'testu' ]

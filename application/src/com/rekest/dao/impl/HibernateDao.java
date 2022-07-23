@@ -73,7 +73,7 @@ public class HibernateDao implements IDao{
 			else logger.info("Record not found.");
 		} catch (Exception e) {
 			throw new DAOException("ERROR:" + e.getClass() + ":" + e.getMessage());
-		} 
+		}
 		return entity;
 	}
 
@@ -135,9 +135,7 @@ public class HibernateDao implements IDao{
 			//Creating Transaction Object  
 			transaction = session.beginTransaction();
 			logger.info("Begin transaction.");
-			
-			//@SuppressWarnings("deprecation")
-			session.saveOrUpdate(entity);
+			session.persist(entity);
 			// Transaction Is Committed To Database
 			transaction.commit();
 			logger.info("Record Successfully updated.");
@@ -237,7 +235,7 @@ public class HibernateDao implements IDao{
 			else logger.info("Record not found.");
 		} catch (Exception e) {
 			throw new DAOException("ERROR:" + e.getClass() + ":" + e.getMessage());
-		} 
+		}
 		return entity;
 	}
 

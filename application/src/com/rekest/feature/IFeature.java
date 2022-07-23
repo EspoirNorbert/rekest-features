@@ -10,9 +10,11 @@ import com.rekest.entities.Produit;
 import com.rekest.entities.Role;
 import com.rekest.entities.Service;
 import com.rekest.entities.employes.Administrateur;
+import com.rekest.entities.employes.ChefDepartement;
 import com.rekest.entities.employes.Employe;
 import com.rekest.entities.employes.Manager;
 import com.rekest.entities.employes.Utilisateur;
+import com.rekest.observableList.impl.ObservableListChefDepartement;
 import com.rekest.observableList.impl.ObservableListDemande;
 import com.rekest.observableList.impl.ObservableListDepartement;
 import com.rekest.observableList.impl.ObservableListEmploye;
@@ -333,6 +335,70 @@ public interface IFeature {
 
 
 	/**
+	 * Returns a list of all 'chefDepartements'.
+	 * 
+	 * @param persons
+	 * @return
+	 */
+	public List<ChefDepartement> listChefDepartements  ()  ;
+
+	/**
+	 * Returns a list of all 'chefDepartements' according to the filters.
+	 * 
+	 * @param whereClause
+	 * @return
+	 * @ 
+	 */
+	public List<ChefDepartement> listChefDepartements  ( String whereClause)   ;
+	
+	/**
+	 * Delete the 'chefDepartement' set in parameter. 
+	 * Returns true if it succeeded, else false.
+	 * 
+	 *  
+	 * @param chefDepartement
+	 */
+	public boolean deleteChefDepartement  (ChefDepartement chefDepartement)  ;
+
+	/**
+	 * Update the 'chefDepartement' set in parameter. 
+	 *  Returns true if it succeeded, else false.
+	 * 
+	 * 
+	 * @param chefDepartement
+	 */
+	public boolean updateChefDepartement  (ChefDepartement chefDepartement)  ;
+
+	/**
+	 * Save the 'chefDepartement' set in parameter. 
+	 * Returns true if it succeeded, else false.
+	 * 
+	 * @param chefDepartement
+	 */
+	public boolean createChefDepartement  (ChefDepartement chefDepartement)  ;
+
+
+	/**
+	 * Find and return the 'chefDepartement' set in parameter if it exist, else null.
+	 * 
+	 * @param whereClause
+	 * @return
+	 * @ 
+	 */
+	public ChefDepartement findChefDepartement ( String whereClause)   ;
+
+	/**
+	 * Find and return the 'chefDepartement' set in parameter if it exist, else null.
+	 * 
+	 * @param primaryKey
+	 * @return
+	 * @ 
+	 */
+	public ChefDepartement findChefDepartement ( Integer primaryKey)   ;	
+
+
+
+	/**
 	 * Returns a list of all 'produits'.
 	 * 
 	 * @param persons
@@ -394,6 +460,7 @@ public interface IFeature {
 	 */
 	public Produit findProduit ( Integer primaryKey)   ;	
 
+	
 	
 	
 	
@@ -858,11 +925,19 @@ public Service rechercherNotification( Integer primaryKey)   ;
 	public ObservableListManager getObservableListManager () ;
 	
 	/**
+	 * Returns the current ObservableListChefDepartement
+	 * 
+	 * @return
+	 */
+	public ObservableListChefDepartement getObservableListChefDepartement () ;
+	
+	/**
 	 * Returns the current ObservableListNote
 	 * 
 	 * @return
 	 */
 	public ObservableListNote getObservableListNote () ;
+	
 	
 	/**
 	 * Returns the current ObservableListProduit
@@ -960,6 +1035,14 @@ public Service rechercherNotification( Integer primaryKey)   ;
 	 * @ 
 	 */
 	public ObservableList<Role> loadRoleObservableList ()  ;
+
+	/**
+	 * Returns a Observable list of the stored 'ChefDepartements'
+	 * 
+	 * @return
+	 * @ 
+	 */
+	public ObservableList<ChefDepartement> loadChefDepartementObservableList ()  ;
 
 
 

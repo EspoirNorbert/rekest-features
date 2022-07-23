@@ -1,10 +1,9 @@
 package com.rekest.test.impl;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-
-
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,10 +35,10 @@ public class FeatureTest implements IFeatureTests {
 		feat.createUtilisateur(user);
 		feat.enableUtilisateur(user);
 		
-		assertEquals(user.isEnable(), false);	
+		assertEquals(user.isEnable(), true);	
 		feat.disableUtilisateur(user);
 		
-		assertEquals(user.isEnable(), true);
+		assertEquals(user.isEnable(), false);
 		
 		feat.deleteUtilisateur(user);
 		
@@ -467,7 +466,7 @@ public class FeatureTest implements IFeatureTests {
 		
 		
 		for (Employe emp : feat.getObservableListEmploye().getData()) {
-			System.out.println("L'employe pose blem"+emp);
+			System.out.println("L'employe pose blem :"+emp);
 			assertFalse(true);
 		}
 		
@@ -1027,10 +1026,29 @@ public class FeatureTest implements IFeatureTests {
 		feat.updateEmploye(obj1);
 		feat.updateService(obj2);
 			
-		assertEquals(feat.findService(obj2.getId()), obj1);
+		assertEquals(obj2.getEmployes().contains(obj1), true);
 		
 		feat.deleteEmploye(obj1);
 		feat.deleteService(obj2);
+	}
+
+
+	@Override
+	public void testAssocierDepartement() {
+		Service obj1 = new Service();
+		Departement obj2 = new Departement();
+		
+		feat.createService(obj1);
+		feat.createDepartement(obj2);
+		
+		feat.associateDepartement(obj1, obj2);
+		
+		assertEquals(obj2.getServices().contains(obj1), true);
+		
+		feat.deleteService(obj1);
+		feat.deleteDepartement(obj2)
+		
+		
 	}
 
 
