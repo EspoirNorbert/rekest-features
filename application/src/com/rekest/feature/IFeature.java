@@ -5,6 +5,7 @@ import java.util.List;
 import com.rekest.entities.Demande;
 import com.rekest.entities.Departement;
 import com.rekest.entities.Note;
+import com.rekest.entities.Notification;
 import com.rekest.entities.Produit;
 import com.rekest.entities.Role;
 import com.rekest.entities.Service;
@@ -671,6 +672,71 @@ public interface IFeature {
 	 */
 	public Note rechercherNote (String whereClause)  ;
 	
+	
+///////////////
+	
+/**
+* Returns a list of all 'services'.
+* 
+* @return
+*/
+public List<Notification> listerNotifications ()  ;
+
+/**
+* Returns a list of all 'notifications' according to the filters.
+* 
+* @param whereClause
+* @return
+* @ 
+*/
+public List<Notification> listerNotifications ( String whereClause)   ;
+
+/**
+* Delete the 'notification' set in parameter.
+* Returns true if it succeeded, else false.
+* 
+* @param service
+*/
+public boolean supprimerNotification (Notification notification)  ;
+
+/**
+* Update the 'Notification' set in parameter. 
+* Returns true if it succeeded, else false.
+* 
+* @param service
+*/
+public boolean modifierNotification (Notification notification)  ;
+
+/**
+* Save the 'notification' set in parameter. 
+* Returns true if it succeeded, else false.
+* 
+* @param service
+*/
+public boolean creerNotification (Notification notification)  ;
+
+
+
+/**
+* Find and return the 'notification' set in parameter if it exist, else null.
+* 
+* @param whereClause
+* @return
+* @ 
+*/
+public Service rechercherNotification( String whereClause)   ;
+
+/**
+* Find and return the 'notification' set in parameter if it exist, else null.
+* 
+* @param primaryKey
+* @return
+* @ 
+*/
+public Service rechercherNotification( Integer primaryKey)   ;
+
+
+	
 	/**
 	 * Returns the number of 'Demandes'
 	 * 
@@ -705,6 +771,14 @@ public interface IFeature {
 	 * @return
 	 */
 	public Integer RetournerNombreProduitsTotal();
+	
+	
+	/**
+	 * Returns the number of 'Notifications'
+	 * 
+	 * @return
+	 */
+	public Integer RetournerNombreNotificationsTotal();
 	
 
 	/**
@@ -794,6 +868,16 @@ public interface IFeature {
 	 * @ 
 	 */
 	public ObservableList<Departement> loadDepartementsObservableList ()  ;
+	
+	
+	/**
+	 * Returns a Observable list of the stored 'Notifications'
+	 * 
+	 * @return
+	 * @ 
+	 */
+	public ObservableList<Notification> loadNotificationObservableList ()  ;
+
 
 
 
@@ -815,9 +899,8 @@ public interface IFeature {
 	 * @return
 	 */
 	public ObservableList<Demande> loadDemandesByDirectionObservableList (Object direction)  ;
-
-
-
+	
+	
 
 	/**
 	 * Returns the user identified, else null.
@@ -850,6 +933,8 @@ public interface IFeature {
 	 */
 	public boolean associerService(Employe employe, Service service)  ;
 	
+	
+	
 	/**
 	 * Others methodes
 	 */
@@ -863,5 +948,6 @@ public interface IFeature {
 	default  void initManagers() {}
 	default Administrateur createDefaultAdmin() {return null;}
 	default void initAllEntity() {}
+	
 	
 }

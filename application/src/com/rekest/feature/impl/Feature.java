@@ -9,6 +9,7 @@ import com.rekest.dao.impl.HibernateDao;
 import com.rekest.entities.Demande;
 import com.rekest.entities.Departement;
 import com.rekest.entities.Note;
+import com.rekest.entities.Notification;
 import com.rekest.entities.Produit;
 import com.rekest.entities.Role;
 import com.rekest.entities.Service;
@@ -26,6 +27,7 @@ import com.rekest.observableList.impl.ObservableListDepartement;
 import com.rekest.observableList.impl.ObservableListEmploye;
 import com.rekest.observableList.impl.ObservableListManager;
 import com.rekest.observableList.impl.ObservableListNote;
+import com.rekest.observableList.impl.ObservableListNotification;
 import com.rekest.observableList.impl.ObservableListProduit;
 import com.rekest.observableList.impl.ObservableListRole;
 import com.rekest.observableList.impl.ObservableListService;
@@ -50,6 +52,7 @@ public class Feature implements IFeature {
 	private ObservableListManager observableListManager ;
 	private ObservableListNote observableListNote ;
 	private ObservableListUtilisateur observableListUtilisateur;
+	private ObservableListNotification observableListNotification ;
 
 	
 	private Feature () {
@@ -62,6 +65,7 @@ public class Feature implements IFeature {
 		observableListManager = new ObservableListManager();
 		observableListNote = new ObservableListNote();
 		observableListUtilisateur = new ObservableListUtilisateur();
+		observableListNotification = new ObservableListNotification();
 	}
 
 	public static Feature getCurrentInstance () {
@@ -205,6 +209,10 @@ public class Feature implements IFeature {
 		return observableListUtilisateur;
 	}
 
+	public ObservableListNotification getObservableListNotification() {
+		return observableListNotification;
+	}
+	
 
 	@Override
 	public List<Departement> listerDepartements ()   {
@@ -1104,7 +1112,7 @@ public class Feature implements IFeature {
 			return   (Note) dao.find ( Note.class, whereClause);
 		} catch (DAOException e) {
 			AlertError(e,"find note");
-			ErrorLogFileManager.appendError(e.getMessage());
+			ErrorLogFileManager.appendError(e.getStackTrace().toString());
 		}
 		return null;
 	}
@@ -1228,6 +1236,115 @@ public class Feature implements IFeature {
 		}
 		return null;
 	}
+	
+	
+	@Override
+	public List<Notification> listerNotifications ()    {
+		
+		List<Notification> objs = new ArrayList<> ();
+		List<Object> objects;
+		try {
+			objects = dao.list ( new Notification());
+			for  (Object obj : objects) {
+				if  (obj instanceof Notification) {
+					objs.add (  (Notification) obj);
+				}
+			}
+		} catch (DAOException e) {
+			AlertError(e,"get notificatons");
+			ErrorLogFileManager.appendError(e.getMessage());
+		}
+		return objs;
+	}
+
+	@Override
+	public List<Notification> listerNotifications (String whereClause)   {
+
+		List<Object> objects;
+		List<Notification> objs = new ArrayList<> ();
+		try {
+			objects = dao.list ( Notification.class, whereClause);
+			for  (Object obj : objects) {
+				if  (obj instanceof Notification) {
+					objs.add (  (Notification) obj);
+				}
+			}
+		} catch (DAOException e) {
+			AlertError(e,"get notes");
+			ErrorLogFileManager.appendError(e.getMessage());
+		}
+		return objs;
+
+	}
+
+	@Override
+	public boolean supprimerNotification (Notification notification)   {
+
+		try {
+			dao.delete ( notification);
+			loadNotificationObservableList();
+			return true;
+		} catch (DAOException e) {
+			AlertError(e,"delete notification");
+			ErrorLogFileManager.appendError(e.getMessage());
+			return false;
+		}
+
+
+	}
+
+	@Override
+	public boolean modifierNotification (Notification notification)   {
+
+		try {
+			dao.update ( notification);
+			loadNotificationObservableList();
+			return true;
+		} catch (DAOException e) {
+			AlertError(e,"update notification");
+			ErrorLogFileManager.appendError(e.getMessage());
+			return false;
+		}
+
+	}
+
+	@Override
+	public boolean creerNotification (Notification notification)   {
+
+		try {
+			dao.save ( notification); 
+			loadNotificationObservableList();
+			return true;
+		} catch (DAOException e) {
+			AlertError(e,"create notification");
+			ErrorLogFileManager.appendError(e.getMessage());
+			return false;
+		}
+
+	}
+
+	@Override
+	public Service rechercherNotification (String whereClause)   {
+
+		try {
+			return   (Service) dao.find ( Notification.class, whereClause);
+		} catch (DAOException e) {
+			AlertError(e,"find notification");
+			ErrorLogFileManager.appendError(e.getMessage());
+		}
+		return null;
+	}
+
+	@Override
+	public Service rechercherNotification (Integer primaryKey)   {
+		try {
+			return   (Service) dao.find ( new Notification(), primaryKey);
+		} catch (DAOException e) {
+			AlertError(e,"find notification");
+			ErrorLogFileManager.appendError(e.getMessage());
+		}
+		return null;
+	}
 
 	@Override
 	public String getTheDaoImplementationClassname () {
@@ -1258,6 +1375,11 @@ public class Feature implements IFeature {
 	@Override
 	public Integer RetournerNombreProduitsTotal () {
 		return listerProduits().size();
+	}
+	
+	@Override
+	public Integer RetournerNombreNotificationsTotal () {
+		return listerNotifications().size();
 	}
 
 	@Override
@@ -1396,6 +1518,21 @@ public class Feature implements IFeature {
 
 		return observableListUtilisateur.getData();
 	}
+	
+	@Override
+	public ObservableList<Notification> loadNotificationObservableList() {
+
+		try {
+			observableListNotification.clear();
+			observableListNotification.addAll(  dao.list ( new Notification() ));
+		} catch (DAOException e) {
+			AlertError(e,"loading nottifications");
+			ErrorLogFileManager.appendError(e.getMessage());
+		}
+
+		return observableListNotification.getData();
+	}
+	
 	@Override
 	public boolean repondreDemande (Demande demande, String reponse)    {
 		try {

@@ -1,2 +1,4 @@
 2022-07-17T17:54:30.265490900  ça marche 
 2022-07-17T19:03:26.109261400  ERROR:class jakarta.persistence.NoResultException:No result found for query [From com.rekest.entities.employes.Utilisateur WHERE nom = 'testu' ]
+2022-07-18T23:25:11.710415200  ça marche 
+2022-07-18T23:26:09.361351  ça marche 
