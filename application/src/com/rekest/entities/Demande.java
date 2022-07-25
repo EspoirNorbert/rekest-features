@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.rekest.feature.impl.Feature;
+import com.rekest.entities.employes.Employe;
+import com.rekest.entities.employes.Utilisateur;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -17,6 +18,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.persistence.Transient;
 
 @Entity
 public class Demande {
@@ -42,6 +44,12 @@ public class Demande {
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="id_demande")
 	private List<Note> notes = new ArrayList<>();
+
+	@Transient
+	private Utilisateur utilisateur;
+	
+	@Transient
+	private Employe employe;
 
 	
 
@@ -111,6 +119,26 @@ public class Demande {
 		this.updatedAt = updatedAt;
 	}
 	
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+
+	public Employe getEmploye() {
+		return employe;
+	}
+
+	public void setEmploye(Employe employe) {
+		this.employe = employe;
+	}
+
+	public Produit getProduit() {
+		return produit;
+	}
+
 	public void addNote(Note note) {
 		this.notes.add(note);
 		this.updatedAt = new java.util.Date();

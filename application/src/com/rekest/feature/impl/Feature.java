@@ -21,7 +21,7 @@ import com.rekest.entities.employes.DirecteurGeneral;
 import com.rekest.entities.employes.Employe;
 import com.rekest.entities.employes.Manager;
 import com.rekest.entities.employes.Utilisateur;
-import com.rekest.exeptions.DAOException;
+import com.rekest.exceptions.DAOException;
 import com.rekest.feature.IFeature;
 import com.rekest.notificationmanager.impl.NotificationManager;
 import com.rekest.observableList.impl.ObservableListChefDepartement;
@@ -51,6 +51,9 @@ public class Feature implements IFeature {
 	private ObservableListService observableListService ;
 	private ObservableListRole observableListRole;
 	private ObservableListDemande observableListDemande ;
+	private ObservableListDemande observableListDemandeByUtilisateur ;
+	private ObservableListDemande observableListDemandeByDepartement ;
+	private ObservableListDemande observableListDemandeByService ;
 	private ObservableListManager observableListManager ;
 	private ObservableListNote observableListNote ;
 	private ObservableListChefDepartement observableListChefDepartement ;
@@ -58,9 +61,9 @@ public class Feature implements IFeature {
 
 	private ObservableListNotification observableListNotification;
 
+	
 
-
-	private static NotificationManager notifManager = new NotificationManager();
+	private static NotificationManager notificationManager = new NotificationManager();
 	
 	private Feature () {
 
@@ -75,6 +78,9 @@ public class Feature implements IFeature {
 		observableListUtilisateur = new ObservableListUtilisateur ();
 		observableListNotification = new ObservableListNotification ();
 		observableListChefDepartement = new ObservableListChefDepartement ();
+		observableListDemandeByUtilisateur = new ObservableListDemande();
+		observableListDemandeByService = new ObservableListDemande();
+		observableListDemandeByDepartement = new ObservableListDemande();
 
 
 	}
@@ -191,8 +197,23 @@ public class Feature implements IFeature {
 	}
 	
 	@Override
+	public ObservableListDemande getObservableListDemandeByUtilisateur () {
+		return observableListDemandeByUtilisateur;
+	}
+	
+	@Override
 	public ObservableListDepartement getObservableListDepartement () {
 		return observableListDepartement;
+	}
+	
+	@Override
+	public ObservableListDemande getObservableListDemandeByService () {
+		return observableListDemandeByService;
+	}
+	
+	@Override
+	public ObservableListDemande getObservableListDemandeByDepartement () {
+		return observableListDemandeByDepartement;
 	}
 	
 	@Override
@@ -285,6 +306,16 @@ public class Feature implements IFeature {
 	@Override
 	public boolean deleteDepartement (Departement departement)   {
 		try {
+			
+			List<Service> services= departement.getServices();
+			
+			while(services.isEmpty() != true) {
+				deleteService(services.remove(0));
+				
+			}
+			departement.setServices(services);
+			
+			
 			dao.delete ( departement);
 			loadDepartementsObservableList ();
 
@@ -450,8 +481,18 @@ public class Feature implements IFeature {
 			utilisateur.setDemandesCreees(demandes);
 			
 			
+			List<Demande> list1= utilisateur.getDemandes_soumises();
+			
+			while(list1.isEmpty() != true) {
+				deleteDemande(list1.get(0));
+				
+			}
+			utilisateur.setDemandes_soumises(list1);
+			
+
 			dao.delete ( utilisateur);
 			loadUtilisateursObservableList ();
+			loadDemandesObservableList();
 			return true;
 		} catch (DAOException e) {
 			AlertError (e,"delete user");
@@ -558,7 +599,8 @@ public class Feature implements IFeature {
 	@Override
 	public boolean deleteNotificationFeature  (Notification notification, Utilisateur utilisateur, Demande demande)   {
 		try {
-			notifManager.deleteNotification(notification, utilisateur, demande);
+			notificationManager.deleteNotification(notification, utilisateur, demande);
+			
 			loadNotificationObservableList ();
 			return true;
 		} catch (DAOException e) {
@@ -569,6 +611,8 @@ public class Feature implements IFeature {
 
 	}
 
+	
+	
 	@Override
 	public boolean updateNotification (Notification notification)   {
 
@@ -587,7 +631,7 @@ public class Feature implements IFeature {
 	public boolean createNotificationFeature (Utilisateur utilisateur, Demande demande, String message)    {
 
 		try {
-			notifManager.createNotification(utilisateur, demande, message);
+			notificationManager.createNotification(utilisateur, demande, message);
 			loadNotificationObservableList ();
 			return true;
 		} catch (DAOException e) {
@@ -667,6 +711,9 @@ public class Feature implements IFeature {
 	public boolean deleteRole (Role role)   {
 		try {
 			dao.delete ( role);
+			
+			loadUtilisateursObservableList();
+			loadManagerObservableList();
 			loadRoleObservableList ();
 			return true;
 		} catch (DAOException e) {
@@ -776,6 +823,27 @@ public class Feature implements IFeature {
 	@Override
 	public boolean deleteManager (Manager manager)   {
 		try {
+			
+			
+			List<Demande> list1= manager.getDemandes_soumises();
+			
+			while(list1.isEmpty() != true) {
+				deleteDemande(list1.get(0));
+				
+			}
+			manager.setDemandes_soumises(list1);
+			
+			
+			List<Demande> list2= manager.getDemandesCreees();
+			
+			while(list2.isEmpty() != true) {
+				deleteDemande(list2.get(0));
+				
+			}
+			manager.setDemandesCreees(list2);
+			
+			
+			
 			dao.delete ( manager);
 			loadManagerObservableList ();
 			return true;
@@ -887,8 +955,23 @@ public class Feature implements IFeature {
 	@Override
 	public boolean deleteEmploye (Employe employe)   {
 		try {
+			
+			/* en debug : cree une boucle infini
+			 * 
+			List<Demande> demandes= employe.getDemandes_soumises();
+			
+			while(demandes.isEmpty() != true) {
+				deleteDemande(demandes.get(0));
+				
+			}
+			employe.setDemandes_soumises(demandes);
+			*/
+			
+			
+			
 			dao.delete ( employe);
 			loadEmployesObservableList ();
+			loadDemandesObservableList();
 			return true;
 		} catch (DAOException e) {
 			AlertError (e,"delete employe");
@@ -1310,6 +1393,7 @@ public class Feature implements IFeature {
 	}
 
 
+	
 	@Override
 	public List<Demande> listDemandes ()    {
 
@@ -1319,6 +1403,8 @@ public class Feature implements IFeature {
 			objects = dao.list ( new Demande ());
 			for (Object obj : objects) {
 				if (obj instanceof Demande) {
+					 
+					
 					objs.add ( (Demande) obj);
 				}
 			}
@@ -1374,6 +1460,8 @@ public class Feature implements IFeature {
 			loadDemandesObservableList ();
 			loadNoteObservableList();
 			loadNotificationObservableList ();
+			loadProduitsObservableList ();
+			
 			return true;
 		} catch (DAOException e) {
 			AlertError (e,"delete demande");
@@ -1384,10 +1472,12 @@ public class Feature implements IFeature {
 	}
 
 	@Override
-	public boolean updateDemande (Demande demande)   {
+	public boolean updateDemande (Utilisateur utilisateur, Demande demande)   {
 
 		try {
 			dao.update ( demande);
+			notificationManager.createNotification(utilisateur, demande,"Cette demande a ete modifié par "+utilisateur.getPrenom()+" "+utilisateur.getNom() );
+			
 			loadDemandesObservableList ();
 			return true;
 		} catch (DAOException e) {
@@ -1398,10 +1488,26 @@ public class Feature implements IFeature {
 	}
 
 	@Override
-	public boolean createDemande (Demande demande)   {
+	public boolean createDemande (Demande demande,Utilisateur utilisateur, Employe employe)   {
 		try {
-			dao.save ( demande);
+			
+			
+		    notificationManager.createNotification(utilisateur ,demande , "Une demande a été créé par vous !");
+
+		    
+		    ChefService chef =  (ChefService) findManager( utilisateur.getChefdeServiceId());
+		    
+		    notificationManager.createNotification(chef , demande ,"Une nouvelle demande a été soumise a votre appreciation !");
+			
+		    utilisateur.addDemandeCreee(demande);
+			employe.addDemandeSoumise(demande);
+			
+			demande.setEmploye(employe);
+			demande.setUtilisateur(utilisateur);
+			
+			loadNotificationObservableList();
 			loadDemandesObservableList ();
+			
 			return true;
 		} catch (DAOException e) {
 			AlertError (e,"create demande");
@@ -1504,20 +1610,7 @@ public class Feature implements IFeature {
 
 	}
 
-	@Override
-	public boolean creerNotification (Notification notification)   {
 
-		try {
-			dao.save ( notification); 
-			loadNotificationObservableList();
-			return true;
-		} catch (DAOException e) {
-			AlertError(e,"create notification");
-			ErrorLogFileManager.appendError(e.getMessage());
-			return false;
-		}
-
-	}
 
 	@Override
 	public Service rechercherNotification (String whereClause)   {
@@ -1589,6 +1682,8 @@ public class Feature implements IFeature {
 	public boolean deleteProduit (Produit produit)   {
 		try {
 			dao.delete ( produit);
+			
+			
 			loadProduitsObservableList ();
 			loadDemandesObservableList();
 			loadNoteObservableList();
@@ -1789,19 +1884,47 @@ public class Feature implements IFeature {
 
 		return observableListEmploye.getData ();
 	}
-
-
+	
 	@Override
-	public ObservableList<Demande> loadDemandesByServiceObservableList (Service service)  {
-		// TODO Auto-generated method stub
-		return null;
+	public ObservableList<Demande> loadDemandeByUtilisateurObservableList  (Utilisateur utilisateur) {
+
+		try {
+			observableListDemandeByUtilisateur.clear ();
+			observableListDemandeByUtilisateur.addAll ( dao.list(Demande.class,"as WHERE id_utilisateur= "+utilisateur.getId()));
+		} catch (DAOException e) {
+			AlertError (e,"loading demandes by user");
+			ErrorLogFileManager.appendError (e.getMessage ());
+		}
+
+		return observableListDemandeByUtilisateur.getData ();
 	}
 
 
 	@Override
-	public ObservableList<Demande> loadDemandesByDirectionObservableList (Object direction)   {
-		// TODO Auto-generated method stub
-		return null;
+	public ObservableList<Demande> loadDemandesByServiceObservableList (Service service)  {
+		try {
+			observableListDemandeByService.clear ();
+			observableListDemandeByService.addAll ( dao.list(Demande.class,"d join utilisateur e ON d.id_utilisateur = e.id_utilisateur WHERE e.id_service="+service.getId()));
+		} catch (DAOException e) {
+			AlertError (e,"loading demandes by service");
+			ErrorLogFileManager.appendError (e.getMessage ());
+		}
+
+		return observableListDemandeByService.getData ();
+	}
+
+
+	@Override
+	public ObservableList<Demande> loadDemandeByDepartementObservableList (Departement departement)   {
+		try {
+			observableListDemandeByDepartement.clear ();
+			observableListDemandeByDepartement.addAll ( dao.list(Demande.class,"d , employe e , service s WHERE d.id_utilisateur = e.id_employe AND e.id_service=s.id_service AND s.id_departement ="+departement.getId()));
+		} catch (DAOException e) {
+			AlertError (e,"loading demandes by departement");
+			ErrorLogFileManager.appendError (e.getMessage ());
+		}
+
+		return observableListDemandeByDepartement.getData ();
 	}
 
 
@@ -1922,6 +2045,8 @@ public class Feature implements IFeature {
 		}
 
 	}
+
+
 
 	/*
 	 * 

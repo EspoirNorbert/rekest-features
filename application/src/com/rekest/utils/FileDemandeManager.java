@@ -80,7 +80,7 @@ public class FileDemandeManager {
             int rowCounter = 1;
             for (Demande obj : demandes.getItems()) {
             	Row row     = sheetDemandes.createRow(rowCounter);  
-            	row.createCell(cellCounter).setCellValue(obj.get);
+            	row.createCell(cellCounter).setCellValue(obj.getEtat());
             	cellCounter++ ;
 			}
             

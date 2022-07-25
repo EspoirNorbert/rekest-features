@@ -9,7 +9,7 @@ import com.rekest.dao.impl.HibernateDao;
 import com.rekest.entities.Demande;
 import com.rekest.entities.Notification;
 import com.rekest.entities.employes.Utilisateur;
-import com.rekest.exeptions.DAOException;
+import com.rekest.exceptions.DAOException;
 import com.rekest.notificationmanager.INotificationManager;
 
 public class NotificationManager implements INotificationManager {
@@ -22,8 +22,8 @@ public class NotificationManager implements INotificationManager {
 		Notification notification = new Notification(message);
 		dao.save(notification);
 		
-		utilisateur.addNotification(notification);		
-		dao.update(utilisateur);
+		//utilisateur.addNotification(notification);		
+		//dao.update(utilisateur);
 		
 		demande.addNotification(notification);
 		dao.update(demande);
@@ -41,8 +41,8 @@ public class NotificationManager implements INotificationManager {
 	@Override
 	public boolean deleteNotification(Notification notification, Utilisateur utilisateur, Demande demande)
 			throws DAOException {
-		utilisateur.removeNotification(notification);
-		dao.update(utilisateur);
+		//utilisateur.removeNotification(notification);
+		//dao.update(utilisateur);
 		demande.removeNotification(notification);
 		dao.update(demande);
 		dao.delete(notification);

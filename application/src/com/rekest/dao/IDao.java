@@ -7,7 +7,7 @@ import com.rekest.entities.Departement;
 import com.rekest.entities.Service;
 import com.rekest.entities.employes.Employe;
 import com.rekest.entities.employes.Utilisateur;
-import com.rekest.exeptions.DAOException;
+import com.rekest.exceptions.DAOException;
 
 import javafx.collections.ObservableList;
 
@@ -148,4 +148,8 @@ public interface IDao {
 	public default ObservableList<Departement> departementlistObservable() throws DAOException {
 		return null;
 	}
+
+	public default Object findEmployeFromDemande(Demande demande) throws DAOException{
+		return null;
+	};
 }

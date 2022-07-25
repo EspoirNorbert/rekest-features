@@ -571,7 +571,7 @@ public interface IFeature {
 	 * 
 	 * @param notification
 	 */
-	public boolean createNotificationFeature   (Utilisateur utilisateur, Demande demande, String message)  ;
+	public boolean createNotificationFeature   (Utilisateur utilisateur, Demande demande, String message) ;
 
 
 	/**
@@ -707,7 +707,7 @@ public interface IFeature {
 	 * @param service
 	 */
 
-	public boolean updateDemande (Demande Demande)   ;
+	public boolean updateDemande (Utilisateur utilisateur, Demande demande)   ;
 
 
 	/**
@@ -716,7 +716,7 @@ public interface IFeature {
 	 * 
 	 * @param service
 	 */
-	public boolean createDemande (Demande Demande)   ;
+	public boolean createDemande (Demande demande,Utilisateur utilisateur, Employe employe)   ;
 
 
 	/**
@@ -843,15 +843,6 @@ public boolean supprimerNotification (Notification notification)  ;
 */
 public boolean modifierNotification (Notification notification)  ;
 
-/**
-* Save the 'notification' set in parameter. 
-* Returns true if it succeeded, else false.
-* 
-* @param service
-*/
-public boolean creerNotification (Notification notification)  ;
-
-
 
 /**
 * Find and return the 'notification' set in parameter if it exist, else null.
@@ -973,6 +964,29 @@ public Service rechercherNotification( Integer primaryKey)   ;
 	 * @return
 	 */
 	public ObservableListDemande getObservableListDemande () ;
+	
+	/**
+	 * Returns the current ObservableListDemandeByUtilisateur
+	 * 
+	 * @return
+	 */
+	public ObservableListDemande getObservableListDemandeByUtilisateur () ;
+	
+	
+	/**
+	 * Returns the current ObservableListDemandeByService
+	 * 
+	 * @return
+	 */
+	public ObservableListDemande getObservableListDemandeByService () ;
+	
+	
+	/**
+	 * Returns the current ObservableListDemandeByDepartement
+	 * 
+	 * @return
+	 */
+	public ObservableListDemande getObservableListDemandeByDepartement () ;
 	
 	/**
 	 * Returns the current ObservableListDepartement
@@ -1110,20 +1124,27 @@ public Service rechercherNotification( Integer primaryKey)   ;
 	 
 	/**
 	 * Todo
-	 * Returns a Observable list of the stored 'Demandes'.
+	 * Returns a Observable list of the stored 'Demandes' by service.
 	 * 
 	 * @return
 	 */
 	public ObservableList<Demande> loadDemandesByServiceObservableList (Service service)  ;
 
+	/**
+	 * Returns a Observable list of the stored 'demandes' by 'utilisateur'
+	 * 
+	 * @return
+	 * @ 
+	 */
+	public ObservableList<Demande> loadDemandeByUtilisateurObservableList (Utilisateur utilisateur);
 
 	/**
 	 * Todo
-	 * Returns a Observable list of the stored 'Demandes' by direction.
+	 * Returns a Observable list of the stored 'Demandes' by departement.
 	 * 
 	 * @return
 	 */
-	public ObservableList<Demande> loadDemandesByDirectionObservableList (Object direction)  ;
+	public ObservableList<Demande> loadDemandeByDepartementObservableList (Departement departement)  ;
 	
 	
 

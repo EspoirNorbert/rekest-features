@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 
 import com.rekest.entities.Demande;
@@ -19,12 +20,13 @@ import com.rekest.entities.Service;
 import com.rekest.entities.employes.Employe;
 import com.rekest.entities.employes.Manager;
 import com.rekest.entities.employes.Utilisateur;
+import com.rekest.exceptions.DAOException;
 import com.rekest.feature.impl.Feature;
 import com.rekest.test.IFeatureTests;
 
 public class FeatureTest implements IFeatureTests {
 
-	private Feature feat  =   Feature.getCurrentInstance();
+	private static Feature feat  =   Feature.getCurrentInstance();
 	
 
 	@Override
@@ -140,13 +142,22 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testListerDemandes() {
 		Demande obj  =  new Demande();
+		Utilisateur user = new Utilisateur();
+		Employe emp = new Employe();
+		
+		
+		feat.createEmploye(emp);
+		feat.createUtilisateur(user);
+		
 		obj.setEtat("testu");
-		feat.createDemande(obj);
+		feat.createDemande(obj,user,emp);
 		List<Demande> liste  =  new ArrayList<Demande>();
 		
 		liste.add(obj);
 		assertEquals( feat.listDemandes(),liste );
 		
+		feat.deleteUtilisateur(user);
+		feat.deleteEmploye(emp);
 		feat.deleteDemande(obj);
 		
 	}
@@ -156,14 +167,24 @@ public class FeatureTest implements IFeatureTests {
 	public void testListerDemandes2() {
 		
 		Demande obj  =  new Demande();
+		Utilisateur user = new Utilisateur();
+		Employe emp = new Employe();
+		
+		
+		feat.createEmploye(emp);
+		feat.createUtilisateur(user);
+		
 		obj.setEtat("testu");
-		feat.createDemande(obj);
+		feat.createDemande(obj,user,emp);
 		List<Demande> liste  =   new ArrayList<Demande>();
 		
 		liste.add(obj);
 		assertEquals( feat.listDemandes("WHERE etat = 'testu' "),liste );
 		
 		feat.deleteDemande(obj);
+		feat.deleteUtilisateur(user);
+		feat.deleteEmploye(emp);
+		
 		
 	}
 
@@ -172,12 +193,22 @@ public class FeatureTest implements IFeatureTests {
 	public void testSupprimerDemande() {
 		
 		Demande obj  =  new Demande();
+		Utilisateur user = new Utilisateur();
+		Employe emp = new Employe();
+		
+		
+		feat.createEmploye(emp);
+		feat.createUtilisateur(user);
+		
 		obj.setEtat("testu");
-		feat.createDemande(obj);
+		feat.createDemande(obj,user,emp);
 		
 		assertEquals( feat.findDemande("WHERE etat = 'testu' "),obj );
 		feat.deleteDemande(obj);
 		assertEquals( feat.findDemande("WHERE etat = 'testu' "),null );
+		
+		feat.deleteEmploye(emp);
+		feat.deleteUtilisateur(user);
 		
 		
 		
@@ -187,14 +218,23 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testModifierDemande() {
 		Demande obj  =  new Demande();
+		Utilisateur user = new Utilisateur();
+		Employe emp = new Employe();
+		
+		feat.createEmploye(emp);
+		feat.createUtilisateur(user);
+		
+		
 		obj.setEtat("testu");
-		feat.createDemande(obj);
+		feat.createDemande(obj,user,emp);
 		
 		obj.setEtat("newname");
-		feat.updateDemande(obj);
+		feat.updateDemande(user,obj);
 		
 		assertEquals( feat.findDemande("WHERE etat = 'newname' "),obj );
 		feat.deleteDemande(obj);
+		feat.deleteUtilisateur(user);
+		feat.deleteEmploye(emp);
 		
 	}
 
@@ -202,36 +242,64 @@ public class FeatureTest implements IFeatureTests {
 	@Test
 	public void testCreerDemande() {
 		Demande obj  =  new Demande();
+		
+		Utilisateur user = new Utilisateur();
+		Employe emp = new Employe();
+		
+		feat.createEmploye(emp);
+		feat.createUtilisateur(user);
+		
 		obj.setEtat("testu");
-		feat.createDemande(obj);
+		feat.createDemande(obj,user,emp);
+		emp.addDemandeSoumise(obj);
 
 		
+		
 		assertEquals( feat.findDemande(obj.getId()),obj );
+		assertEquals( obj.getEmploye(), emp );
 		feat.deleteDemande(obj);
+		feat.deleteUtilisateur(user);
+		feat.deleteEmploye(emp);
 	}
 
 	@Override
 	@Test
 	public void testRechercherDemande() {
 		Demande obj  =  new Demande();
+		
+		Utilisateur user = new Utilisateur();
+		Employe emp = new Employe();
+		
+		feat.createEmploye(emp);
+		feat.createUtilisateur(user);
+		
 		obj.setEtat("testu");
-		feat.createDemande(obj);
-
+		feat.createDemande(obj,user,emp);
 		
 		assertEquals( feat.findDemande("WHERE etat = 'testu' "),obj );
 		feat.deleteDemande(obj);
+		feat.deleteUtilisateur(user);
+		feat.deleteEmploye(emp);
 	}
 
 	@Override
 	@Test
 	public void testRechercherDemandeId() {
 		Demande obj  =  new Demande();
+		
+		Utilisateur user = new Utilisateur();
+		Employe emp = new Employe();
+		
+		feat.createEmploye(emp);
+		feat.createUtilisateur(user);
+		
 		obj.setEtat("testu");
-		feat.createDemande(obj);
-
+		feat.createDemande(obj,user,emp);
 		
 		assertEquals( feat.findDemande(obj.getId()),obj );
 		feat.deleteDemande(obj);
+		feat.deleteUtilisateur(user);
+		feat.deleteEmploye(emp);
 	}
 
 	@Override
@@ -900,10 +968,21 @@ public class FeatureTest implements IFeatureTests {
 	@Override
 	@Test
 	public void testLoadDemandesObservableList() {
-		feat.createDemande( new Demande());
+		Demande obj  =  new Demande();
+		
+		Utilisateur user = new Utilisateur();
+		Employe emp = new Employe();
+		
+		feat.createEmploye(emp);
+		feat.createUtilisateur(user);
+		
+		obj.setEtat("testu");
+		feat.createDemande(obj,user,emp);
 		assertEquals(feat.getObservableListDemande().getData(), feat.listDemandes());
 		
 		feat.deleteDemande(feat.listDemandes().get(0));
+		feat.deleteUtilisateur(user);
+		feat.deleteEmploye(emp);
 	}
 
 	@Override
@@ -945,8 +1024,32 @@ public class FeatureTest implements IFeatureTests {
 		feat.deleteDepartement(feat.listDepartements().get(0));
 		
 	}
+	
+	@Test
+	@AfterAll
+	public static void testLoadDemandeByUtilisateurObservableList() {
+		Demande demande = new Demande();
+		Utilisateur user = new Utilisateur();
+		Employe emp = new Employe();
+		
+		feat.createUtilisateur(user);
+		
+		feat.createDemande( demande,user,  emp);
+		feat.loadDemandeByUtilisateurObservableList(user);
+		
+		assertEquals(feat.getObservableListDemandeByUtilisateur().getData(), feat.listDemandes());
+		
+		
+		feat.deleteDemande(demande);
+		feat.deleteUtilisateur(user);
+		
+		feat.deleteEmploye(emp);
+		
+		
+	}
 
 	@Override
+	@Test
 	public void testLoadUtilisateursObservableList() {
 		feat.createUtilisateur( new Utilisateur());
 		assertEquals(feat.getObservableListUtilisateur().getData(), feat.listUtilisateurs());
@@ -957,6 +1060,7 @@ public class FeatureTest implements IFeatureTests {
 
 
 	@Override
+	@Test
 	public void testLoadManagersObservableList() {
 		feat.createManager( new Manager());
 		assertEquals(feat.getObservableListManager().getData(), feat.listManagers());
@@ -967,6 +1071,7 @@ public class FeatureTest implements IFeatureTests {
 
 
 	@Override
+	@Test
 	public void testLoadNotesObservableList() {
 		feat.createNote( new Note());
 		assertEquals(feat.getObservableListNote().getData(), feat.listNotes());
@@ -974,7 +1079,8 @@ public class FeatureTest implements IFeatureTests {
 		feat.deleteNote(feat.listNotes().get(0));
 		
 	}
-
+	
+	
 
 	@Override
 	@Test
@@ -1046,10 +1152,13 @@ public class FeatureTest implements IFeatureTests {
 		assertEquals(obj2.getServices().contains(obj1), true);
 		
 		feat.deleteService(obj1);
-		feat.deleteDepartement(obj2)
+		feat.deleteDepartement(obj2);
+		
 		
 		
 	}
+	
+	
 
 
 }

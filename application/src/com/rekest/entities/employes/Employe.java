@@ -30,6 +30,7 @@ public class Employe {
 	@Column(name="id_employe")
 	protected int id;
 	protected String nom;
+
 	protected String prenom;
 	
 	@Column(unique = true)
@@ -120,6 +121,15 @@ public class Employe {
 	{
 		return 0;
 	}
+	
+	public List<Demande> getDemandes_soumises() {
+		return demandes_soumises;
+	}
+
+	public void setDemandes_soumises(List<Demande> demandes_soumises) {
+		this.demandes_soumises = demandes_soumises;
+	}
+
 	
 	public static void copy(Employe employe, Employe entity) {}
 	

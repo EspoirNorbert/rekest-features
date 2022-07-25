@@ -14,7 +14,7 @@ import com.rekest.entities.Departement;
 import com.rekest.entities.Service;
 import com.rekest.entities.employes.Employe;
 import com.rekest.entities.employes.Utilisateur;
-import com.rekest.exeptions.DAOException;
+import com.rekest.exceptions.DAOException;
 import com.rekest.utils.HibernateSession;
 
 public class HibernateDao implements IDao{
@@ -80,11 +80,38 @@ public class HibernateDao implements IDao{
 	@Override
 	public Object find(Class<?> entityClass, String whereClause) throws DAOException {
 		Object entity = null;
+		 String clsname= entityClass.getName();
+		 System.out.println("Full class name ="+clsname); 
+		 int mid=clsname.lastIndexOf ('.') + 1;
+		 String finalClsName = clsname.substring(mid);
+		 System.out.println("Final class name ="+finalClsName);
+		 
 		try {
 			session = HibernateSession.getSession();							
 			@SuppressWarnings("deprecation")
-			Query<?> query = session.createQuery("From " + entityClass.getName() + " " + whereClause); 
+			Query<?> query = session.createQuery("From " + finalClsName + " " + whereClause, entityClass ); 
 			entity = query.getSingleResult();
+			if (entity != null) logger.info("Record Successfully read.");
+			else logger.info("Record not found.");
+		} catch (Exception e) {
+			throw new DAOException("ERROR:" + e.getClass() + ":" + e.getMessage());
+		}
+		return entity;
+	}
+	
+	@Override
+	public Integer findEmployeFromDemande(Demande demande)  throws DAOException {
+		Integer entity = null;
+		try {
+			session = HibernateSession.getSession();	
+			
+			Query<?> query = session.createQuery(
+					"select e.id_employe " +
+					"from "+Demande.class.getName( )+" e " +
+					"where e.id_demande =" + demande.getId(), Integer.class
+			);
+			entity = (Integer) query.getSingleResult();
+			
 			if (entity != null) logger.info("Record Successfully read.");
 			else logger.info("Record not found.");
 		} catch (Exception e) {

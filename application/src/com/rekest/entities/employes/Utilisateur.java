@@ -7,6 +7,7 @@ import java.util.List;
 import com.rekest.entities.Demande;
 import com.rekest.entities.Notification;
 import com.rekest.entities.Role;
+import com.rekest.entities.Service;
 import com.rekest.utils.Utilitaire;
 
 import jakarta.persistence.Basic;
@@ -137,6 +138,11 @@ public class Utilisateur extends Employe {
 
 	public void setDemandesCreees(List<Demande> demandesCreees) {
 		this.demandesCreees = demandesCreees;
+	}
+
+	public Service getService() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
